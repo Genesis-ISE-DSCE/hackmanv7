@@ -1,0 +1,26 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+.App{
+  width: 100vw;
+  height: 100vh;
+}
+.main{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bg{
+  background-color: #4e0a0a;
+}
+.bg1{
+background-color: #0d8f4c;
+}
+.bg2{
+  background-color: #0d148f;
+}
