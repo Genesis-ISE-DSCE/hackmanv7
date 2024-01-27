@@ -9,3 +9,21 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Participant{
+  id Int @id @default(autoincrement())
+  name String
+  email String @unique
+  phoneNumber String 
+  team Team @relation(fields: [teamId] ,references: [id])
+  teamId Int
+  isLead Boolean @default(false)
+}
+model Team{
+  id Int @id @default(autoincrement())
+  teamName String
+  members Participant[]
+  githubLink String
+  transactionId String @unique
+  upiId String
+}

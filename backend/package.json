@@ -2,8 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
+    "start": "ts-node server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +15,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@prisma/client": "^5.8.1",
     "prisma": "^5.8.1"
   }
 }
