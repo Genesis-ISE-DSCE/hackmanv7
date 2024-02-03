@@ -20,7 +20,7 @@ body{
   width: 100vw;
   object-fit: cover; */
   position: relative;
-  animation: primary 6s linear infinite;
+  animation: primary 7s linear infinite;
 }
 
 @keyframes primary {
@@ -30,4 +30,13 @@ body{
   to {
     left: -100%;
   }
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 1;
 }

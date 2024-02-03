@@ -4,6 +4,7 @@ import img2 from "../assets/cityscape-1.png"
 import img3 from "../assets/cityscape-1.png"
 import '../App.css'
 
+
 function Landing() {
   const handleScroll = (event) => {
     const container = event.target;
@@ -18,9 +19,11 @@ function Landing() {
     <div >
     <div className="container">
       <section onWheel={handleScroll} className='elem'>
+        <div className="overlay"></div>
         <img src={img2} alt="" srcset="" style={{height:"100vh",width:"100vw",objectFit:"cover"}}/> 
       </section>
       <section onWheel={handleScroll} className='elem'>
+      <div className="overlay"></div>
       <img src={img2} alt="" srcset="" style={{height:"100vh",width:"100vw",objectFit:"cover"}}/> 
       </section>
       {/* <section onWheel={handleScroll} className='elem'>
