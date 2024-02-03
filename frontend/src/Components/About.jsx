@@ -2,6 +2,7 @@ import React from "react";
 import "../App.css";
 import Board from "../assets/board-about.png";
 import CityScape from "../assets/cityscape-3.png";
+import "../Css/About.css"
 
 function About() {
   return (
@@ -30,7 +31,7 @@ function About() {
           </h1>
           <h4
             className="dates pb-4"
-            style={{ color: "black", letterSpacing: "1px" }}
+            // style={{ color: "black", letterSpacing: "1px" }}
           >
             Date : June 24th - 25th
           </h4>
