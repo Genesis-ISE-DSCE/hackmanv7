@@ -1,26 +1,33 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-} */
-.App{
-  width: 100vw;
-  height: 100vh;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.main{
-  width: 100vw;
-  height: 100vh;
+body{
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.bg{
-  background-color: #4e0a0a;
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  position: relative;
+  width: 100vw;
+  /* height: 20rem; */
+  overflow-x: hidden;
 }
-.bg1{
-background-color: #0d8f4c;
+.elem{
+  /* height: 100vh;
+  width: 100vw;
+  object-fit: cover; */
+  position: relative;
+  animation: primary 6s linear infinite;
 }
-.bg2{
-  background-color: #0d148f;
+
+@keyframes primary {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+  }
 }
