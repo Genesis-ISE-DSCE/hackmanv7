@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 const About = React.lazy(()=>import('../Components/About'));
+
 const Faqs = React.lazy(()=>import('../Components/Faqs'));
 // const Gallery = React.lazy(()=>import('../components/Gallery'));
 const Landing = React.lazy(()=>import('../Components/Landing'));
@@ -11,6 +12,8 @@ const Register = React.lazy(()=>import('../Components/Register'));
 const LandingPage = () => {
     return (
         <div>
+            
+
             <Suspense>
                 <Landing />
             </Suspense>

@@ -2,12 +2,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { Component } from 'react'
 import './App.css'
 import LandingPage from './Pages/LandingPage'
-
+import Navbar from './Components/Navbar'
 function App() {
   return (
     <>
  <BrowserRouter>
       <div>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<LandingPage/>} />
         {/* <Route path="/page" element={<Page />} />

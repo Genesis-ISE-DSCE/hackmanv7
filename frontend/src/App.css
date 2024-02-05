@@ -7,6 +7,12 @@
 body{
   overflow-x: hidden;
 }
+
+@font-face {
+  font-family:pixeloidsansbold ;
+  src: url("./fonts/PixeloidSans-Bold.ttf");
+}
+
 @font-face {
   font-family: pixeloidsans;
   src: url("./fonts/PixeloidSans.ttf");
@@ -145,3 +151,22 @@ body{
     margin-right: -20%;
   }
 }
+
+/* Navbar */
+
+.navbar{
+  background-color: #4A252C;
+  
+}
+
+
+.navbar-ul{
+  color: rgb(215, 188, 126);
+  font-weight: bolder;
+}
+
+.navbar-ul:hover{
+  color:white;
+}
+
+/*Navbar*/
