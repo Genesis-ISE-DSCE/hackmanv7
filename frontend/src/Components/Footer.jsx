@@ -1,7 +1,8 @@
 import React from "react";
-import { Linkedin, Instagram, Mail } from 'react-feather';
 import "../App.css";
 import Board from "../assets/board-contact.png";
+import { Linkedin, Instagram, Mail } from 'react-feather';
+
 import CityScape from "../assets/cityscape-3.png";
 import "../Css/About.css"
 function Footer() {
