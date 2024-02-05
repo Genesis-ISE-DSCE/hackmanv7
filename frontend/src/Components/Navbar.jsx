@@ -18,7 +18,7 @@ function Navbar()
         
     }
     return (
-        <nav className="navbar navbar-expand-lg d-flex align-items-center " style={{ height: "auto", backgroundColor: "#4A252C" }}>
+        <nav className=" fixed-top  navbar navbar-expand-lg d-flex align-items-center " style={{ height: "auto", backgroundColor: "#4A252C" }}>
           <a href="/">
             <div className="heading fs-3 mx-3 mx-md-5 float-start">HACKMAN v7</div>
           </a>
