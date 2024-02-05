@@ -38,14 +38,14 @@ function Footer() {
             Date : June 24th - 25th
           </h4>
           
-    <div className="content-box container-md container-sm">
+    <div className="content-box small-text container-md container-sm">
         
         <div>
                     <h2 style={{ fontFamily: 'pixeloidsans-bold', color: "black", paddingTop:'20px'}}>Reach Out To Us</h2>
         </div>
 
-        <div style={{ color: "black", fontSize: 20 }}>
-            <ul style={{ listStyle: 'none', display: 'flex' }}>
+        <div className="small-text" style={{ color: "black", fontSize: "1.3em" }}>
+            <ul style={{ listStyle: 'none'}}>
                 <li>
                     <p style={{paddingRight:'20px'}}>Gagan S: <a href="tel:">+91 9008243280</a></p>
                 </li>

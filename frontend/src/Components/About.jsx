@@ -36,7 +36,7 @@ function About() {
             Date : June 24th - 25th
           </h4>
           <div className="content-box container-md container-sm">
-              <p className="p-3 small-text" style={{color: "black", letterSpacing:"0.5px",wordSpacing:"1px"}}>
+              <p className="p-3 small-text" style={{color: "black", letterSpacing:"0.5px", wordSpacing:"1px"}}>
               HackMan v.7 is an Inter College, extravagant 24-hour Hackathon,
               hosted by the Department of ISE, Dayananda Sagar College of
               Engineering (DSCE), Bangalore. We give the brightest of minds a
