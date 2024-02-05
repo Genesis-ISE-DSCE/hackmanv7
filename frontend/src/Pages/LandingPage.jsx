@@ -1,6 +1,10 @@
 import React, { Suspense } from 'react';
 const About = React.lazy(()=>import('../Components/About'));
+<<<<<<< HEAD
 
+=======
+const Footer = React.lazy(()=>import('../Components/Footer'));
+>>>>>>> c4b81cdee9f4fded554f3f337e99e8562c0428c4
 const Faqs = React.lazy(()=>import('../Components/Faqs'));
 // const Gallery = React.lazy(()=>import('../components/Gallery'));
 const Landing = React.lazy(()=>import('../Components/Landing'));
@@ -22,6 +26,9 @@ const LandingPage = () => {
                 <About />   
             </Suspense>  
 
+            <Suspense>
+                <Footer />
+            </Suspense>
              {/* <Suspense fallback={<div>Loading...</div>}>
                 <Schedule />
             </Suspense> 
