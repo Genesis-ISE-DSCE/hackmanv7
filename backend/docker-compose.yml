@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+  postgres:
+    container_name: e-commerce-db
+    image: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/postgres_data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: hackman
+      POSTGRES_PASSWORD: hackman
+
+volumes:
+  postgres_data:
