@@ -6,7 +6,7 @@ import "../Css/About.css"
 
 function About() {
   return (
-    <div className="about-con">
+    <div id="about" className="about-con">
       <div
         className="abt-container vh-100"
         style={{
@@ -21,7 +21,7 @@ function About() {
             src={Board}
             alt="board"
             className="img-fluid"
-            style={{ width: "20rem" }}
+            style={{ width: "19rem" }}
           />
           <h1
             className="heading pt-5"

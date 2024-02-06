@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import './App.css'
 import LandingPage from './Pages/LandingPage'
 import Navbar from './Components/Navbar'
+import About from "./Components/About";
 function App() {
   return (
     <>

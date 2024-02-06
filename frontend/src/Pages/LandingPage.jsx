@@ -24,6 +24,10 @@ const LandingPage = () => {
                 <About />   
             </Suspense>  
 
+            <Suspense fallback={<div>Loading...</div>}>
+                <Faqs />
+            </Suspense>
+
             <Suspense>
                 <Footer />
             </Suspense>
@@ -36,9 +40,7 @@ const LandingPage = () => {
                 <Sponsors />
             </Suspense>
 
-            <Suspense fallback={<div>Loading...</div>}>
-                <Faqs />
-            </Suspense>
+            
 
             <Suspense fallback={<div>Loading...</div>}>
                 <Contact />
