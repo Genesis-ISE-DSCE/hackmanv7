@@ -13,7 +13,7 @@
 
 .about-con{
     font-family: pixeloidsans;
-    overflow-x: hidden;
+    overflow: hidden;
     }
     .heading {
       font-family: karmatic;
@@ -53,3 +53,9 @@
         font-size: 0.7em;
       }
     }
+    /* .nev{
+      background-color: rgba(7, 37, 44, 0.);
+    } */
+   .head{
+    margin-right: -180px;
+   }

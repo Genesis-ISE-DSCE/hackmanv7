@@ -9,7 +9,7 @@ function Footer() {
 
     return (
         
-<div className="about-con">
+<div className="about-con" id="contact">
     <div
         className="abt-container vh-100"
         style={{

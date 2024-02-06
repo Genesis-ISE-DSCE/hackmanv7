@@ -23,13 +23,13 @@ function Landing() {
     });
   };
  
- 
   return (
-    <div>
-    <div className="containz">
+    <div id='land'>
+    <div className="containz ">
+      <div className="">
       <h1  className='karma' >HACKMAN v7</h1>
       <h1 className='karma2 sh'>June 24th-25th</h1>
-
+      </div>
       <section onWheel={handleScroll} className='elem'>
         <div className="overlay"></div>
         <img src={img} alt="" srcset="" style={{height:"100vh",width:"100vw",objectFit:"cover"}}></img> 
@@ -38,12 +38,11 @@ function Landing() {
       <div className="overlay"></div>
       <img src={img2} alt="" srcset=""  style={{height:"100vh",width:"100vw",objectFit:"cover"}}/> 
       </section>
-     <div className="mascot ">
+     {/* <div className="mascot ">
         <picture  alt="mascot" >
            <img height={250} width={240} src={mascot} loading="lazy" alt="mascot"/>
-
         </picture>
-      </div>
+      </div> */}
       </div>
       
 
