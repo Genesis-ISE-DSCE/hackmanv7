@@ -18,10 +18,10 @@ function Navbar()
         
     }
     return (
-        <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center" style={{ height:"65px",  backgroundColor: "#4A252C" }}>
+        <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center" style={{ height:"auto",  backgroundColor: "#4A252C" }}>
           <div className="head">
           <a href="/">
-            <div className="heading fs-4 mx-3 mx-md- float-start">HACKMAN v7</div>
+            <div className="heading fs-4 mx-3 mx-md-3 float-start">HACKMAN v7</div>
           </a>
           </div>
           <button className="navbar-toggler my-2 mx-3" style={{backgroundColor:"#D7BD7E"}}  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

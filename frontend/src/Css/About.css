@@ -11,6 +11,9 @@
     src: url("../fonts/PixeloidSans.ttf");
   }
 
+  .custom-height{
+    height: 120vh; 
+  }
 .about-con{
     font-family: pixeloidsans;
     overflow: hidden;

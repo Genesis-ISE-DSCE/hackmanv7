@@ -24,7 +24,7 @@ function Landing() {
   };
  
   return (
-    <div id='land'>
+    <div id='land' className='custom-height'>
     <div className="containz ">
       <div className="">
       <h1  className='karma' >HACKMAN v7</h1>
@@ -32,11 +32,11 @@ function Landing() {
       </div>
       <section onWheel={handleScroll} className='elem'>
         <div className="overlay"></div>
-        <img src={img} alt="" srcset="" style={{height:"100vh",width:"100vw",objectFit:"cover"}}></img> 
+        <img src={img} alt="" srcset="" style={{height:"120vh",width:"100vw",objectFit:"cover"}}></img> 
       </section>
       <section onWheel={handleScroll} className='elem'>
       <div className="overlay"></div>
-      <img src={img2} alt="" srcset=""  style={{height:"100vh",width:"100vw",objectFit:"cover"}}/> 
+      <img src={img2} alt="" srcset=""  style={{height:"120vh",width:"100vw",objectFit:"cover"}}/> 
       </section>
      {/* <div className="mascot ">
         <picture  alt="mascot" >

@@ -2,6 +2,9 @@
     font-family: pixeloidsans-bold;
     src: url("../fonts/PixeloidSans.ttf");
   }
+  .custom-height {
+    height: 120vh; /* Adjust the value as needed */
+  }
 .outer{
     overflow:hidden;
 }

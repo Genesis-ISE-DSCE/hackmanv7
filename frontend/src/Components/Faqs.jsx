@@ -12,14 +12,12 @@ import Board from "../assets/Faqs-board.png"
 
 function Faqs() {
   return (
-    <div id="faqs" className="about-con">
+    <div id="faqs" className="custom-height d-flex justify-content-center " style={{
+      backgroundImage: `url(${CityScape})`,
+      backgroundSize: "cover",
+    }}>
       <div
-        className="outer vh-110 d-flex flex-row  "
-        style={{
-          backgroundImage: `url(${CityScape})`,
-          backgroundSize: "cover",
-          height: "auto",
-        }}
+        className="outer d-flex flex-row "
       >
         <div className="text-center ">
         <img
@@ -35,7 +33,7 @@ function Faqs() {
               <img src={card1} alt=""width={200}  height={550}/>
               </div>
               <div class="backSide" >
-                <img src={brick} width={325}  height={600} alt="" srcset="" />
+                <img src={brick} width={315}  height={600} alt="" srcset="" />
                 <p className="position-absolute bs-cont">Hackman is a 24Hr Inter-College Hackathon, hosted by Dept of ISE,DSCE</p>
             </div>
             </div>
@@ -46,7 +44,7 @@ function Faqs() {
               <img src={card2} alt="" width={200}  height={550}/>
               </div>
               <div class="backSide">
-              <img src={brick} width={325}  height={600} alt="" srcset="" />
+              <img src={brick} width={315}  height={600} alt="" srcset="" />
               <span  className="position-absolute bs-cont fs-6">Any student pursuing engineering from any year with an interest in technology can participate in Hackman. This includes programmers, designers, data scientists,and other tech enthusiasts.</span>
             </div>
             </div>
@@ -57,7 +55,7 @@ function Faqs() {
               <img src={card3} alt=""width={200}  height={550}/>
               </div>
               <div class="backSide" >
-                <img src={brick} width={325}  height={600} alt="" srcset="" />
+                <img src={brick} width={315}  height={600} alt="" srcset="" />
                 <p className="position-absolute bs-cont mh-60">Hackman v7 has an open theme, meaning participants are free to work on any project they choose.</p>
             </div>
             </div>
@@ -68,33 +66,11 @@ function Faqs() {
               <img src={card4} alt=""width={200}  height={550}/>
               </div>
               <div class="backSide" >
-                <img src={brick} width={325}  height={600} alt="" srcset="" />
+                <img src={brick} width={315}  height={600} alt="" srcset="" />
                 <p className="position-absolute bs-cont mh-60 fs-5" >Yes, food, shelter and snacks will be provided for participants throughout the duration of Hackman to help ensure they can stay focused on their projects.</p>
             </div>
             </div>
           </div>
-          {/* <div className="myCard">
-            <div className="innerCard">
-              <div class="frontSide">
-              <img src={card5} alt=""width={200}  height={550}/>
-              </div>
-              <div class="backSide" >
-                <img src={brick} width={200}  height={550} alt="" srcset="" />
-                <p className="position-absolute bs-cont">Content</p>
-            </div>
-            </div>
-          </div>
-          <div className="myCard">
-            <div className="innerCard">
-              <div class="frontSide">
-              <img src={card6} alt=""width={200}  height={550}/>
-              </div>
-              <div class="backSide" >
-                <img src={brick} width={200}  height={550} alt="" srcset="" />
-                <p className="position-absolute bs-cont">Content</p>
-            </div>
-            </div>
-          </div> */}
           </div>
           </div>
       </div>

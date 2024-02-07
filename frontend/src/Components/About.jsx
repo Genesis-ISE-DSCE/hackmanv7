@@ -6,15 +6,14 @@ import "../Css/About.css"
 
 function About() {
   return (
-    <div id="about" className="about-con">
+    <div id="about" className="custom-height about-con" style={{
+      backgroundImage: `url(${CityScape})`,
+      color: "white",
+      backgroundSize: "cover",
+    }}>
       <div
         className="abt-container vh-100 logo"
-        style={{
-          backgroundImage: `url(${CityScape})`,
-          color: "white",
-          backgroundSize: "cover",
-          height: "auto",
-        }}
+        
       >
         <div className="text-center">
           <img
@@ -25,7 +24,7 @@ function About() {
           />
           <h1
             className="heading pt-5"
-            style={{ letterSpacing: "0.5px",marginTop:"-2%" }}
+            style={{ letterSpacing: "0.5px" }}
           >
             HACKMAN V7
           </h1>

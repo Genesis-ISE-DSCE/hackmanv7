@@ -9,15 +9,14 @@ function Footer() {
 
     return (
         
-<div className="about-con" id="contact">
-    <div
-        className="abt-container vh-110"
-        style={{
+<div className="about-con custom-height" id="contact"  style={{
           backgroundImage: `url(${CityScape})`,
           color: "white",
           backgroundSize: "cover",
-          height: "auto",
-        }}
+        }}>
+    <div
+        className="abt-container vh-110"
+       
       >
     <div className="text-center">
           <img
