@@ -44,13 +44,24 @@
       .content-box {
         width: 50%;
       }
+    }  
+    @media (min-width: 768px) and (max-width: 1300px) {
+      .content-box {
+        width: 70%;
+      }
     }
+
     .small-text {
       font-size: 1.1em; 
     }
     @media (max-width: 767px) {
       .small-text {
         font-size: 0.7em;
+      }
+    }
+    @media (min-width: 768px) and (max-width: 1300px) {
+      .small-text {
+        font-size: 0.9em;
       }
     }
     /* .nev{
