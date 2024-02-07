@@ -27,6 +27,7 @@
     /* overflow:auto; */
 
   }
+
   .myCard:last-child {
     margin-right: 0;  /* No margin on the last card */
   }
@@ -41,9 +42,9 @@
   }
   .bs-cont{
       font-family: pixeloidsans-bold;
-      color: black;
+      color: rgb(255, 255, 255);
     font-size: 1.3em;
-    -webkit-text-stroke: 2px rgb(0, 0, 0); 
+    -webkit-text-stroke: 1px rgb(255, 255, 255); 
     letter-spacing: 2px;
   }
   .innerCard {
@@ -151,14 +152,16 @@
     align-items: center;
   }
   @media (max-width: 767px) {
-    .card-container {
-      overflow: auto;
+  
+    .card-container{
+      overflow-x: scroll;
+      flex-wrap: wrap;
     }
   }
   
   /* Styles for Medium Devices (768px to 991px) */
   @media (min-width: 768px) and (max-width: 991px) {
-    .card-container {
-     
+    .myCard {
+      scale: 0.5;
     }
   }
