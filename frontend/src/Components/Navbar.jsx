@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "react-router-dom"
+// import {Link} from "react-router-dom"
 import '../App.css'
 import "../Css/About.css"
 
@@ -18,7 +18,7 @@ function Navbar()
         
     }
     return (
-        <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center  p-2" style={{ height: "auto", backgroundColor: "#4A252C" }}>
+        <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center" style={{ height:"65px",  backgroundColor: "#4A252C" }}>
           <div className="head">
           <a href="/">
             <div className="heading fs-4 mx-3 mx-md- float-start">HACKMAN v7</div>

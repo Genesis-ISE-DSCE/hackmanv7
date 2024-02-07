@@ -8,7 +8,7 @@ function About() {
   return (
     <div id="about" className="about-con">
       <div
-        className="abt-container vh-100"
+        className="abt-container vh-100 logo"
         style={{
           backgroundImage: `url(${CityScape})`,
           color: "white",
@@ -20,12 +20,12 @@ function About() {
           <img
             src={Board}
             alt="board"
-            className="img-fluid"
+            className="img-fluid boardd"
             style={{ width: "19rem" }}
           />
           <h1
             className="heading pt-5"
-            style={{ letterSpacing: "0.5px" }}
+            style={{ letterSpacing: "0.5px",marginTop:"-2%" }}
           >
             HACKMAN V7
           </h1>
@@ -35,7 +35,7 @@ function About() {
           >
             Date : June 24th - 25th
           </h4>
-          <div className="content-box container-md container-sm">
+          <div className="content-box container-md container-sm abt-box">
               <p className="p-3 small-text" style={{color: "black", letterSpacing:"0.5px", wordSpacing:"1px"}}>
               HackMan v.7 is an Inter College, extravagant 24-hour Hackathon,
               hosted by the Department of ISE, Dayananda Sagar College of

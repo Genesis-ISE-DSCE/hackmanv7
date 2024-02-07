@@ -11,7 +11,7 @@ function Footer() {
         
 <div className="about-con" id="contact">
     <div
-        className="abt-container vh-100"
+        className="abt-container vh-110"
         style={{
           backgroundImage: `url(${CityScape})`,
           color: "white",
