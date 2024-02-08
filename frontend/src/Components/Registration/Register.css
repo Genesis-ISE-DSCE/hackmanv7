@@ -1,0 +1,22 @@
+@font-face {
+    font-family: karmatic ;
+    src: url("./fonts/ka1.ttf");
+  }
+.all{
+    font-family: karmatic;
+}
+   input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+.kard{
+    background: rgba(163, 84, 99, 0.3);
+    margin-top: 7%;
+    padding: 5%;
+    color: #A52A2A;
+}

@@ -5,6 +5,11 @@
   .custom-height {
     height: 120vh; /* Adjust the value as needed */
   }
+  @media (max-width:767px){
+    .custom-height {
+      height: 100vh; /* Adjust the value as needed */
+    }
+  }
 .outer{
     overflow:hidden;
 }
@@ -14,13 +19,15 @@
 .card-container {
     display: flex;
     flex-direction: row;
+
     /* width: 100%;
     overflow-x: scroll;  */
     max-height: 600px;  /* Set a fixed height for the container */
-    justify-content: space-evenly;
-    margin: 5%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 5%;
+    margin-top: 6%;
   }
-
 .myCard {
     background-color: transparent;
     width: 250px;
@@ -31,12 +38,6 @@
 
   }
 
-  .myCard:last-child {
-    margin-right: 0;  /* No margin on the last card */
-  }
-  .myCard:first-child {
-    margin-left: 2%;  
-  }
   .title {
     font-size: 1.5em;
     font-weight: 900;
@@ -62,7 +63,6 @@
   .myCard:hover .innerCard {
     transform: rotateY(180deg);
   }
-  
   .frontSide,
   .backSide {
     position: absolute;
@@ -80,17 +80,6 @@
     /* box-shadow: 0 0 0.3em rgba(255, 255, 255, 0.5); */
     font-weight: 700;
   }
-  
-  .frontSide,
-  .frontSide::before {
-    /* background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%); */
-  }
-  
-  .backSide,
-  .backSide::before {
-    /* background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); */
-  }
-  
   .backSide {
     transform: rotateY(180deg);
   }
@@ -114,15 +103,53 @@
     0% {
       opacity: 0.3;
     }
-  
     80% {
       opacity: 1;
     }
-  
     100% {
       opacity: 0.3;
     }
   }
+  .card{
+    background: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 767px) {
+  
+    .card-container{
+      overflow: scroll;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* flex-direction: column; */
+      /* gap: 200px; */
+    }
+    .myCard {
+      scale: 0.8;
+      margin-left: 25%;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .card-container{
+      overflow: scroll;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* flex-direction: column; */
+      /* gap: 200px; */
+    }
+    .myCard {
+      scale: 0.9;
+      /* margin-left: 25%; */
+    }
+  }
+  /* Styles for Medium Devices (768px to 991px) */
+  
   ::-webkit-scrollbar {
     width: 9px;
   }
@@ -146,25 +173,4 @@
   /* Style for the scrollbar corner */
   ::-webkit-scrollbar-corner {
     background-color: transparent;
-  }
-  .card{
-    background: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  @media (max-width: 767px) {
-  
-    .card-container{
-      overflow-x: scroll;
-      flex-wrap: wrap;
-    }
-  }
-  
-  /* Styles for Medium Devices (768px to 991px) */
-  @media (min-width: 768px) and (max-width: 991px) {
-    .myCard {
-      scale: 0.5;
-    }
   }

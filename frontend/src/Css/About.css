@@ -14,6 +14,14 @@
   .custom-height{
     height: 120vh; 
   }
+  @media (max-width:767px){
+    .custom-height {
+      height: 100vh; 
+    }
+    .ki {
+      margin-top: 20%;
+    }
+  }
 .about-con{
     font-family: pixeloidsans;
     overflow: hidden;
@@ -63,7 +71,9 @@
     margin-right: -180px;
    }
   
-
+   .ok{
+    margin-bottom: 3%;
+}
 .abt-box {
   transition: transform 0.3s; /* Smooth transition for scale effect */
 }

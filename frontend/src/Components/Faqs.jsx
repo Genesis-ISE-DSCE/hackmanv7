@@ -17,16 +17,16 @@ function Faqs() {
       backgroundSize: "cover",
     }}>
       <div
-        className="outer d-flex flex-row "
+        className="outer d-flex flex-row"
       >
-        <div className="text-center ">
+        <div className="text-center">
         <img
             src={Board}
             alt="board"
             className="img-fluid ok boardd"
             style={{ width: "20rem" }}
           />
-        <div className="card-container">
+        <div className="card-container ">
         <div className="myCard">
             <div className="innerCard">
               <div class="frontSide">
@@ -63,11 +63,11 @@ function Faqs() {
           <div className="myCard">
             <div className="innerCard">
               <div class="frontSide">
-              <img src={card4} alt=""width={200}  height={550}/>
+              <img src={card4} alt="" width={200}  height={550}/>
               </div>
               <div class="backSide" >
                 <img src={brick} width={315}  height={600} alt="" srcset="" />
-                <p className="position-absolute bs-cont mh-60 fs-5" >Yes, food, shelter and snacks will be provided for participants throughout the duration of Hackman to help ensure they can stay focused on their projects.</p>
+                <p className="position-absolute bs-cont mh-60 fs-5" >Yes, food, shelter and snacks will be provided for participants throughout the duration of Hackman.</p>
             </div>
             </div>
           </div>

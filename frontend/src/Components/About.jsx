@@ -19,8 +19,8 @@ function About() {
           <img
             src={Board}
             alt="board"
-            className="img-fluid boardd"
-            style={{ width: "19rem" }}
+            className="img-fluid boardd ki"
+            style={{ width: "20rem" }}
           />
           <h1
             className="heading pt-5"
