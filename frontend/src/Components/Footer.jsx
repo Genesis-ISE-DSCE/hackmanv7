@@ -1,7 +1,9 @@
 import React from "react";
 import "../App.css";
 import Board from "../assets/board-contact.png";
+
 import { Linkedin, Instagram, Mail } from "react-feather";
+
 
 import CityScape from "../assets/cityscape-3.png";
 import "../Css/About.css";
@@ -28,12 +30,12 @@ function Footer() {
             HACKMAN V7
           </h1>
           <h4
+
             className="dates pb-4 mb-4"
             // style={{ color: "black", letterSpacing: "1px" }}
           >
             Date : June 24th - 25th
           </h4>
-
           <div className="content-box small-text container-md container-sm">
             <div>
               <h2
@@ -53,6 +55,7 @@ function Footer() {
             >
               <ul style={{ listStyle: "none" }}>
                 <li>
+
                   <p style={{ paddingRight: "20px" }}>
                     Gagan S: <a href="tel:">+91 9008243280</a>
                   </p>
