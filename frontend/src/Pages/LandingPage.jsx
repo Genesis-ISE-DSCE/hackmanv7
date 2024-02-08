@@ -10,6 +10,7 @@ const Landing = React.lazy(()=>import('../Components/Landing'));
 const Schedule = React.lazy(()=>import('../Components/Schedule'));
 const Sponsors = React.lazy(()=>import('../Components/Sponsors'));
 const Register = React.lazy(()=>import('../Components/Register'));
+const Leader = React.lazy(()=>import('../Components/Registration/Leader'));
 
 const LandingPage = () => {
     return (
@@ -30,6 +31,9 @@ const LandingPage = () => {
 
             <Suspense>
                 <Footer />
+            </Suspense>
+            <Suspense>
+                <Leader />
             </Suspense>
              {/* <Suspense fallback={<div>Loading...</div>}>
                 <Schedule />
