@@ -4,26 +4,27 @@ import "./Register.css"
 
 function Leader() {
   return (
-    <div className='custom-height all d-flex justify-content-center  align-items-start ' style={{backgroundImage: `url(${CityScape})`,backgroundSize: "cover"}}>
-        <div className="card px-8 py-6 rounded-lg bg-gray-800 w-25 kard ">
-      <h1 className="text-center font-bold text-3xl text-white ">Login</h1>
-      <form className="my-6">
-        <div className="mb-3">
-          <input className="form-control" placeholder="Leader Name" type="text" />
-        </div>
-        <div className="mb-3">
-          <input className="form-control" placeholder="Leader Email" type="email" />
-        </div>
-        <div className="mb-3">
-          <input className="form-control" placeholder="Leader Phone" type="number" />
-        </div>
-        <div className="">
-        <button className="btn btn-dark w-30 mt-3 mx-3">Back</button>
-        <button className="btn btn-dark w-30 mt-3 mx-3">Next</button>
-        </div>
-      </form>
+    <div id='registration' className='custom-height all d-flex justify-content-center align-items-start' style={{backgroundImage: `url(${CityScape})`, backgroundSize: "cover"}}>
+    <div className="card p-4 rounded-lg bg-gray-800 w-75-lg kard ">
+        <h1 className="text-center font-bold text-3xl" style={{color: "#D7BD7E"}}>Register</h1>
+        <form className="my-3">
+            <div className="mb-3">
+                <input className="form-control" placeholder="Leader Name" type="text" />
+            </div>
+            <div className="mb-3">
+                <input className="form-control" placeholder="Leader Email" type="email" />
+            </div>
+            <div className="mb-3">
+                <input className="form-control" placeholder="Leader Phone" type="number" />
+            </div>
+            <div className="d-flex justify-content-between">
+                <button className="btn  w-45">Back</button>
+                <button className="btn  w-45">Next</button>
+            </div>
+        </form>
     </div>
-    </div>
+</div>
+
   )
 }
 
