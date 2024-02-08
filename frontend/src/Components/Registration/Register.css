@@ -4,6 +4,7 @@
   }
 .all{
     font-family: karmatic;
+    color: #D7BD7E;
 }
    input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
@@ -19,4 +20,21 @@
     margin-top: 7%;
     padding: 5%;
     color: #A52A2A;
+}
+.form-control::placeholder{
+  color:#e394b2;
+  font-family: pixeloidsansbold;
+  text-align: center;
+}
+.form-control {
+  text-align: center;
+  border-radius: 5px; /* Adjust border-radius as needed */
+  padding: 10px;
+  font-size: 16px;
+  background: #F1E1F1;
+  font-family: pixeloidsansbold;
+}
+.form-control:focus{
+  background: #F1E1F1;
+  border: 0px;
 }
