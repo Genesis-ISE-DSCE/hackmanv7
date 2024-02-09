@@ -1,18 +1,7 @@
 import { Request, Response } from "express";
 import { db } from "../utils/db";
-
-// id Int @id @default(autoincrement())
-// name String
-// email String @unique
-// phoneNumber String
-// team Team @relation(fields: [teamId] ,references: [id])
-// teamId Int
-// isLead Boolean @default(false)
-
-// leader -->
-
-// name,
-// email,
+import { AppError } from "../utils/error";
+import { isValidEmail } from "../helpers/emailValidator";
 
 interface Participant {
   name: string;
@@ -31,6 +20,16 @@ export const registerController = async (req: Request, res: Response) => {
   const { members, teamInfo }: { members: Participant[]; teamInfo: TeamInfo } =
     req.body;
 
+  if (
+    teamInfo.name === "" ||
+    teamInfo.transactionId === "" ||
+    teamInfo.upiId === ""
+  ) {
+    throw new AppError({
+      name: "BAD_REQUEST",
+      message: "Empty details found!",
+    });
+  }
   const team = await db.team.create({
     data: {
       teamName: teamInfo.name,
@@ -39,15 +38,33 @@ export const registerController = async (req: Request, res: Response) => {
     },
   });
 
-  members.map(async (member) => {
-    const teamMate = await db.participant.create({
-      data: {
-        name: member.name,
-        email: member.email,
-        phoneNumber: member.phoneNumber,
-        isLead: member.isLead === "true",
-        teamId: team.id,
-      },
+  if (team) {
+    members.map(async (member) => {
+      if (isValidEmail(member.email) || member.name !== "") {
+        throw new AppError({
+          name: "BAD_REQUEST",
+          message: "Fill all the details",
+        });
+      }
+      const teamMate = await db.participant.create({
+        data: {
+          name: member.name,
+          email: member.email,
+          phoneNumber: member.phoneNumber,
+          isLead: member.isLead === "true",
+          teamId: team.id,
+        },
+      });
+      if (!teamMate) {
+        throw new AppError({
+          name: "INTERNAL_SERVER_ERROR",
+          message: "Some Error Occurred",
+        });
+      }
     });
+  }
+  throw new AppError({
+    name: "INTERNAL_SERVER_ERROR",
+    message: "Some Error Occurred",
   });
 };
