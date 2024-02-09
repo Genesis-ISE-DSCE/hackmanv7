@@ -62,6 +62,9 @@ export const registerController = async (req: Request, res: Response) => {
         });
       }
     });
+    return res
+      .status(201)
+      .json({ success: true, message: "Team successfully registered!" });
   }
   throw new AppError({
     name: "INTERNAL_SERVER_ERROR",
