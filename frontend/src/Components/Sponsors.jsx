@@ -9,7 +9,7 @@ import azad from "../assets/azad.png";
 import skill from "../assets/skill.png";
 import skolar from "../assets/skolar.png";
 
-function Footer() {
+function Sponsors() {
 
     return (
 
@@ -18,7 +18,7 @@ function Footer() {
             backgroundImage: `url(${CityScape})`,
             color: "white",
             backgroundSize: "cover",
-            height: "auto",
+            height: "auto"
           }}>
             <div className="heading">
               <h1 className="heading pt-5 text-center" style={{ letterSpacing: "0.5px" }}>
@@ -89,4 +89,4 @@ function Footer() {
     );
 }
 
-export default Footer;
+export default Sponsors;

@@ -11,9 +11,20 @@
     src: url("../fonts/PixeloidSans.ttf");
   }
 
+  .custom-height{
+    height: 120vh; 
+  }
+  @media (max-width:767px){
+    .custom-height {
+      height: 100vh; 
+    }
+    .ki {
+      margin-top: 20%;
+    }
+  }
 .about-con{
     font-family: pixeloidsans;
-    overflow-x: hidden;
+    overflow: hidden;
     }
     .heading {
       font-family: karmatic;
@@ -55,3 +66,32 @@
         font-size: 0.7em;
       }
     }
+    @media (min-width: 768px) and (max-width: 1300px) {
+      .small-text {
+        font-size: 0.9em;
+      }
+    }
+    /* .nev{
+      background-color: rgba(7, 37, 44, 0.);
+    } */
+   .head{
+    margin-right: -180px;
+   }
+  
+   .ok{
+    margin-bottom: 3%;
+}
+.abt-box {
+  transition: transform 0.3s; /* Smooth transition for scale effect */
+}
+
+.abt-box:hover {
+  transform: scale(1.1); /* Scale up on hover */
+}
+.boardd {
+  transition: transform 0.3s;
+}
+
+.boardd:hover {
+  transform: translateY(-25px); /* Move the image 3D behind by 15px on hover */
+}

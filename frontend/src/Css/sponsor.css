@@ -27,6 +27,14 @@
     font-family:  karmatic;
     font-size: 2em;
   }
+
+  .with-margin {
+    transition: transform 0.3s;
+  }
+  
+  .with-margin:hover {
+    transform: translateY(-25px); /* Move the image 3D behind by 15px on hover */
+  }
   @media (max-width: 768px){
     
     .heading {
