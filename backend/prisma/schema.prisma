@@ -10,20 +10,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Participant{
-  id Int @id @default(autoincrement())
+model Participant {
+  id String @id @default(uuid())
   name String
   email String @unique
   phoneNumber String 
   team Team @relation(fields: [teamId] ,references: [id])
-  teamId Int
+  teamId String
   isLead Boolean @default(false)
 }
-model Team{
-  id Int @id @default(autoincrement())
+
+model Team {
+  id String @id @default(uuid())
   teamName String
   members Participant[]
-  githubLink String
+  githubLink String?
   transactionId String @unique
   upiId String
+  payStatus Boolean @default(false)
 }
