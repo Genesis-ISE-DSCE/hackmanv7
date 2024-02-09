@@ -5,7 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "start": "ts-node server.ts",
-    "dev":"nodemon server.ts",
+    "dev": "nodemon server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "npx prisma migrate dev && npx prisma generate"
   },
@@ -21,6 +21,7 @@
     "@prisma/client": "^5.8.1",
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
+    "nodemon": "^3.0.3",
     "prisma": "^5.8.1"
   }
 }
