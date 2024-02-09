@@ -21,37 +21,34 @@ const LandingPage = () => {
                 <Landing />
             </Suspense>
 
-              <Suspense>
+              <Suspense fallback={<div>Loading...</div>}>
                 <About />   
             </Suspense>  
 
-            <Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
                 <Faqs />
             </Suspense>
+
             <Suspense>
                 <Sponsors />
             </Suspense>
+            
             <Suspense>
                 <Footer />
             </Suspense>
-
             <Suspense>
                 <Leader />
             </Suspense>
-             {/* <Suspense fallback={<div>Loading...</div>}>
-                <Schedule />
-            </Suspense> 
-
-
-            <Suspense fallback={<div>Loading...</div>}>
-                <Sponsors />
-            </Suspense>
-
+     
             
+
+            {/* {/* <Suspense fallback={<div>Loading...</div>}>
+                <Schedule />
+            </Suspense>  
 
             <Suspense fallback={<div>Loading...</div>}>
                 <Contact />
-            </Suspense>      */}
+            </Suspense>      
 
             {/* <Suspense fallback={<div>Loading...</div>}>
                 <ConfettiComp />

@@ -23,7 +23,7 @@ function Footer() {
           <img
             src={Board}
             alt="board"
-            className="img-fluid boardd ki"
+            className="img-fluid"
             style={{ width: "20rem" }}
           />
           <h1 className="heading pt-5" style={{ letterSpacing: "0.5px" }}>
@@ -79,7 +79,7 @@ function Footer() {
                 paddingTop: "5px",
               }}
             >
-              <div className="boardd" style={{ margin: "0 10px" }}>
+              <div style={{ margin: "0 10px" }}>
                 <a
                   style={{ color: "black" }}
                   href="https://www.instagram.com/wearehackman/"
@@ -89,7 +89,7 @@ function Footer() {
                   <Instagram size={50} />
                 </a>
               </div>
-              <div className="boardd" style={{ margin: "0 10px" }}>
+              <div style={{ margin: "0 10px" }}>
                 <a
                   style={{ color: "black" }}
                   href="https://www.linkedin.com/company/wearehackman/"
@@ -99,7 +99,7 @@ function Footer() {
                   <Linkedin size={50} />
                 </a>
               </div>
-              <div className="boardd" style={{ margin: "0 10px" }}>
+              <div style={{ margin: "0 10px" }}>
                 <a
                   style={{ color: "black" }}
                   href="mailto:genesis.hackman@gmail.com"
@@ -129,5 +129,6 @@ function Footer() {
     </div>
   );
 }
+
 
 export default Footer;

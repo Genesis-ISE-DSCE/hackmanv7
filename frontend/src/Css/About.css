@@ -1,97 +1,101 @@
 @font-face {
-    font-family: pixeloidsans;
-    src: url("../fonts/PixeloidSans.ttf");
-  }
-  @font-face {
-    font-family: karmatic ;
-    src: url("../fonts/ka1.ttf");
-  }
-  @font-face {
-    font-family: pixeloidsans-bold;
-    src: url("../fonts/PixeloidSans.ttf");
-  }
+  font-family: pixeloidsans;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+  font-family: karmatic ;
+  src: url("../fonts/ka1.ttf");
+}
+@font-face {
+  font-family: pixeloidsans-bold;
+  src: url("../fonts/PixeloidSans.ttf");
+}
 
-  .custom-height{
-    height: 120vh; 
+.custom-height{
+  height: 120vh; 
+}
+@media (max-width:767px){
+  .custom-height {
+    height: 100vh; 
+  }
+  .ki {
+    margin-top: 20%;
+  }
+}
+.about-con{
+  font-family: pixeloidsans;
+  overflow: hidden;
+  }
+  .heading {
+    font-family: karmatic;
+    /* -webkit-text-stroke: 1px rgb(222, 188, 106);  */
+     color:rgb(222, 188, 126);
   }
   @media (max-width:767px){
-    .custom-height {
-      height: 100vh; 
-    }
-    .ki {
-      margin-top: 20%;
+    .heading {
+      color: rgb(215, 188, 126);
     }
   }
-.about-con{
-    font-family: pixeloidsans;
-    overflow: hidden;
-    }
-    .heading {
-      font-family: karmatic;
-      /* -webkit-text-stroke: 1px rgb(222, 188, 106);  */
-       color:rgb(222, 188, 126);
-    }
-    @media (max-width:767px){
-      .heading {
-        color: rgb(215, 188, 126);
-      }
-    }
-    
-    .dates {
-      color: white; 
-      font-weight:bolder;
-    }
-    .content-box {
-      background-color: rgba(217, 217, 217, 0.8);
-      border: 4px solid black;
-
-      width:85%;
-      height:60%;
-      
-      align-items: center;
-      justify-content: center;
-    }
-    @media (min-width: 768px) {
-      .content-box {
-        width: 50%;
-      }
-      
-    }
-    
-    .small-text {
-      font-size: 1.1em; 
-    }
-    @media (max-width: 767px) {
-      .small-text {
-        font-size: 0.7em;
-      }
-    }
-    @media (min-width: 768px) and (max-width: 1300px) {
-      .small-text {
-        font-size: 0.9em;
-      }
-    }
-    /* .nev{
-      background-color: rgba(7, 37, 44, 0.);
-    } */
-   .head{
-    margin-right: -180px;
-   }
   
-   .ok{
-    margin-bottom: 3%;
+  .dates {
+    color: white; 
+    font-weight:bolder;
+  }
+  .content-box {
+    background-color: rgba(217, 217, 217, 0.8);
+    border: 4px solid black;
+
+    width:85%;
+    height:60%;
+    
+    align-items: center;
+    justify-content: center;
+  }
+  @media (min-width: 768px) {
+    .content-box {
+      width: 50%;
+    }
+  }  
+  @media (min-width: 768px) and (max-width: 1300px) {
+    .content-box {
+      width: 70%;
+    }
+  }
+
+  .small-text {
+    font-size: 1.1em; 
+  }
+  @media (max-width: 767px) {
+    .small-text {
+      font-size: 0.7em;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1300px) {
+    .small-text {
+      font-size: 0.9em;
+    }
+  }
+  /* .nev{
+    background-color: rgba(7, 37, 44, 0.);
+  } */
+ .head{
+  margin-right: -180px;
+ }
+
+ .ok{
+  margin-bottom: 3%;
 }
 .abt-box {
-  transition: transform 0.3s; /* Smooth transition for scale effect */
+transition: transform 0.3s; /* Smooth transition for scale effect */
 }
 
 .abt-box:hover {
-  transform: scale(1.1); /* Scale up on hover */
+transform: scale(1.1); /* Scale up on hover */
 }
 .boardd {
-  transition: transform 0.3s;
+transition: transform 0.3s;
 }
 
 .boardd:hover {
-  transform: translateY(-25px); /* Move the image 3D behind by 15px on hover */
+transform: translateY(-25px); /* Move the image 3D behind by 15px on hover */
 }
