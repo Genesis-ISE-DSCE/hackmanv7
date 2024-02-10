@@ -1,0 +1,65 @@
+@font-face {
+    font-family: pixeloidsans;
+    src: url("../fonts/PixeloidSans.ttf");
+  }
+  @font-face {
+    font-family: karmatic ;
+    src: url("../fonts/ka1.ttf");
+  }
+  @font-face {
+    font-family: pixeloidsans-bold;
+    src: url("../fonts/PixeloidSans.ttf");
+  }
+  
+  .custom-height{
+    height: 100vh; 
+  }
+
+  /* .wrapper{
+    display: flex;
+    overflow-x: auto;
+  } 
+  
+  @media (max-width:768px){
+    .wrapper{
+        scale: 0.7;
+    }
+  } */
+
+.chooseImage{
+    display: flex;
+    overflow-x: auto;
+}
+
+@media (max-width:768px){
+    .chooseImage{
+        scale: 0.7;
+    }
+}
+
+.chooseImage::-webkit-scrollbar{
+    background-color: transparent; 
+}
+
+.chooseImage .brand{
+   display: flex;
+   flex-direction:column;
+   align-items: center;
+   cursor: pointer;
+   gap:4px;
+}
+
+.chooseImage .brand .eventImage{
+    overflow: hidden;
+} 
+
+/* @media (max-width:767px){
+    .eventImage{
+      scale: 0.7;
+      padding: 0%;
+    }
+} */
+
+
+
+
