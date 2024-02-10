@@ -1,0 +1,93 @@
+@font-face {
+    font-family: pixeloidsans;
+    src: url("../fonts/PixeloidSans.ttf");
+  }
+@font-face {
+    font-family: karmatic ;
+    src: url("../fonts/ka1.ttf");
+  }
+@font-face {
+    font-family: pixeloidsans-bold;
+    src: url("../fonts/PixeloidSans.ttf");
+  }
+
+#profile {
+    height: 120vh;
+    width: 100vw;
+    font-family: karmatic;
+}
+
+.profile-heading{
+    font-size: 3em;
+    padding-top: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(215, 188, 126);
+    letter-spacing: 1px;
+}
+@media (max-width: 768px){
+    .profile-heading{
+        padding-top: 15%;
+    }
+}
+
+.profilee{
+  border-radius: 50%;
+  border: 2px solid #fff; 
+  transition: transform 0.3s ease-in-out; 
+
+}
+.profilee:hover {
+    transform: scale(1.1); 
+}
+.contain{
+    display: grid;
+    place-items: center;
+}
+
+.details{
+    font-family: pixeloidsans;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+    flex-direction: column;
+    background-color: rgba(112, 55, 65, 0.93);
+    width: 60%;
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+
+.team-detail{
+    font-size: 1.2em;
+    font-weight: bolder;
+    /* -webkit-text-stroke: 1px white; */
+}
+
+.table-container{
+    display: grid;
+    place-items: center;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    width:80%;
+}
+@media (max-width:768px){
+    .table-container{
+        width:-20%
+    }
+}
+
+.custom-table{
+    font-family: pixeloidsans;
+    font-size: 15px;
+    background-color: rgba(86, 44, 51, 1);
+    border-radius: 0.5rem;
+    border: white;
+    text-align: center;
+    width:90%;
+    padding: 40%;
+}
+
+
+
