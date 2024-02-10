@@ -18,9 +18,6 @@
   .custom-height {
     height: 100vh; 
   }
-  .ki {
-    margin-top: 20%;
-  }
 }
 .about-con{
   font-family: pixeloidsans;
@@ -94,6 +91,8 @@ transform: scale(1.1); /* Scale up on hover */
 }
 .boardd {
 transition: transform 0.3s;
+margin-bottom: 5%;
+
 }
 
 .boardd:hover {

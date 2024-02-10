@@ -148,26 +148,26 @@
       /* margin-left: 25%; */
     }
   }
-  /* Styles for Medium Devices (768px to 991px) */
-  
+
+  /* ScrollbarCode  Start */
   ::-webkit-scrollbar {
-    width: 9px;
+    width: 14px;
   }
   
   /* Style for the scrollbar handle or thumb */
   ::-webkit-scrollbar-thumb {
-    background-color: #6e2100;
-    border-radius: 9px;
+    background-color: #32191e;
+
   }
   
   /* Style for the scrollbar track on hover */
   ::-webkit-scrollbar-track:hover {
-    background-color: #ba3107d6;
+    background-color: #0905033a;
   }
   
   /* Style for the scrollbar handle or thumb on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #bc6d27;
+    background-color: #000000;
   }
   
   /* Style for the scrollbar corner */

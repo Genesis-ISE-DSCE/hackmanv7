@@ -21,11 +21,10 @@ function Sponsors() {
             backgroundSize: "cover",
             height: "auto"
           }}>
-            <div className="heading">
-              <h1 className="heading pt-5 text-center" style={{ letterSpacing: "0.5px" }}>
+              <h1 className="heading text-center pt-4" style={{ letterSpacing: "0.5px" }}>
                 SPONSORS
               </h1>
-            </div>
+            
           <div className="containerz text-center">
             
               <div className="row justify-content-center align-items-center pt-5 sps">

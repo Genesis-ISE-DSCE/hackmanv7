@@ -49,7 +49,7 @@ const Schedule = () => {
       }
     
   return (
-    <div id="about" className="custom-height about-con" style={{
+    <div id="schedule" className="custom-height about-con" style={{
         backgroundImage: `url(${CityScape})`,
         color: "white",
         backgroundSize: "cover",
@@ -81,7 +81,7 @@ const Schedule = () => {
           onMouseMove={handleMouseMove}>
 
           {events.map((image) => (
-            <div className="image p-4" key={image.id}>
+            <div className="image p-4 mx-2 mt-5" key={image.id}>
               <div className="eventImage">
                 <img src={image.src} alt={image.name} />
               </div>

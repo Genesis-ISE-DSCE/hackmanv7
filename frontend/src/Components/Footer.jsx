@@ -23,7 +23,7 @@ function Footer() {
           <img
             src={Board}
             alt="board"
-            className="img-fluid"
+            className="img-fluid boardd"
             style={{ width: "20rem" }}
           />
           <h1 className="heading pt-5" style={{ letterSpacing: "0.5px" }}>

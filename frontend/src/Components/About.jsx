@@ -12,7 +12,7 @@ function About() {
       backgroundSize: "cover",
     }}>
       <div
-        className="abt-container vh-100 logo"
+        className="abt-container logo"
         
       >
         <div className="text-center">

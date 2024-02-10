@@ -17,9 +17,20 @@
     }
 .kard{
     background: rgba(163, 84, 99, 0.3);
-    margin-top: 7%;
+    margin-top: 12%;
     padding: 5%;
     color: #A52A2A;
+}
+@media (max-width: 767px) {
+  .kard{
+    margin-top: 45%;
+}
+}
+@media (min-width: 768px) and (max-width: 1300px) {
+  .kard{
+    margin-top: 25%;
+
+}
 }
 .form-control::placeholder{
   color:#e394b2;
