@@ -114,8 +114,9 @@ body{
   position: absolute;
   /* bottom: 0px; */
   right: 0px;
-  margin-right: -5%;
+  margin-right: -1%;
   rotate: -3deg;
+  margin-top: 5%;
   animation: bounce 6s;
   z-index: 1;
 }
@@ -179,6 +180,20 @@ body{
   font-weight: bolder;
 }
 
+.actual-nav{
+  height: 11%;
+}
+
+@media (max-width:767px){
+  .actual-nav{
+    height: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .actual-nav{
+    height: auto;
+  }
+}
 .navbar-ul:hover{
   color:white;
 }

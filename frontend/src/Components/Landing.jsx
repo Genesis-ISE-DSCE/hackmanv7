@@ -28,7 +28,7 @@ function Landing() {
     <div className="containz ">
       <div className="">
       <h1  className='karma' >HACKMAN v7</h1>
-      <h1 className='karma2 sh'>June 24th-25th</h1>
+      <h1 className='karma2 sh'>May 24th-25th</h1>
       </div>
       <section onWheel={handleScroll} className='elem'>
         <div className="overlay"></div>

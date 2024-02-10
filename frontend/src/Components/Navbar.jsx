@@ -20,7 +20,7 @@ function Navbar()
         
     }
     return (
-        <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center" style={{ height:"auto",  backgroundColor: "#4A252C" }}>
+        <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center actual-nav" style={{  backgroundColor: "#4A252C" }}>
           <div className="head">
           <a href="/">
             <div className="heading fs-4 mx-3 mx-md-3 float-start">HACKMAN v7</div>
@@ -47,7 +47,7 @@ function Navbar()
                 <a className="navbar-ul" href="/#schedule" onClick={() => handleClick("schedule")}>Schedule</a>
               </li>
               <li className="mx-2">
-                <a className="navbar-ul" href="/#registration" onClick={() => handleClick("registration")}>Register</a>
+                <a className="navbar-ul" href="/registration" onClick={() => handleClick("registration")}>Register</a>
               </li> 
               <li className="mx-2">
                 <a className="navbar-ul" href="/profile" onClick={() => handleClick("profile")}>

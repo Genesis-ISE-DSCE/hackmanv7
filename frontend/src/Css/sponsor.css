@@ -10,7 +10,9 @@
     font-family: pixeloidsans-bold;
     src: url("../fonts/PixeloidSans.ttf");
   }
-
+.head-top{
+  margin-top: 5%;
+}
   .sponsorpage{
     overflow-x: hidden;
   }
@@ -23,7 +25,6 @@
    
   }
   .heading {
-
     font-family:  karmatic;
     font-size: 2em;
   }

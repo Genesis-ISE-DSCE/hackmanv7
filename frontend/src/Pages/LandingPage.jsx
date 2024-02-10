@@ -41,9 +41,6 @@ const LandingPage = () => {
                 <Footer />
             </Suspense>
 
-            <Suspense>
-                <Leader />
-            </Suspense>
 
             
 
