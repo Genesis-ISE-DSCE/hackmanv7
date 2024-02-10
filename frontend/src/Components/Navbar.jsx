@@ -1,7 +1,9 @@
 import React from "react"
 // import {Link} from "react-router-dom"
-import '../App.css'
-import "../Css/About.css"
+import '../App.css';
+import "../Css/About.css";
+import "../Css/Profile.css";
+import User from "../assets/user-profile.png";
 
 
 function Navbar()
@@ -46,7 +48,12 @@ function Navbar()
               </li>
               <li className="mx-2">
                 <a className="navbar-ul" href="/#registration" onClick={() => handleClick("registration")}>Register</a>
-              </li>
+              </li> 
+              <li className="mx-2">
+                <a className="navbar-ul" href="/#profile" onClick={() => handleClick("profile")}>
+                  <img className="profilee" src={User} alt="profile-pic" style={{width:"45px", height: "45px"}} />
+                </a>
+              </li> 
             </ul>
           </div>
         </nav>

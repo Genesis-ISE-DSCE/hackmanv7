@@ -11,11 +11,11 @@ const Schedule = React.lazy(()=>import('../Components/Schedule'));
 const Sponsors = React.lazy(()=>import('../Components/Sponsors'));
 const Register = React.lazy(()=>import('../Components/Register'));
 const Leader = React.lazy(()=>import('../Components/Registration/Leader'));
+const Profile = React.lazy(()=>import('../Components/Profile'));
 
 const LandingPage = () => {
     return (
         <div>
-            
 
             <Suspense>
                 <Landing />
@@ -32,9 +32,15 @@ const LandingPage = () => {
             <Suspense>
                 <Footer />
             </Suspense>
+
             <Suspense>
                 <Leader />
             </Suspense>
+
+            <Suspense fallback={<div>Loading...</div>}>
+                <Profile />
+            </Suspense>  
+
              {/* <Suspense fallback={<div>Loading...</div>}>
                 <Schedule />
             </Suspense> 
@@ -42,13 +48,7 @@ const LandingPage = () => {
 
             <Suspense fallback={<div>Loading...</div>}>
                 <Sponsors />
-            </Suspense>
-
-            
-
-            <Suspense fallback={<div>Loading...</div>}>
-                <Contact />
-            </Suspense>      */}
+            </Suspense>    */}
 
             {/* <Suspense fallback={<div>Loading...</div>}>
                 <ConfettiComp />
