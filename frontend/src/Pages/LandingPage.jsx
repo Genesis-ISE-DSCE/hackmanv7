@@ -41,9 +41,7 @@ const LandingPage = () => {
                 <Leader />
             </Suspense>
 
-            <Suspense fallback={<div>Loading...</div>}>
-                <Profile />
-            </Suspense>  
+            
 
         </div>
     );

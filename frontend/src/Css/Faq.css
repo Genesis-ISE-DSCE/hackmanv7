@@ -7,7 +7,7 @@
   }
   @media (max-width:767px){
     .custom-height {
-      height: 100vh; /* Adjust the value as needed */
+      height: 110vh; /* Adjust the value as needed */
     }
   }
 .outer{

@@ -67,14 +67,26 @@
 
 .table-container{
     display: grid;
+    /* margin-left: 10%; */
     place-items: center;
     padding-top: 2%;
     padding-bottom: 5%;
     width:80%;
 }
 @media (max-width:768px){
-    .table-container{
-        width:-20%
+    .right-p{
+        font-size: smaller;
+    }
+    .left-p{
+        font-size: smaller;
+    }
+    .custom-table{
+        font-size:x-small;
+
+    }
+    .details{
+        scale: 0.8;
+        width: fit-content;
     }
 }
 
@@ -88,6 +100,17 @@
     width:90%;
     padding: 40%;
 }
-
+.right-p{
+    display: inline;
+}
+.left-p{
+    display: inline;
+}
+.team-num {
+    display: flex;
+    justify-content: space-between !important;
+    margin: 5%;
+    gap: 120px;
+}
 
 

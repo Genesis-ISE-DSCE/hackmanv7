@@ -6,8 +6,8 @@ import card3 from "../assets/Eventback-3.png";
 import brick from "../assets/brick.png";
 import "../Css/Faq.css"
 import card4 from "../assets/Eventback-4.png"
-import card5 from "../assets/Eventback-5.png"
-import card6 from "../assets/Eventback-6.png"
+// import card5 from "../assets/Eventback-5.png"
+// import card6 from "../assets/Eventback-6.png"
 import Board from "../assets/Faqs-board.png"
 
 function Faqs() {
