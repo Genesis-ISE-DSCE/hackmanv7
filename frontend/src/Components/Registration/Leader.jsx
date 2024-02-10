@@ -19,7 +19,10 @@ function Leader() {
             </div>
             <div className="d-flex justify-content-between">
                 <button className="btn  w-45">Back</button>
-                <button className="btn  w-45">Next</button>
+                <a href=""><button className="btn  w-45">
+                    Next
+                    </button>
+                    </a>
             </div>
         </form>
     </div>

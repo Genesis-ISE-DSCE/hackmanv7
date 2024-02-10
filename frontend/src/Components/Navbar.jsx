@@ -50,7 +50,7 @@ function Navbar()
                 <a className="navbar-ul" href="/#registration" onClick={() => handleClick("registration")}>Register</a>
               </li> 
               <li className="mx-2">
-                <a className="navbar-ul" href="/#profile" onClick={() => handleClick("profile")}>
+                <a className="navbar-ul" href="/profile" onClick={() => handleClick("profile")}>
                   <img className="profilee" src={User} alt="profile-pic" style={{width:"45px", height: "45px"}} />
                 </a>
               </li> 

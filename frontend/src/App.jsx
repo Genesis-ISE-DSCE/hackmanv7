@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 import './App.css'
 import LandingPage from './Pages/LandingPage'
 import Navbar from './Components/Navbar'
-import About from "./Components/About";
+// import About from "./Components/About";
+import Profile from "./Components/Profile";
 function App() {
   return (
     <>
@@ -12,8 +13,8 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<LandingPage/>} />
+        <Route path="/profile" element={<Profile />} />
         {/* <Route path="/page" element={<Page />} />
-        <Route path="/registration" element={<RegistrationForm />} />
         <Route path="/rulebook/:id" element={<RuleBook />} />
         <Route path="/massmail" element={<MassMail />} />
         <Route path="/confetti" element={<ConfettiComp />} />

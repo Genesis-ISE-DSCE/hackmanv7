@@ -28,7 +28,7 @@ function Sponsors() {
             </div>
           <div className="containerz text-center">
             
-              <div className="row justify-content-center align-items-center pt-5">
+              <div className="row justify-content-center align-items-center pt-5 sps">
                 
                 <img
                     src={anastrat}
@@ -48,7 +48,7 @@ function Sponsors() {
               
           
             
-              <div className="row justify-content-center align-items-center pt-5">
+              <div className="row justify-content-center align-items-center pt-5 gap-4">
                 <img
                     src={nokia}
                     alt="nokia"
@@ -66,10 +66,10 @@ function Sponsors() {
                     src={skill}
                     alt="skill"
                     className="img-fluid with-margin" 
-                   style={{ maxWidth: "100%", height: "auto", width: "15em" }}
+                   style={{ maxWidth: "100%", height: "auto", width: "15em",marginBottom:"20px" }}
                   />
                   </div>
-                  <div className="row justify-content-center align-items-center pt-5">
+                  <div className="row justify-content-center align-items-center pt-5 gap-4">
 
                   <img
                     src={skolar}
