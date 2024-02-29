@@ -1,5 +1,6 @@
 import React from 'react'
 import img from "../assets/cityscape-1.png"
+import newBg from "../assets/new-bg.png"
 import img2 from "../assets/cityscape-1.png"
 import img3 from "../assets/cityscape-1.png"
 import '../App.css'
@@ -32,11 +33,11 @@ function Landing() {
       </div>
       <section onWheel={handleScroll} className='elem'>
         <div className="overlay"></div>
-        <img src={img} alt="" srcset="" style={{height:"120vh",width:"100vw",objectFit:"cover"}}></img> 
+        <img src={newBg} alt="" srcset="" style={{height:"120vh",width:"100vw",objectFit:"cover"}}></img> 
       </section>
       <section onWheel={handleScroll} className='elem'>
       <div className="overlay"></div>
-      <img src={img2} alt="" srcset=""  style={{height:"120vh",width:"100vw",objectFit:"cover"}}/> 
+      <img src={newBg} alt="" srcset=""  style={{height:"120vh",width:"100vw",objectFit:"cover"}}/> 
       </section>
      {/* <div className="mascot ">
         <picture  alt="mascot" >

@@ -1,5 +1,5 @@
 import React , {useRef, useState } from 'react';
-import CityScape from "../assets/cityscape-3.png";
+import CityScape from "../assets/new-bg2.png";
 import Board from "../assets/event-board.png";
 import "../Css/Schedule.css";
 import Schedule1 from "../assets/schedule-1.png";

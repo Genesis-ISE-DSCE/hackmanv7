@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 import Board from "../assets/board-about.png";
-import CityScape from "../assets/cityscape-3.png";
+import CityScape from "../assets/new-bg2.png";
 import "../Css/About.css"
 
 function About() {

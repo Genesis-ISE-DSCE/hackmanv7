@@ -1,6 +1,6 @@
 import React from "react";
 import "../Css/Profile.css";
-import CityScape from "../assets/cityscape-3.png";
+import CityScape from "../assets/new-bg2.png";
 
 const Profile = () => {
   return (
