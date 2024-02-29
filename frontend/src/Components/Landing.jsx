@@ -1,8 +1,5 @@
 import React from 'react'
-import img from "../assets/cityscape-1.png"
 import newBg from "../assets/new-bg.png"
-import img2 from "../assets/cityscape-1.png"
-import img3 from "../assets/cityscape-1.png"
 import '../App.css'
 import About from './About'
 import mascot from "../assets/mascot.png"
@@ -12,6 +9,7 @@ import Typewriter from 'typewriter-effect/dist/core';
 //   strings: ['Hackman', 'v7'],
 //   autoStart: true,
 // });
+
 function Landing() {
 
   const handleScroll = (event) => {
@@ -39,11 +37,11 @@ function Landing() {
       <div className="overlay"></div>
       <img src={newBg} alt="" srcset=""  style={{height:"120vh",width:"100vw",objectFit:"cover"}}/> 
       </section>
-     {/* <div className="mascot ">
+     <div className="mascot ">
         <picture  alt="mascot" >
            <img height={250} width={240} src={mascot} loading="lazy" alt="mascot"/>
         </picture>
-      </div> */}
+      </div>
       </div>
       
 

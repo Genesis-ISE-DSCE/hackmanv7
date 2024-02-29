@@ -12,13 +12,25 @@
 }
 
 .custom-height{
-  height: 120vh; 
+  height: 120vh;
 }
+
 @media (max-width:767px){
   .custom-height {
-    height: 100vh; 
+    height: 110vh; 
+}
+}
+
+.abt-container{
+  padding-top: 8%;
+}
+
+@media (max-width:767px) {
+  .abt-container{
+    padding-top: 40%;
   }
 }
+
 .about-con{
   font-family: pixeloidsans;
   overflow: hidden;
@@ -31,6 +43,7 @@
   @media (max-width:767px){
     .heading {
       color: rgb(215, 188, 126);
+      padding-top: 50%;
     }
   }
   
@@ -89,12 +102,29 @@ transition: transform 0.3s; /* Smooth transition for scale effect */
 .abt-box:hover {
 transform: scale(1.1); /* Scale up on hover */
 }
-.boardd {
-transition: transform 0.3s;
-margin-bottom: 5%;
 
+/* #about{
+  padding-top: 8%;
+  font-size: 2.5em;
+  color: white;
+}
+@media (max-width: 767px) {
+  #about{
+      font-size: 1em;
+      padding-top: 30%;
+  }
+} */
+.custom-abt-bg{
+      background-image: url("../assets/new-bg2.png");
+      color : white;
+      background-size: cover;
 }
 
-.boardd:hover {
-transform: translateY(-25px); /* Move the image 3D behind by 15px on hover */
+@media (max-width: 767px) {
+  .custom-abt-bg{
+    background-image: url("../assets/small-bg.jpeg");
+    color : white;
+    background-size: cover;
 }
+}
+

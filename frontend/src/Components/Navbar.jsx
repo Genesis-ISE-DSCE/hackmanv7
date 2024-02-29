@@ -1,14 +1,12 @@
 import React from "react"
 // import {Link} from "react-router-dom"
-import '../App.css';
 import "../Css/About.css";
 import "../Css/Profile.css";
 import User from "../assets/user-profile.png";
-
+import "../App.css"
 
 function Navbar()
 {
-
     const handleClick=(item)=>
     {
         const element=document.getElementById("item");
@@ -16,14 +14,13 @@ function Navbar()
         if(element)
         {
             element.scrollIntoView({behavior:"smooth"});
-        }
-        
+        } 
     }
     return (
-        <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center actual-nav" style={{  backgroundColor: "#4A252C" }}>
+        <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center actual-nav">
           <div className="head">
           <a href="/">
-            <div className="heading fs-4 mx-3 mx-md-3 float-start">HACKMAN v7</div>
+            <div className="heading fs-4 mx-3 mx-md-3 float-start" style={{color: "white"}}>HACKMAN v7</div>
           </a>
           </div>
           <button className="navbar-toggler my-2 mx-3" style={{backgroundColor:"#D7BD7E"}}  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

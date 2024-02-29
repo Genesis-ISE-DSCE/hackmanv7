@@ -11,6 +11,15 @@
     src: url("../fonts/PixeloidSans.ttf");
   }
 
+  .custom-height {
+    height: 120vh; 
+  }
+  @media (max-width:767px){
+    .custom-height {
+      height: 110vh; 
+  }
+}
+
 #profile {
     height: 120vh;
     width: 100vw;
@@ -23,7 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(215, 188, 126);
+    color: rgb(255, 255, 255);
     letter-spacing: 1px;
 }
 @media (max-width: 768px){
@@ -111,6 +120,20 @@
     justify-content: space-between !important;
     margin: 5%;
     gap: 120px;
+}
+
+.custom-prof-bg{
+    background-image: url("../assets/new-bg2.png");
+    color : white;
+    background-size: cover;
+}
+
+@media (max-width: 767px) {
+.custom-prof-bg{
+  background-image: url("../assets/small-bg.jpeg");
+  color : white;
+  background-size: cover;
+}
 }
 
 

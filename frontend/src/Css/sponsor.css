@@ -54,15 +54,27 @@
             justify-content: center;
             align-items: center;
             
-        } 
-        
+        }      
         
     }
-   
   @media (max-width: 768px) {
     .pt-5 {
         padding-top: 0 !important;
       }
 
   }
+
+.custom-sp-bg{
+    background-image: url("../assets/new-bg2.png");
+    color : white;
+    background-size: cover;
+}
+
+@media (max-width: 767px) {
+.custom-sp-bg{
+  background-image: url("../assets/small-bg.jpeg");
+  color : white;
+  background-size: cover;
+}
+}
   
