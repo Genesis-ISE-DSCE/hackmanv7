@@ -1,7 +1,7 @@
 
 import React from "react";
 import "../App.css";
-import CityScape from "../assets/cityscape-3.png";
+import CityScape from "../assets/new-bg2.png";
 import "../Css/sponsor.css"
 import basil from "../assets/basil.png";
 import anastrat from "../assets/anastrat.png";

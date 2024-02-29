@@ -1,5 +1,5 @@
 import React from "react";
-import CityScape from "../assets/cityscape-3.png";
+import CityScape from "../assets/new-bg2.png";
 import card1 from "../assets/Eventback.png";
 import card2 from "../assets/Eventback-2.png";
 import card3 from "../assets/Eventback-3.png";

@@ -5,7 +5,7 @@ import Board from "../assets/board-contact.png";
 import { Linkedin, Instagram, Mail } from "react-feather";
 
 
-import CityScape from "../assets/cityscape-3.png";
+import CityScape from "../assets/new-bg2.png";
 import "../Css/About.css";
 function Footer() {
   return (
