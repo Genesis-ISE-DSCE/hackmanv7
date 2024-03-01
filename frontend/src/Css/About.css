@@ -77,7 +77,7 @@
   }
   @media (max-width: 767px) {
     .small-text {
-      font-size: 0.7em;
+      font-size: 0.9em;
     }
   }
   @media (min-width: 768px) and (max-width: 1300px) {
