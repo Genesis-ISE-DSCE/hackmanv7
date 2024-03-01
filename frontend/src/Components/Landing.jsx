@@ -23,10 +23,13 @@ function Landing() {
   };
  
   return (
-    <div id='land' className='custom-height'>
+    <div id='land' className='custom-height-land'>
     <div className="containz ">
       <div className="">
-      <h1  className='karma' >HACKMAN v7</h1>
+        <h1  className='karma glass'>
+          <span>HACKMAN </span>
+          <span>v7.0</span>
+        </h1>
       <h1 className='karma2 sh'>May 24th-25th</h1>
       </div>
       <section onWheel={handleScroll} className='elem'>
@@ -37,11 +40,11 @@ function Landing() {
       <div className="overlay"></div>
       <img src={newBg} alt="" srcset=""  style={{height:"120vh",width:"100vw",objectFit:"cover"}}/> 
       </section>
-     <div className="mascot ">
+     {/* <div className="mascot ">
         <picture  alt="mascot" >
            <img height={250} width={240} src={mascot} loading="lazy" alt="mascot"/>
         </picture>
-      </div>
+      </div> */}
       </div>
       
 

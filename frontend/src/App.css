@@ -62,19 +62,30 @@ body{
   white-space: nowrap;
   overflow: hidden;
   font-size: 4.5em;
-  top: 38%;
-  left: 28%;
-
-  /* transform: translate(-50%, -50%); */
+  top: 27%;
+  left: 18%;
   font-family: karmatic;
   z-index: 2;
-  color: rgb(215, 188, 126);
+  color: rgb(236, 198, 110);
   /* animation: breathe 4s linear;  */
-  text-shadow: 6px 6px #000;
+  /* text-shadow: 6px 6px #000;
   animation: 
   typing 6s steps(70, end),
   blink-caret .71s step-end infinite;
-  letter-spacing: 8px;
+  letter-spacing: 8px; */
+  padding: 7%;
+  padding-top: 5%;
+  background: rgba(61, 42, 61, 0.629);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5px );
+-webkit-backdrop-filter: blur( 5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.outer-karma{
+  position: absolute;
+ display: grid;
+ place-items: center;
 }
 @keyframes typing {
   from { width: 0 }
@@ -83,8 +94,8 @@ body{
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
+  from, to { border-color: rgba( 255, 255, 255, 0.18 ) }
+  50% { border-color: rgba( 255, 255, 255, 0.18 ); }
 }
 
 .karma2{
@@ -101,7 +112,7 @@ body{
   /* animation: breathe 4s linear;  */
   text-shadow: 6px 6px #000;
   animation: 
-  typing 18s steps(90, end),
+  typing 8s steps(90, end),
   blink-caret .71s step-end infinite;
   letter-spacing: 5px;
 }
@@ -117,7 +128,7 @@ body{
   margin-right: -1%;
   rotate: -3deg;
   margin-top: 5%;
-  animation: bounce 6s;
+  /* animation: bounce 6s; */
   z-index: 1;
 }
 
@@ -135,15 +146,23 @@ body{
 }
 @media (max-width: 767px) {
   .karma {
-    font-size: 2em;
-    top: 38%;
-    left: 10%;
+    font-size: 2.2em;
+    top: 32%;
+    left: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+  }
+  span{
+    display: block;
   }
 
   .karma2 {
-    font-size: 1em;
-    top: 45%;
-    left: 24%;
+    font-size: 1.3em;
+    top: 60%;
+    left: 14%;
   }
 }
 
@@ -195,5 +214,13 @@ body{
 .navbar-ul:hover{
   color:white;
 }
+@media (max-width:767px){
+  .actual-nav{
+    height: auto;
+  }
+}
 
 /*Navbar*/
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */

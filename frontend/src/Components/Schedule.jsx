@@ -53,7 +53,7 @@ const Schedule = () => {
         className="abt-container vh-100 logo"
       >
         <div className="text-center pb-10">
-        <h1 style={{fontFamily:"karmatic"}}>EVENTS</h1>
+        <h1 style={{fontFamily:"karmatic"}}>Schedule</h1>
            {/* <div className='wrapper'>
             <img className="events" src={Schedule1} alt='event1'></img>
             <img className="events" src={Schedule2} alt='event1'></img>

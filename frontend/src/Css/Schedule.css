@@ -29,6 +29,7 @@
 .chooseImage{
     display: flex;
     overflow-x: auto;
+    scale: 0.7;
 }
 
 @media (max-width:768px){

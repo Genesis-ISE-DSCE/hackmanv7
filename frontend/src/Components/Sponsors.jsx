@@ -12,7 +12,7 @@ function Sponsors() {
     return (
 
        <div className="sponsorpage">
-        <div className="abt-container vh-100 custom-sp-bg">
+        <div className="vh-100 custom-sp-bg">
               <h1 className="heading text-center pt-4" style={{ letterSpacing: "0.5px", color:"white" }}>
                 SPONSORS
               </h1>
@@ -62,12 +62,12 @@ function Sponsors() {
                   </div>
                   <div className="row justify-content-center align-items-center pt-5 gap-4">
 
-                  <img
+                  {/* <img
                     src={skolar}
                     alt="skolar"
                     className="img-fluid with-margin" 
                    style={{ maxWidth: "100%", height: "auto", width: "15em"}}
-                  />  
+                  />   */}
                   </div>
 
           

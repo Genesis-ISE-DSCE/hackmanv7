@@ -191,6 +191,7 @@
 
 .faq-main{
   padding-top: 8%;
+  text-decoration: none;
 }
 
 @media (max-width: 767px){
@@ -199,7 +200,7 @@
   }
 }
 
-.main-accordian {
+.main-accordion{
   padding: 4% 10%;
 }
 
@@ -208,7 +209,26 @@
     padding: 8% 10%;
   }
 }
-
+.accordion-button {
+  background-color: #3d2a3d !important;
+  color: white;
+}
+.accordion-button:not(.collapsed) {
+  color: white;
+ 
+}
+.accordion-button:focus{
+  border: none;
+  outline: 0;
+}
+.accordion-body {
+  padding: var(--bs-accordion-body-padding-y) var(--bs-accordion-body-padding-x);
+  background-color: #694f69;
+  color: #fba04b;
+}
+.accordion-button:not(.collapsed){
+  background-color: transparent;
+}
 /* .accordian-ques{
   color: white;
   background-color: rgba(86, 27, 86, 0.971);

@@ -42,8 +42,9 @@
       font-weight:bolder;
     }
     .content-box {
-      background-color: rgba(217, 217, 217, 0.8);
-      border: 4px solid black;
+      background-color: rgba(217, 217, 217, 0.624);
+      border: 2px solid rgba(39, 37, 37, 0.34);
+      border-radius: 7px;
   
       width:85%;
       height:60%;
