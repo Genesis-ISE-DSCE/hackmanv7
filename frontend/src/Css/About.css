@@ -11,13 +11,13 @@
   src: url("../fonts/PixeloidSans.ttf");
 }
 
-.custom-height{
+.custom-height-abt{
   height: 120vh;
 }
 
 @media (max-width:767px){
-  .custom-height {
-    height: 110vh; 
+  .custom-height-abt {
+    height: 100vh; 
 }
 }
 
@@ -27,7 +27,7 @@
 
 @media (max-width:767px) {
   .abt-container{
-    padding-top: 40%;
+    padding-top: 20%;
   }
 }
 
@@ -43,7 +43,6 @@
   @media (max-width:767px){
     .heading {
       color: rgb(215, 188, 126);
-      padding-top: 50%;
     }
   }
   
@@ -52,9 +51,10 @@
     font-weight:bolder;
   }
   .content-box {
-    background-color: rgba(217, 217, 217, 0.8);
-    border: 4px solid black;
-
+    /* background-color: rgba(190, 190, 190, 0.12); */
+    /* border: 4px solid black; */
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
     width:85%;
     height:60%;
     
@@ -89,7 +89,9 @@
     background-color: rgba(7, 37, 44, 0.);
   } */
  .head{
-  margin-right: -180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
  }
 
  .ok{

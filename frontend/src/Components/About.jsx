@@ -3,7 +3,7 @@ import "../Css/About.css"
 
 function About() {
   return (
-    <div id="about" className="custom-height about-con custom-abt-bg">
+    <div id="about" className="custom-height-abt about-con custom-abt-bg">
       <div className="abt-container logo">
         <div className="text-center">
           <h1 id="about" style={{fontFamily:"karmatic"}}>ABOUT</h1>

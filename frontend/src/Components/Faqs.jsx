@@ -68,8 +68,10 @@ function Faqs() {
     <div id="faqs" className="custom-height custom-faq-bg faq-main">
       <div className="text-center">
         <h1 style={{ fontFamily: "karmatic" }}>FAQS</h1>
+        <div className="main-accordion">
         <div
-          className="accordion main-accordian"
+        
+          className="custom-accordion accordion"
           id="accordionExample"
           style={{ fontFamily: "pixeloidsans-bold" }}
         >
@@ -175,6 +177,7 @@ function Faqs() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
