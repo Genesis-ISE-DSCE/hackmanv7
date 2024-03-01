@@ -1,5 +1,4 @@
 import React , {useRef, useState } from 'react';
-import CityScape from "../assets/new-bg2.png";
 import Board from "../assets/event-board.png";
 import "../Css/Schedule.css";
 import Schedule1 from "../assets/schedule-1.png";
@@ -49,23 +48,12 @@ const Schedule = () => {
       }
     
   return (
-    <div id="schedule" className="custom-height about-con" style={{
-        backgroundImage: `url(${CityScape})`,
-        color: "white",
-        backgroundSize: "cover",
-      }}>
+    <div id="schedule" className="custom-height about-con custom-sc-bg">
        <div
         className="abt-container vh-100 logo"
       >
         <div className="text-center pb-10">
-          <img
-            src={Board}
-            alt="board"
-            className="img-fluid boardd ki"
-            style={{ width: "20rem" }}
-          />
-
-          
+        <h1 style={{fontFamily:"karmatic"}}>EVENTS</h1>
            {/* <div className='wrapper'>
             <img className="events" src={Schedule1} alt='event1'></img>
             <img className="events" src={Schedule2} alt='event1'></img>

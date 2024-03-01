@@ -171,13 +171,11 @@ body{
 /* Navbar */
 
 .navbar{
-  background-color: #4A252C;
-  
+  background-color: #38263bf3;
 }
 
 .navbar-ul{
-  color: rgb(215, 188, 126);
-  font-weight: bolder;
+  color: rgb(255, 255, 255);
 }
 
 .actual-nav{

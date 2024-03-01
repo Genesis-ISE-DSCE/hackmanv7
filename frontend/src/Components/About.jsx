@@ -1,27 +1,12 @@
 import React from "react";
-import "../App.css";
-import Board from "../assets/board-about.png";
-import CityScape from "../assets/new-bg2.png";
 import "../Css/About.css"
 
 function About() {
   return (
-    <div id="about" className="custom-height about-con" style={{
-      backgroundImage: `url(${CityScape})`,
-      color: "white",
-      backgroundSize: "cover",
-    }}>
-      <div
-        className="abt-container logo"
-        
-      >
+    <div id="about" className="custom-height about-con custom-abt-bg">
+      <div className="abt-container logo">
         <div className="text-center">
-          <img
-            src={Board}
-            alt="board"
-            className="img-fluid boardd ki"
-            style={{ width: "20rem" }}
-          />
+          <h1 id="about" style={{fontFamily:"karmatic"}}>ABOUT</h1>
           <h1
             className="heading pt-5"
             style={{ letterSpacing: "0.5px" }}

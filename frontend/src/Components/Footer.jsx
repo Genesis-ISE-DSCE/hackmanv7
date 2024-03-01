@@ -1,31 +1,17 @@
 import React from "react";
-import "../App.css";
 import Board from "../assets/board-contact.png";
-
 import { Linkedin, Instagram, Mail } from "react-feather";
+import "../Css/footer.css";
 
-
-import CityScape from "../assets/new-bg2.png";
-import "../Css/About.css";
 function Footer() {
   return (
     <div
-      className="about-con custom-height"
+      className="about-con custom-height custom-foot-bg"
       id="contact"
-      style={{
-        backgroundImage: `url(${CityScape})`,
-        color: "white",
-        backgroundSize: "cover",
-      }}
     >
       <div className="abt-container vh-110">
         <div className="text-center">
-          <img
-            src={Board}
-            alt="board"
-            className="img-fluid boardd"
-            style={{ width: "20rem" }}
-          />
+        <h1 style={{fontFamily:"karmatic"}}>CONTACT US</h1>
           <h1 className="heading pt-5" style={{ letterSpacing: "0.5px" }}>
             HACKMAN V7
           </h1>

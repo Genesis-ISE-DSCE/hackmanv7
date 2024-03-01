@@ -53,12 +53,19 @@
     overflow: hidden;
 } 
 
-/* @media (max-width:767px){
-    .eventImage{
-      scale: 0.7;
-      padding: 0%;
-    }
-} */
+.custom-sc-bg{
+  background-image: url("../assets/new-bg2.png");
+  color : white;
+  background-size: cover; 
+}
+
+@media (max-width: 767px) {
+.custom-sc-bg{
+background-image: url("../assets/small-bg.jpeg");
+color : white;
+background-size: cover;
+}
+}
 
 
 

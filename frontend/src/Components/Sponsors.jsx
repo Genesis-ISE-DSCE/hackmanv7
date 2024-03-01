@@ -1,7 +1,4 @@
-
 import React from "react";
-import "../App.css";
-import CityScape from "../assets/new-bg2.png";
 import "../Css/sponsor.css"
 import basil from "../assets/basil.png";
 import anastrat from "../assets/anastrat.png";
@@ -15,13 +12,8 @@ function Sponsors() {
     return (
 
        <div className="sponsorpage">
-        <div className="abt-container vh-100" style={{
-            backgroundImage: `url(${CityScape})`,
-            color: "white",
-            backgroundSize: "cover",
-            height: "auto"
-          }}>
-              <h1 className="heading text-center pt-4" style={{ letterSpacing: "0.5px" }}>
+        <div className="abt-container vh-100 custom-sp-bg">
+              <h1 className="heading text-center pt-4" style={{ letterSpacing: "0.5px", color:"white" }}>
                 SPONSORS
               </h1>
             

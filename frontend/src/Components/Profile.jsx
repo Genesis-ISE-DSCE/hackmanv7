@@ -1,18 +1,12 @@
 import React from "react";
 import "../Css/Profile.css";
-import CityScape from "../assets/new-bg2.png";
 
 const Profile = () => {
   return (
     <div>
       <div
         id="profile"
-        className=""
-        style={{
-          backgroundImage: `url(${CityScape})`,
-          color: "white",
-          backgroundSize: "cover",
-        }}
+        className="custom-prof-bg"
       >
         <h1 className="profile-heading">Profile</h1>
         <div className="contain">
