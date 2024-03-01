@@ -56,7 +56,6 @@ body{
   z-index: 1;
 }
 
-
 .karma{
   position: absolute;
   white-space: nowrap;
@@ -121,15 +120,53 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   /* 70% { transform: scale(0.8); } */
   100% { transform: scale(1); }
 }
+
 .mascot {
   position: absolute;
-  /* bottom: 0px; */
   right: 0px;
   margin-right: -1%;
   rotate: -3deg;
   margin-top: 5%;
   /* animation: bounce 6s; */
   z-index: 1;
+}
+
+@media (max-width:767px)
+{
+  .mascot {
+    position: absolute;
+    right: 5%;
+    margin-right: 10%;
+    margin-top: 20%;
+    /* animation: bounce 6s; */
+    z-index: 1;
+  }
+}
+
+.dialogue {
+  display: none;
+  position: absolute;
+  bottom: 43%;
+  right: 50%;
+  transform: translateX(-45%);
+  padding: 10px;
+}
+
+.dialogue2{
+  display: none;
+  position: absolute;
+  bottom: 35%;
+  right: 30%;
+  transform: translateX(-45%);
+  padding: 10px;
+}
+
+.mascot:hover .dialogue2{
+  display: block;
+}
+
+.mascot .dialogue {
+  display: block;
 }
 
 @keyframes bounce {
