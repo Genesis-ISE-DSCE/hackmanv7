@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import CityScape from "../../assets/cityscape-3.png";
 import "./Register.css"
 
 function Payment() {
   return (
-    <div  className='custom-height all d-flex justify-content-center align-items-start' style={{backgroundImage: `url(${CityScape})`, backgroundSize: "cover"}}>
+    <div  className='custom-reg-bg all d-flex justify-content-center align-items-start' >
     <div className="card p-4 rounded-lg bg-gray-800 w-75-lg kard ">
         <h1 className="text-center font-bold text-3xl" style={{color: "#D7BD7E"}}>Payment</h1>
         <form className="my-3">

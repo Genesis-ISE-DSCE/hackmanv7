@@ -1,79 +1,72 @@
 @font-face {
-    font-family: pixeloidsans;
-    src: url("../fonts/PixeloidSans.ttf");
-  }
-  @font-face {
-    font-family: karmatic ;
-    src: url("../fonts/ka1.ttf");
-  }
-  @font-face {
-    font-family: pixeloidsans-bold;
-    src: url("../fonts/PixeloidSans.ttf");
-  }
+  font-family: pixeloidsans;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+  font-family: karmatic;
+  src: url("../fonts/ka1.ttf");
+}
+@font-face {
+  font-family: pixeloidsans-bold;
+  src: url("../fonts/PixeloidSans.ttf");
+}
 
-  .sponsorpage{
-    overflow: hidden;
-   
-  }
- 
-  .sponsor{
-    overflow: hidden;
-  }
-  .containerz{
-    overflow: hidden;
-   
-  }
+.sponsorpage {
+  overflow: hidden;
+}
+
+.sponsor {
+  overflow: hidden;
+}
+.containerz {
+  overflow: hidden;
+}
+.heading {
+  font-family: karmatic;
+  font-size: 2.3em;
+  padding-top: 6%;
+}
+
+.with-margin {
+  transition: transform 0.3s;
+}
+
+.with-margin:hover {
+  transform: translateY(-25px); /* Move the image 3D behind by 15px on hover */
+}
+@media (max-width: 768px) {
   .heading {
-    font-family:  karmatic;
-    font-size: 2em;
+    font-size: 1.5em;
   }
+  .sps {
+    scale: 0.6;
+    gap: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .containerz {
+    flex-direction: column;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .pt-5 {
+    padding-top: 0 !important;
+  }
+}
 
-  .with-margin {
-    transition: transform 0.3s;
-  }
-  
-  .with-margin:hover {
-    transform: translateY(-25px); /* Move the image 3D behind by 15px on hover */
-  }
-  @media (max-width: 768px){
-    
-    .heading {
-        font-size: 1.5em;
-    }
-    .sps{
-      scale: 0.6;
-      gap: 30px;
-    }
-    
-    }
-    @media (max-width: 768px){
-        .containerz{
-            flex-direction: column;
-            max-width: 100%;
-            justify-content: center;
-            align-items: center;
-            
-        }      
-        
-    }
-  @media (max-width: 768px) {
-    .pt-5 {
-        padding-top: 0 !important;
-      }
-
-  }
-
-.custom-sp-bg{
-    background-image: url("../assets/new-bg2.png");
-    color : white;
-    background-size: cover;
+.custom-sp-bg {
+  background-image: url("../assets/new-bg2.png");
+  color: white;
+  background-size: cover;
 }
 
 @media (max-width: 767px) {
-.custom-sp-bg{
-  background-image: url("../assets/small-bg.jpeg");
-  color : white;
-  background-size: cover;
+  .custom-sp-bg {
+    background-image: url("../assets/small-bg.jpeg");
+    color: white;
+    background-size: cover;
+  }
 }
-}
-  

@@ -1,15 +1,14 @@
-
 /* *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 } */
-body{
+body {
   overflow-x: hidden;
 }
 
 @font-face {
-  font-family:pixeloidsansbold ;
+  font-family: pixeloidsansbold;
   src: url("./fonts/PixeloidSans-Bold.ttf");
 }
 
@@ -18,7 +17,7 @@ body{
   src: url("./fonts/PixeloidSans.ttf");
 }
 @font-face {
-  font-family: karmatic ;
+  font-family: karmatic;
   src: url("./fonts/ka1.ttf");
 }
 
@@ -30,7 +29,7 @@ body{
   width: 100vw;
   /* height: 20rem; */
 }
-.elem{
+.elem {
   /* height: 100vh;
   width: 100vw;
   object-fit: cover; */
@@ -46,7 +45,7 @@ body{
     right: 0%;
   }
 }
-.overlay{
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -56,7 +55,7 @@ body{
   z-index: 1;
 }
 
-.karma{
+.karma {
   position: absolute;
   white-space: nowrap;
   overflow: hidden;
@@ -65,7 +64,7 @@ body{
   left: 18%;
   font-family: karmatic;
   z-index: 2;
-  color: rgb(16, 16, 16);
+  color: rgb(217, 212, 212);
   /* animation: breathe 4s linear;  */
   /* text-shadow: 6px 6px #000;
   animation: 
@@ -74,30 +73,39 @@ body{
   letter-spacing: 8px; */
   padding: 7%;
   padding-top: 5%;
-  background: rgba(176, 157, 180, 0.493);
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 20px );
--webkit-backdrop-filter: blur( 5px );
-border-radius: 10px;
-border: 3px solid rgba(81, 55, 86, 0.58);
+  background: rgba(61, 42, 61, 0.455);
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(11px);
+  border-radius: 3px;
+  border: 3px solid rgba(0, 0, 0, 0.58);
 }
-.outer-karma{
+.outer-karma {
   position: absolute;
- display: grid;
- place-items: center;
+  display: grid;
+  place-items: center;
 }
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: rgba( 255, 255, 255, 0.18 ) }
-  50% { border-color: rgba( 255, 255, 255, 0.18 ); }
+  from,
+  to {
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.18);
+  }
 }
 
-.karma2{
+.karma2 {
   position: absolute;
   font-size: 1.8em;
   white-space: nowrap;
@@ -107,18 +115,20 @@ border: 3px solid rgba(81, 55, 86, 0.58);
   /* transform: translate(-50%, -50%); */
   font-family: karmatic;
   z-index: 2;
-  color: rgb(0, 0, 0);
+  color: rgb(209, 198, 198);
   /* animation: breathe 4s linear;  */
 
-  animation: 
-  typing 8s steps(90, end),
-  blink-caret .71s step-end infinite;
+  animation: typing 8s steps(90, end), blink-caret 0.71s step-end infinite;
   letter-spacing: 5px;
 }
 @keyframes breathe {
-  0% { transform: scale(0.5)  }
+  0% {
+    transform: scale(0.5);
+  }
   /* 70% { transform: scale(0.8); } */
-  100% { transform: scale(1); }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .mascot {
@@ -131,8 +141,7 @@ border: 3px solid rgba(81, 55, 86, 0.58);
   z-index: 1;
 }
 
-@media (max-width:767px)
-{
+@media (max-width: 767px) {
   .mascot {
     position: absolute;
     right: 5%;
@@ -152,7 +161,7 @@ border: 3px solid rgba(81, 55, 86, 0.58);
   padding: 10px;
 }
 
-.dialogue2{
+.dialogue2 {
   display: none;
   position: absolute;
   bottom: 35%;
@@ -161,7 +170,7 @@ border: 3px solid rgba(81, 55, 86, 0.58);
   padding: 10px;
 }
 
-.mascot:hover .dialogue2{
+.mascot:hover .dialogue2 {
   display: block;
 }
 
@@ -174,7 +183,7 @@ border: 3px solid rgba(81, 55, 86, 0.58);
   100% {
     transform: translateX(0);
   }
-  75%{
+  75% {
     transform: rotate(-25deg);
   }
   50% {
@@ -192,7 +201,7 @@ border: 3px solid rgba(81, 55, 86, 0.58);
     align-items: center;
     padding: 30px;
   }
-  span{
+  span {
     display: block;
   }
 
@@ -218,7 +227,7 @@ border: 3px solid rgba(81, 55, 86, 0.58);
     left: 32%;
   }
 }
-@media (max-width:767px){
+@media (max-width: 767px) {
   .mascot {
     scale: 0.75;
     margin-right: -20%;
@@ -227,33 +236,33 @@ border: 3px solid rgba(81, 55, 86, 0.58);
 
 /* Navbar */
 
-.navbar{
+.navbar {
   background-color: #38263bf3;
 }
 
-.navbar-ul{
+.navbar-ul {
   color: rgb(255, 255, 255);
 }
 
-.actual-nav{
+.actual-nav {
   height: 11%;
 }
 
-@media (max-width:767px){
-  .actual-nav{
+@media (max-width: 767px) {
+  .actual-nav {
     height: auto;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .actual-nav{
+  .actual-nav {
     height: auto;
   }
 }
-.navbar-ul:hover{
-  color:white;
+.navbar-ul:hover {
+  color: white;
 }
-@media (max-width:767px){
-  .actual-nav{
+@media (max-width: 767px) {
+  .actual-nav {
     height: auto;
   }
 }
