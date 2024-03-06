@@ -1,16 +1,20 @@
-import React from "react";
-import "../Css/About.css"
+import React, { useEffect } from "react";
+import "../Css/About.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function About() {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  });
   return (
     <div id="about" className="custom-height-abt about-con custom-abt-bg">
-      <div className="abt-container logo">
+      <div className="abt-container logo" data-aos="slide-up">
         <div className="text-center">
-          <h1 id="about" style={{fontFamily:"karmatic"}}>ABOUT</h1>
-          <h1
-            className="heading pt-5"
-            style={{ letterSpacing: "0.5px" }}
-          >
+          <h1 id="about" style={{ fontFamily: "karmatic" }}>
+            ABOUT
+          </h1>
+          <h1 className="heading pt-5" style={{ letterSpacing: "0.5px" }}>
             HACKMAN V7
           </h1>
           <h4
@@ -20,7 +24,14 @@ function About() {
             Date : June 24th - 25th
           </h4>
           <div className="content-box container-md container-sm abt-box">
-              <p className="p-3 small-text" style={{color: "black", letterSpacing:"0.5px", wordSpacing:"1px"}}>
+            <p
+              className="p-3 small-text"
+              style={{
+                color: "black",
+                letterSpacing: "0.5px",
+                wordSpacing: "1px",
+              }}
+            >
               HackMan v.7 is an Inter College, extravagant 24-hour Hackathon,
               hosted by the Department of ISE, Dayananda Sagar College of
               Engineering (DSCE), Bangalore. We give the brightest of minds a

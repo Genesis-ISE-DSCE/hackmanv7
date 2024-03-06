@@ -1,4 +1,4 @@
-import React , {useRef, useState } from 'react';
+import React, { useRef, useState } from "react";
 import Board from "../assets/event-board.png";
 import "../Css/Schedule.css";
 import Schedule1 from "../assets/schedule-1.png";
@@ -10,51 +10,49 @@ import Schedule6 from "../assets/schedule-6.png";
 import Schedule7 from "../assets/schedule-7.png";
 
 const Schedule = () => {
-    const itemsRef = useRef(null);
-    const [isMouseDown, setIsMouseDown]= useState(false);
-    const [startX, setStartX]= useState(0);
-    const [scrollLeft, setScrollLeft]= useState(0);
+  const itemsRef = useRef(null);
+  const [isMouseDown, setIsMouseDown] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
-    const events = [
-        {id: 1,name: "event1",src: Schedule1},
-        {id: 2,name: "event2",src: Schedule2},
-        {id: 3,name: "event3",src: Schedule3},
-        {id: 4,name: "event4",src: Schedule4},
-        {id: 5,name: "event5",src: Schedule5},
-        {id: 6,name: "event5",src: Schedule6},
-        {id: 7,name: "event5",src: Schedule7},
-      ];
+  const events = [
+    { id: 1, name: "event1", src: Schedule1 },
+    { id: 2, name: "event2", src: Schedule2 },
+    { id: 3, name: "event3", src: Schedule3 },
+    { id: 4, name: "event4", src: Schedule4 },
+    { id: 5, name: "event5", src: Schedule5 },
+    { id: 6, name: "event5", src: Schedule6 },
+    { id: 7, name: "event5", src: Schedule7 },
+  ];
 
-      const handleMouseDown = (e) => {
-        setIsMouseDown(true);
-        setStartX(e.pageX - - itemsRef.current.offsetLeft);
-        setScrollLeft(itemsRef.current.scrollLeft);
-      };
+  const handleMouseDown = (e) => {
+    setIsMouseDown(true);
+    setStartX(e.pageX - -itemsRef.current.offsetLeft);
+    setScrollLeft(itemsRef.current.scrollLeft);
+  };
 
-      const handleMouseLeave = () => {
-        setIsMouseDown(false);
-      }
+  const handleMouseLeave = () => {
+    setIsMouseDown(false);
+  };
 
-      const handleMouseMove = (e) => {
-        if(!isMouseDown) return;
-        e.preventDefault();
-        const x = e.pageX - itemsRef.current.offsetLeft;
-        const walk = (x-startX)*1;
-        itemsRef.current.scrollLeft = scrollLeft - walk;
-      }
+  const handleMouseMove = (e) => {
+    if (!isMouseDown) return;
+    e.preventDefault();
+    const x = e.pageX - itemsRef.current.offsetLeft;
+    const walk = (x - startX) * 1;
+    itemsRef.current.scrollLeft = scrollLeft - walk;
+  };
 
-      const handleMouseup = () => {
-        setIsMouseDown(false);
-      }
-    
+  const handleMouseup = () => {
+    setIsMouseDown(false);
+  };
+
   return (
     <div id="schedule" className="custom-height about-con custom-sc-bg">
-       <div
-        className="abt-container vh-100 logo"
-      >
+      <div className="abt-container vh-100 logo" data-aos="slide-up">
         <div className="text-center pb-10">
-        <h1 style={{fontFamily:"karmatic"}}>Schedule</h1>
-           {/* <div className='wrapper'>
+          <h1 style={{ fontFamily: "karmatic" }}>Schedule</h1>
+          {/* <div className='wrapper'>
             <img className="events" src={Schedule1} alt='event1'></img>
             <img className="events" src={Schedule2} alt='event1'></img>
             <img className="events" src={Schedule3} alt='event1'></img>
@@ -62,26 +60,26 @@ const Schedule = () => {
             <img className="events" src={Schedule5} alt='event1'></img>
           </div>  */}
 
-        <div className="chooseImage mt-4"  ref={itemsRef}
-          onMouseDown={handleMouseDown}
-          onMouseLeave={handleMouseLeave}
-          onMouseUp={handleMouseup}
-          onMouseMove={handleMouseMove}>
-
-          {events.map((image) => (
-            <div className="image p-4 mx-2 mt-5" key={image.id}>
-              <div className="eventImage">
-                <img src={image.src} alt={image.name} />
+          <div
+            className="chooseImage mt-4"
+            ref={itemsRef}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseup}
+            onMouseMove={handleMouseMove}
+          >
+            {events.map((image) => (
+              <div className="image p-4 mx-2 mt-5" key={image.id}>
+                <div className="eventImage">
+                  <img src={image.src} alt={image.name} />
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-    
+            ))}
+          </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Schedule;

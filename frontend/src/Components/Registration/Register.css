@@ -1,39 +1,38 @@
 @font-face {
-    font-family: karmatic ;
-    src: url("./fonts/ka1.ttf");
-  }
-.all{
-    font-family: karmatic;
-    color: #D7BD7E;
+  font-family: karmatic;
+  src: url("./fonts/ka1.ttf");
 }
-   input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
+.all {
+  font-family: karmatic;
+  color: #d7bd7e;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-    input[type="number"] {
-      -moz-appearance: textfield;
-    }
-.kard{
-    background: rgba(163, 84, 99, 0.3);
-    margin-top: 12%;
-    padding: 5%;
-    color: #A52A2A;
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.kard {
+  background: rgba(163, 84, 99, 0.3);
+  margin-top: 12%;
+  padding: 5%;
+  color: #a52a2a;
 }
 @media (max-width: 767px) {
-  .kard{
+  .kard {
     margin-top: 45%;
-}
+  }
 }
 @media (min-width: 768px) and (max-width: 1300px) {
-  .kard{
+  .kard {
     margin-top: 25%;
-
+  }
 }
-}
-.form-control::placeholder{
-  color:#e394b2;
+.form-control::placeholder {
+  color: #e394b2;
   font-family: pixeloidsansbold;
   text-align: center;
 }
@@ -42,10 +41,24 @@
   border-radius: 5px; /* Adjust border-radius as needed */
   padding: 10px;
   font-size: 16px;
-  background: #F1E1F1;
+  background: #f1e1f1;
   font-family: pixeloidsansbold;
 }
-.form-control:focus{
-  background: #F1E1F1;
+.form-control:focus {
+  background: #f1e1f1;
   border: 0px;
+}
+.custom-reg-bg {
+  background-image: url("/src/assets/new-bg2.png");
+  color: white;
+  background-size: cover;
+  height: 100vh;
+}
+
+@media (max-width: 767px) {
+  .custom-reg-bg {
+    background-image: url("/src/assets/small-bg.jpeg");
+    color: white;
+    background-size: cover;
+  }
 }
