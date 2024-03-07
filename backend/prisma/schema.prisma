@@ -28,4 +28,6 @@ model Team {
   transactionId String @unique
   upiId String
   payStatus Boolean @default(false)
+  leaderEmail String
+  password String?
 }
