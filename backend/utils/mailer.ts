@@ -1,4 +1,8 @@
 //@ts-ignore
+import fs from "fs";
+import path from "path";
+import { Participant } from "@prisma/client";
+import { db } from "./db";
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
@@ -12,6 +16,8 @@ const transporter = nodemailer.createTransport({
     pass: process.env.MAIL_PASSWORD,
   },
 });
+
+const attachmentDocsPath = [];
 
 export const sendEmailToLeader = async (
   leaderEmail: string,
@@ -30,5 +36,50 @@ export const sendEmailToLeader = async (
   } catch (error) {
     console.error("Error sending email to leader with password:", error);
     return false;
+  }
+};
+
+const sendBrocures = async (memberEmail: String, teamName: String) => {
+  try {
+    const mailOption = {
+      from: process.env.MAIL_USER,
+      to: memberEmail,
+      subject: `Brochure for team ${teamName}`,
+      text: `Dear Team Member,\n\nPlease find attached the brochure for your team "${teamName}".\n\nBest regards,\nYour Team`,
+      attachments: attachmentDocsPath.map((doc) => ({
+        filename: doc.filename,
+        content: fs.createReadStream(doc.path),
+      })),
+    };
+    await transporter.sendMail(mailOption);
+    console.log(`Brochure sent to ${memberEmail} for team ${teamName}`);
+  } catch (error) {
+    console.error("Error sending brochure:", error);
+  }
+};
+
+export const sendMassMail = async (teamName: String, req: Request) => {
+  try {
+    const team = await db.team.findUnique({
+      where: { teamName },
+      include: {
+        members: true,
+      },
+    });
+
+    const { members }: { members: Participant[] } = req.body;
+    if (!team) {
+      console.warn(`Team ${teamName} not found.`);
+      return;
+    }
+    const memberEmails = members.map((member) => member.email);
+
+    for (const mem of memberEmails) {
+      const { email } = mem;
+      await sendBrocures(email, teamName);
+    }
+    console.log(`Mass mail for brochures sent to team ${teamName}`);
+  } catch (error) {
+    console.error("Error sending mass mail for brochures:", error);
   }
 };
