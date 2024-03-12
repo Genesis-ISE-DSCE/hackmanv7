@@ -1,10 +1,10 @@
 import React from "react";
-import card1 from "../assets/Eventback.png";
-import card2 from "../assets/Eventback-2.png";
-import card3 from "../assets/Eventback-3.png";
-import brick from "../assets/brick.png";
 import "../Css/Faq.css";
-import card4 from "../assets/Eventback-4.png";
+// import card1 from "../assets/Eventback.png";
+// import card2 from "../assets/Eventback-2.png";
+// import card3 from "../assets/Eventback-3.png";
+// import brick from "../assets/brick.png";
+// import card4 from "../assets/Eventback-4.png";
 // import card5 from "../assets/Eventback-5.png"
 // import card6 from "../assets/Eventback-6.png"
 
@@ -74,7 +74,7 @@ function Faqs() {
             id="accordionExample"
             style={{ fontFamily: "pixeloidsans-bold" }}
           >
-            <div className="accordion-item">
+            <div className="accordion-item ">
               <h2 className="accordion-header">
                 <button
                   className="accordion-button accordian-ques"
