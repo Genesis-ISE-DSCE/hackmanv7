@@ -1,6 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import Hammer from "hammerjs";
 import Board from "../assets/event-board.png";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 import "../Css/Schedule.css";
 // import Schedule1 from "../assets/schedule-1.png";
 // import Schedule2 from "../assets/schedule-2.png";
@@ -85,7 +88,9 @@ import "../Css/Schedule.css";
 
 const Schedule = () => {
   const timelineRef = useRef(null);
-
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  });
   useEffect(() => {
     const timeline = timelineRef.current;
     const elH = timeline.querySelectorAll(".timeline li > div");
@@ -220,7 +225,14 @@ const Schedule = () => {
   return (
     <div id="schedule">
       <div className="text-center custom-sc-height custom-sc-bg event-container">
-        <h1 className="eventHeading" style={{ fontFamily: "karmatic" }}>
+        <h1
+          className="eventHeading"
+          style={{
+            fontFamily: "karmatic",
+            filter: "drop-shadow(3px 3px 5px #010101)",
+          }}
+          data-aos="slide-up"
+        >
           EVENT SCHEDULE
         </h1>
         <section
@@ -228,7 +240,7 @@ const Schedule = () => {
           ref={timelineRef}
           style={{ fontFamily: "pixeloidSans" }}
         >
-          <div className="items-wrap">
+          <div className="items-wrap" data-aos="slide-up">
             <ol>
               <li>
                 <div>

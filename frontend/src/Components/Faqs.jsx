@@ -67,7 +67,14 @@ function Faqs() {
   return (
     <div id="faqs" className="custom-height custom-faq-bg faq-main">
       <div className="text-center">
-        <h1 style={{ fontFamily: "karmatic" }}>FAQS</h1>
+        <h1
+          style={{
+            fontFamily: "karmatic",
+            filter: "drop-shadow(3px 3px 5px #010101)",
+          }}
+        >
+          FAQS
+        </h1>
         <div className="main-accordion" data-aos="slide-up">
           <div
             className="custom-accordion accordion"

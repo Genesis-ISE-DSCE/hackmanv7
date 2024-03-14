@@ -7,7 +7,7 @@ function Members() {
   return (
     <div className='custom-reg-bg all d-flex justify-content-center align-items-start' >
     <div className="card p-4 rounded-lg bg-gray-800 w-75-lg kard ">
-        <h1 className="text-center font-bold text-3xl" style={{color: "#D7BD7E"}}>Team Members</h1>
+        <h1 className="text-center font-bold text-3xl" style={{color: "#fff"}}>Team Members</h1>
         <form className="my-3">
             <div className="mb-3">
                 <input className="form-control" placeholder="Member Name" type="text" />

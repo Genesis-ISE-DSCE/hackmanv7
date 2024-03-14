@@ -13,13 +13,13 @@ function Sponsors() {
       <div className="vh-100 custom-sp-bg">
         <h1
           className="heading text-center"
-          style={{ letterSpacing: "0.5px", color: "white" }}
+          style={{ letterSpacing: "0.5px", color: "white" ,filter: "drop-shadow(3px 3px 5px #010101)"}}
         >
           SPONSORS
         </h1>
 
         <div className="containerz text-center" data-aos="slide-up">
-          <div className="row justify-content-center align-items-center pt-5 sps">
+          <div className="row justify-content-center align-items-center pt-5 sps shadow-custom">
             <img
               src={anastrat}
               alt="anastrat"
@@ -34,7 +34,7 @@ function Sponsors() {
             />
           </div>
 
-          <div className="row justify-content-center align-items-center pt-5 gap-4">
+          <div className="row justify-content-center align-items-center pt-5 gap-4 shadow-custom">
             <img
               src={nokia}
               alt="nokia"

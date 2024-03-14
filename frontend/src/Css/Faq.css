@@ -1,17 +1,17 @@
 @font-face {
-    font-family: pixeloidsans-bold;
-    src: url("../fonts/PixeloidSans.ttf");
-  }
+  font-family: pixeloidsans-bold;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+.custom-height {
+  height: 120vh; /* Adjust the value as needed */
+}
+@media (max-width: 767px) {
   .custom-height {
-    height: 120vh; /* Adjust the value as needed */
+    height: 110vh; /* Adjust the value as needed */
   }
-  @media (max-width:767px){
-    .custom-height {
-      height: 110vh; /* Adjust the value as needed */
-    }
-  }
-.outer{
-    overflow:hidden;
+}
+.outer {
+  overflow: hidden;
 }
 /* .ok{
     margin-bottom: 3%;
@@ -22,21 +22,21 @@
 
     /* width: 100%;
     overflow-x: scroll;  */
-    /* max-height: 600px;  Set a fixed height for the container
+/* max-height: 600px;  Set a fixed height for the container
     justify-content: space-around;
     align-items: center;
     margin-left: 5%;
     margin-top: 6%;
   }
 .myCard { */
-    /* background-color: transparent;
+/* background-color: transparent;
     width: 250px;
     height: 290px;
     perspective: 1000px;
     margin-right: 100px; */
-    /* overflow:auto; */
+/* overflow:auto; */
 
-  /* }
+/* }
 
   .title {
     font-size: 1.5em;
@@ -44,7 +44,7 @@
     text-align: center;
     margin: 0;
   } */
-  /* .bs-cont{
+/* .bs-cont{
       font-family: pixeloidsans-bold;
       color: rgb(255, 255, 255);
     font-size: 1.3em;
@@ -52,7 +52,7 @@
     letter-spacing: 2px;
   }
   .innerCard { */
-    /* position: relative;
+/* position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -75,10 +75,10 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     /* border: 1px solid rgba(255, 255, 255, 0.8); */
-    /* border-radius: 1rem; */
-    /* color: white; */
-    /* box-shadow: 0 0 0.3em rgba(255, 255, 255, 0.5); */
-    /* font-weight: 700;
+/* border-radius: 1rem; */
+/* color: white; */
+/* box-shadow: 0 0 0.3em rgba(255, 255, 255, 0.5); */
+/* font-weight: 700;
   }
   .backSide {
     transform: rotateY(180deg);
@@ -95,7 +95,7 @@
     position: absolute;
     z-index: -1;
     /* border-radius: 1em; */
-    /* filter: blur(20px);
+/* filter: blur(20px);
     animation: animate 5s linear infinite;
   }  */
 /*   
@@ -110,14 +110,14 @@
       opacity: 0.3;
     }
   } */
-  /* .card{
+/* .card{
     background: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   } */
-  /* @media (max-width: 767px) {
+/* @media (max-width: 767px) {
   
     .card-container{
       overflow: scroll;
@@ -126,107 +126,108 @@
       justify-content: center;
       align-items: center;
       /* flex-direction: column; */
-      /* gap: 200px; 
+/* gap: 200px; 
     }
     .myCard {
       scale: 0.8;
       margin-left: 25%;
     }
   } */
-  /* @media (min-width: 768px) and (max-width: 991px) {
+/* @media (min-width: 768px) and (max-width: 991px) {
     .card-container{
       overflow: scroll;
       flex-wrap: wrap;
       display: flex;
       justify-content: center;
       align-items: center; */
-      /* flex-direction: column; */
-      /* gap: 200px; */
-    /* }
+/* flex-direction: column; */
+/* gap: 200px; */
+/* }
     .myCard {
       scale: 0.9; */
-      /* margin-left: 25%; */
-    /* }
-  } */ 
+/* margin-left: 25%; */
+/* }
+  } */
 
-  /* ScrollbarCode  Start */
-  ::-webkit-scrollbar {
-    width: 14px;
-  }
-  
-  /* Style for the scrollbar handle or thumb */
-  ::-webkit-scrollbar-thumb {
-    background-color: #32191e;
+/* ScrollbarCode  Start */
+::-webkit-scrollbar {
+  width: 14px;
+}
 
-  }
-  
-  /* Style for the scrollbar track on hover */
-  ::-webkit-scrollbar-track:hover {
-    background-color: #0905033a;
-  }
-  
-  /* Style for the scrollbar handle or thumb on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #000000;
-  }
-  
-  /* Style for the scrollbar corner */
-  ::-webkit-scrollbar-corner {
-    background-color: transparent;
-  }
+/* Style for the scrollbar handle or thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #0a3c62;
+}
 
-.custom-faq-bg{
-    background-image: url("../assets/new-bg2.png");
-    color : white;
-    background-size: cover;
+/* Style for the scrollbar track on hover */
+::-webkit-scrollbar-track:hover {
+  background: #031421;
+}
+::-webkit-scrollbar-track {
+  background: #031421;
+}
+
+/* Style for the scrollbar handle or thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0b4672;
+}
+
+/* Style for the scrollbar corner */
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.custom-faq-bg {
+  background-image: url("../assets/newbg3.png");
+  color: white;
+  background-size: cover;
 }
 
 @media (max-width: 767px) {
-.custom-faq-bg{
-  background-image: url("../assets/small-bg.jpeg");
-  color : white;
-  background-size: cover;
-}
+  .custom-faq-bg {
+    background-image: url("../assets/small-bg.jpeg");
+    color: white;
+    background-size: cover;
+  }
 }
 
-.faq-main{
+.faq-main {
   padding-top: 8%;
   text-decoration: none;
 }
 
-@media (max-width: 767px){
-  .faq-main{
+@media (max-width: 767px) {
+  .faq-main {
     padding-top: 30%;
   }
 }
 
-.main-accordion{
+.main-accordion {
   padding: 4% 10%;
 }
 
-@media (max-width: 767px){
-  .main-accordian{
+@media (max-width: 767px) {
+  .main-accordian {
     padding: 8% 10%;
   }
 }
 .accordion-button {
-  background-color: #3d2a3d !important;
+  background-color: #041d30 !important;
   color: white;
 }
 .accordion-button:not(.collapsed) {
   color: white;
- 
 }
-.accordion-button:focus{
+.accordion-button:focus {
   border: none;
   outline: 0;
 }
 .accordion-body {
   padding: var(--bs-accordion-body-padding-y) var(--bs-accordion-body-padding-x);
-  background-color: #694f69;
-  color: #fba04b;
+  background-color: #062b46;
+  color: #ffffff;
 }
-.accordion-button:not(.collapsed){
+.accordion-button:not(.collapsed) {
   background-color: transparent;
 }
 /* .accordian-ques{
