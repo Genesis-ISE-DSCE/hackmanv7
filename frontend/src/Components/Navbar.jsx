@@ -1,7 +1,6 @@
 import React from "react";
-// import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import "../Css/About.css";
-// import "../Css/Profile.css";
 import User from "../assets/user-profile.png";
 import "../App.css";
 
@@ -18,17 +17,18 @@ function Navbar() {
   return (
     <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center actual-nav pb-3 pt-2 ">
       <div className="head">
-        <a href="/" onClick={() => handleClick("home")}>
+        <a href="/">
           <div
-            className="heading fs-4 mx-3 mx-md-3 float-start"
+            className="heading fs-4 mx-3"
+            style={{ filter: "drop-shadow(3px 3px 5px #010101)" }}
           >
-            HACKMAN v7
+            Hackman
           </div>
         </a>
       </div>
       <button
         className="navbar-toggler my-2 mx-3"
-        style={{ backgroundColor: "#D7BD7E" }}
+        style={{ backgroundColor: "#d6d5d2" }}
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
@@ -39,11 +39,11 @@ function Navbar() {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div
-        className="collapse navbar-collapse justify-content-center text-center"
+        className="collapse navbar-collapse justify-content-center text-center flex "
         id="navbarNav"
       >
         <ul
-          className="list-unstyled d-flex flex-column align-items-center flex-md-row fs-4 gap-md-2 gap-lg-4 text-md-sm my-3 border-0 mt-4"
+          className="list-unstyled d-flex flex-column align-items-center flex-md-row fs-5 gap-4 gap-md-2 gap-lg-2 my-3 mt-4 "
           style={{ fontFamily: "pixeloidsansbold" }}
         >
           <li className="mx-2 ">
@@ -51,6 +51,7 @@ function Navbar() {
               className="navbar-ul"
               href="/#land"
               onClick={() => handleClick("landing")}
+              style={{ filter: "drop-shadow(3px 3px 5px #010101)" }}
             >
               Home
             </a>
@@ -60,6 +61,7 @@ function Navbar() {
               className="navbar-ul"
               href="/#about"
               onClick={() => handleClick("about")}
+              style={{ filter: "drop-shadow(3px 3px 5px #010101)" }}
             >
               About
             </a>
@@ -67,11 +69,12 @@ function Navbar() {
           {/* <li className="mx-2">
                 <a className="navbar-ul" href="/#contact" onClick={() => handleClick("contact")}>Contact</a>
               </li> */}
-          <li className="mx-2">
+          <li className="mx-2 ">
             <a
-              className="navbar-ul"
+              className="navbar-ul "
               href="/#faqs"
               onClick={() => handleClick("faqs")}
+              style={{ filter: "drop-shadow(3px 3px 5px #010101)" }}
             >
               Faqs
             </a>
@@ -81,32 +84,38 @@ function Navbar() {
               className="navbar-ul"
               href="/#schedule"
               onClick={() => handleClick("schedule")}
+              style={{ filter: "drop-shadow(3px 3px 5px #010101)" }}
             >
               Schedule
             </a>
           </li>
           <li className="mx-2">
-            <a
+            <Link
               className="navbar-ul"
-              href="/registration"
+              to="/registration"
               onClick={() => handleClick("registration")}
+              style={{ filter: "drop-shadow(3px 3px 5px #010101)" }}
             >
               Register
-            </a>
+            </Link>
           </li>
           <li className="mx-2">
-            <a
+            <Link
               className="navbar-ul"
-              href="/profile"
+              to="/profile"
               onClick={() => handleClick("profile")}
             >
               <img
                 className="profilee"
                 src={User}
                 alt="profile-pic"
-                style={{ width: "45px", height: "45px" }}
+                style={{
+                  width: "45px",
+                  height: "45px",
+                  filter: "drop-shadow(3px 3px 5px #010101)",
+                }}
               />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

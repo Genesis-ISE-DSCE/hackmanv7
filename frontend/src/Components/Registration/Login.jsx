@@ -6,7 +6,7 @@ function Login() {
   return (
     <div id='registration' className='custom-reg-bg all d-flex justify-content-center align-items-start' >
     <div className="card p-4 rounded-lg bg-gray-800 w-75-lg kard ">
-        <h1 className="text-center font-bold text-3xl" style={{color: "#D7BD7E"}}>Login</h1>
+        <h1 className="text-center font-bold text-3xl" style={{color: "#fff"}}>Login</h1>
         <form className="my-3">
             <div className="mb-3">
                 <input className="form-control" placeholder="Username" type="text" />

@@ -58,7 +58,7 @@
 }
 
 .custom-sp-bg {
-  background-image: url("../assets/new-bg2.png");
+  background-image: url("../assets/newbg3.png");
   color: white;
   background-size: cover;
 }
@@ -69,4 +69,7 @@
     color: white;
     background-size: cover;
   }
+}
+.shadow-custom {
+  filter: drop-shadow(3px 3px 5px #010101);
 }

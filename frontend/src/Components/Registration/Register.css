@@ -4,7 +4,7 @@
 }
 .all {
   font-family: karmatic;
-  color: #d7bd7e;
+  color: #f1f1f1;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -16,10 +16,10 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 .kard {
-  background: rgba(163, 84, 99, 0.3);
+  background: rgba(78, 156, 208, 0.206);
   margin-top: 12%;
   padding: 5%;
-  color: #a52a2a;
+  color: #ffffff;
 }
 @media (max-width: 767px) {
   .kard {
@@ -32,7 +32,7 @@ input[type="number"] {
   }
 }
 .form-control::placeholder {
-  color: #e394b2;
+  color: #0a3c62;
   font-family: pixeloidsansbold;
   text-align: center;
 }
@@ -41,15 +41,15 @@ input[type="number"] {
   border-radius: 5px; /* Adjust border-radius as needed */
   padding: 10px;
   font-size: 16px;
-  background: #f1e1f1;
+  background: #6bb5edcc;
   font-family: pixeloidsansbold;
 }
 .form-control:focus {
-  background: #f1e1f1;
+  background: #6bb5edcc;
   border: 0px;
 }
 .custom-reg-bg {
-  background-image: url("/src/assets/new-bg2.png");
+  background-image: url("/src/assets/newbg3.png");
   color: white;
   background-size: cover;
   height: 100vh;

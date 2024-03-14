@@ -11,7 +11,13 @@ function About() {
     <div id="about" className="custom-height-abt about-con custom-abt-bg">
       <div className="abt-container logo" data-aos="slide-up">
         <div className="text-center">
-          <h1 id="about" style={{ fontFamily: "karmatic" }}>
+          <h1
+            id="about"
+            style={{
+              fontFamily: "karmatic",
+              filter: "drop-shadow(3px 3px 5px #010101)",
+            }}
+          >
             ABOUT
           </h1>
           <h1 className="heading pt-5" style={{ letterSpacing: "0.5px" }}>

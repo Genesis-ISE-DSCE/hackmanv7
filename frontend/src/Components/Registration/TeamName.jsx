@@ -8,7 +8,7 @@ function TeamName() {
       <div className="card p-4 rounded-lg bg-gray-800 w-75-lg kard ">
         <h1
           className="text-center font-bold text-3xl"
-          style={{ color: "#D7BD7E" }}
+          style={{ color: "#fff" }}
         >
           Team Name
         </h1>
