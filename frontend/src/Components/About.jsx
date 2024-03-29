@@ -38,7 +38,7 @@ function About() {
                 wordSpacing: "1px",
               }}
             >
-              HackMan v.7 is an Inter College, extravagant 24-hour Hackathon,
+              HACKMAN v.7 is an Inter College, extravagant 24-hour Hackathon,
               hosted by the Department of ISE, Dayananda Sagar College of
               Engineering (DSCE), Bangalore. We give the brightest of minds a
               chance to brainstorm as a team and come up with unique solutions,
