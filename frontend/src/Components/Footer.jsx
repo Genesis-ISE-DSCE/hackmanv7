@@ -16,7 +16,7 @@ function Footer() {
             className="dates pb-4 mb-4"
             // style={{ color: "black", letterSpacing: "1px" }}
           >
-            Date : June 24th - 25th
+            Date : June 8th - 9th
           </h4>
           <div
             data-aos="flip-down"
