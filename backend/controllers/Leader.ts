@@ -1,30 +1,56 @@
 import { Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
-
+import { db } from '../utils/db';
+import { compareSync } from 'bcrypt';
+import jwt from 'jsonwebtoken';
 const prisma = new PrismaClient();
-
-// Add a team member
-export const getTeamDetails = async(req:Request,res:Response)=>{
-    const teamId = req.body.teamId;
+// auth
+export const login = async (req: Request, res: Response) => {
+    const { email, password } = req.body;
+    try{
+        const user = await db.team.findFirst({
+            where: {
+                leaderEmail: email,
+            },
+        });
+        if (!user)
+            throw new Error("No user found with the given email address")
+        if (user.password && compareSync(password, user.password)) {
+            const token = jwt.sign({ email: user.leaderEmail,teamName:user.teamName }, process.env["JWT_KEY"] as string);
+            res.status(200).json({ token, msg: "Authenticated", status: true });
+        }
+        else {
+            throw new Error("Authentication failed, Invalid credentials");
+        }
+    }
+    catch(err){
+        res.json({
+            status:false,
+            err
+        })
+    }
+}
+export const getTeamDetails = async (req: Request, res: Response) => {
+    const teamName = req.user.teamName;
     try {
         const team = await prisma.team.findUnique({
-          where: {
-            id: teamId,
-          },
-          include: {
-            members: true,
-          },
+            where: {
+                teamName
+            },
+            include: {
+                members: true,
+            },
         });
-    
+
         if (!team) {
-          return res.status(404).json({ status:false,error: 'Team not found' });
+            return res.status(404).json({ status: false, error: 'Team not found' });
         }
-    
-        res.status(200).json({team,status:true});
-      } catch (error) {
+
+        res.status(200).json({ team, status: true });
+    } catch (error) {
         console.error('Error fetching team details:', error);
         res.status(500).json({ error: 'Internal server error' });
-      }
+    }
 }
 export const addTeamMember = async (req: Request, res: Response) => {
     const { teamId, name, email, phoneNumber, isLead } = req.body;
