@@ -31,7 +31,7 @@ const getalluser = async (req: Request, res: Response) => {
       },
     });
 
-    const teamInfo: TeamInfo[] = teams.map((team) => ({
+    const teamInfo= teams.map((team) => ({
       teamName: team.teamName,
       teamMembers: team.members.map((member) => ({
         name: member.name,

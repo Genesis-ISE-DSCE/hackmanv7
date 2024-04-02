@@ -16,8 +16,11 @@ const transporter = nodemailer.createTransport({
     pass: process.env.MAIL_PASSWORD,
   },
 });
-
-const attachmentDocsPath = [];
+type Doc = {
+  filename: string,
+  path: string
+};
+const attachmentDocsPath: Doc[] = [];
 
 export const sendEmailToLeader = async (
   leaderEmail: string,
@@ -39,9 +42,12 @@ export const sendEmailToLeader = async (
   }
 };
 
-const sendBrocures = async (memberEmail: String, teamName: String) => {
+const sendBrocures = async (memberEmail: string, teamName: string) => {
   try {
-    const mailOption = {
+    if (process.env.MAIL_USER === undefined) {
+      throw new Error("Email not specified in Environment")
+    }
+    const mailOption: nodemailer.SendMailOptions = {
       from: process.env.MAIL_USER,
       to: memberEmail,
       subject: `Brochure for team ${teamName}`,
@@ -51,14 +57,19 @@ const sendBrocures = async (memberEmail: String, teamName: String) => {
         content: fs.createReadStream(doc.path),
       })),
     };
-    await transporter.sendMail(mailOption);
+    await transporter.sendMail(mailOption, (error) => {
+      if (error) {
+        console.log(error);
+
+      }
+    });
     console.log(`Brochure sent to ${memberEmail} for team ${teamName}`);
   } catch (error) {
     console.error("Error sending brochure:", error);
   }
 };
 
-export const sendMassMail = async (teamName: String, req: Request) => {
+export const sendMassMail = async (teamName: string, req: Request) => {
   try {
     const team = await db.team.findUnique({
       where: { teamName },
@@ -67,15 +78,15 @@ export const sendMassMail = async (teamName: String, req: Request) => {
       },
     });
 
-    const { members }: { members: Participant[] } = req.body;
+    const members = req.body;
     if (!team) {
       console.warn(`Team ${teamName} not found.`);
       return;
     }
-    const memberEmails = members.map((member) => member.email);
+    const memberEmails = Array.isArray(members) ? members.map((member) => member.email) : [];
 
-    for (const mem of memberEmails) {
-      const { email } = mem;
+   for (const mem of memberEmails) {
+      const  email  = mem;
       await sendBrocures(email, teamName);
     }
     console.log(`Mass mail for brochures sent to team ${teamName}`);
