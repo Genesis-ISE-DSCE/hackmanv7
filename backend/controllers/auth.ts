@@ -4,7 +4,8 @@ import { AppError } from "../utils/error";
 import { isValidEmail } from "../helpers/emailValidator";
 import { sendEmailToLeader } from "../utils/mailer";
 import { generateRandomPassword } from "../utils/randomPassword";
-
+import { hashSync } from "bcrypt";
+const salt:number = Number(process.env.SALT); 
 interface Participant {
   name: string;
   email: string;
@@ -68,8 +69,7 @@ export const registerController = async (req: Request, res: Response) => {
       }
     });
     const password = generateRandomPassword(teamInfo.name);
-    const hashedPassword = 
-
+    const hashedPassword = hashSync(password,salt);
     const updatedTeam = await db.team.create({
       data: {
         teamName: teamInfo.name,
