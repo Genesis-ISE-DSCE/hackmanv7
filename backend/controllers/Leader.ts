@@ -4,6 +4,28 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 // Add a team member
+export const getTeamDetails = async(req:Request,res:Response)=>{
+    const teamId = req.body.teamId;
+    try {
+        const team = await prisma.team.findUnique({
+          where: {
+            id: teamId,
+          },
+          include: {
+            members: true,
+          },
+        });
+    
+        if (!team) {
+          return res.status(404).json({ status:false,error: 'Team not found' });
+        }
+    
+        res.status(200).json({team,status:true});
+      } catch (error) {
+        console.error('Error fetching team details:', error);
+        res.status(500).json({ error: 'Internal server error' });
+      }
+}
 export const addTeamMember = async (req: Request, res: Response) => {
     const { teamId, name, email, phoneNumber, isLead } = req.body;
 
