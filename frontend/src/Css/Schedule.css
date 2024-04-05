@@ -1,50 +1,4 @@
 @font-face {
-<<<<<<< HEAD
-    font-family: pixeloidsans;
-    src: url("../fonts/PixeloidSans.ttf");
-  }
-  @font-face {
-    font-family: karmatic ;
-    src: url("../fonts/ka1.ttf");
-  }
-  @font-face {
-    font-family: pixeloidsans-bold;
-    src: url("../fonts/PixeloidSans.ttf");
-  }
-  
-  .custom-height{
-    height: 120vh; 
-  }
-
-  /* .wrapper{
-    display: flex;
-    overflow-x: auto;
-  }  */
-
-.chooseImage{
-    display: flex;
-    overflow-x: auto;
-}
-
-.chooseImage::-webkit-scrollbar{
-    background-color: transparent; 
-}
-
-.chooseImage .brand{
-   display: flex;
-   flex-direction:column;
-   align-items: center;
-   gap: 4px;
-   cursor: pointer;
-}
-
-.chooseImage .brand .eventImage{
-    overflow: hidden;
-} 
-
-
-
-=======
   font-family: pixeloidsans;
   src: url("../fonts/PixeloidSans.ttf");
 }
@@ -329,4 +283,3 @@ a {
   font-weight: bolder;
   color: #158be6;
 }
->>>>>>> 8bb6486ec1ab07064aca5280b96478906c7854dc
