@@ -1,10 +1,10 @@
 -- CreateTable
 CREATE TABLE "Participant" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "phoneNumber" TEXT NOT NULL,
-    "teamId" INTEGER NOT NULL,
+    "teamId" TEXT NOT NULL,
     "isLead" BOOLEAN NOT NULL DEFAULT false,
 
     CONSTRAINT "Participant_pkey" PRIMARY KEY ("id")
@@ -12,11 +12,12 @@ CREATE TABLE "Participant" (
 
 -- CreateTable
 CREATE TABLE "Team" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "teamName" TEXT NOT NULL,
-    "githubLink" TEXT NOT NULL,
+    "githubLink" TEXT,
     "transactionId" TEXT NOT NULL,
     "upiId" TEXT NOT NULL,
+    "payStatus" BOOLEAN NOT NULL DEFAULT false,
 
     CONSTRAINT "Team_pkey" PRIMARY KEY ("id")
 );

@@ -1,64 +1,126 @@
-import React from "react"
-// import {Link} from "react-router-dom"
-import '../App.css';
+import React from "react";
+import { Link } from "react-router-dom";
 import "../Css/About.css";
-import "../Css/Profile.css";
 import User from "../assets/user-profile.png";
+import "../App.css";
 
-
-function Navbar()
-{
-
-    const handleClick=(item)=>
-    {
-        const element=document.getElementById("item");
-
-        if(element)
-        {
-            element.scrollIntoView({behavior:"smooth"});
-        }
-        
+function Navbar() {
+  const handleClick = (item) => {
+    const element = document.getElementById("item");
+    if (item === "home") {
+      window.location.href = "/"; // Redirect to the home page
     }
-    return (
-        <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center" style={{ height:"auto",  backgroundColor: "#4A252C" }}>
-          <div className="head">
-          <a href="/">
-            <div className="heading fs-4 mx-3 mx-md-3 float-start">HACKMAN v7</div>
-          </a>
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  return (
+    <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center actual-nav pb-3 pt-2 ">
+      <div className="head">
+        <a href="/">
+          <div
+            className="heading fs-4 mx-3"
+            style={{ filter: "drop-shadow(3px 3px 5px #010101)" }}
+          >
+            Hackman
           </div>
-          <button className="navbar-toggler my-2 mx-3" style={{backgroundColor:"#D7BD7E"}}  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse justify-content-center text-center" id="navbarNav">
-            <ul className="list-unstyled d-flex flex-column align-items-center flex-md-row fs-4 gap-md-2 gap-lg-4 text-md-sm my-3 border-0 mt-4" style={{ fontFamily: "pixeloidsansbold" }}>
-              <li className="mx-2 ">
-                <a className="navbar-ul" href="/#land" onClick={() => handleClick("landing")}>Home</a>
-              </li>
-              <li className="mx-2">
-                <a className="navbar-ul" href="/#about" onClick={() => handleClick("about")}>About</a>
-              </li>
-              {/* <li className="mx-2">
+        </a>
+      </div>
+      <button
+        className="navbar-toggler my-2 mx-3"
+        style={{ backgroundColor: "#d6d5d2" }}
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div
+        className="collapse navbar-collapse justify-content-center text-center flex "
+        id="navbarNav"
+      >
+        <ul
+          className="list-unstyled d-flex flex-column align-items-center flex-md-row fs-5 gap-4 gap-md-2 gap-lg-2 my-3 mt-4 "
+          style={{ fontFamily: "pixeloidsansbold" }}
+        >
+          <li className="mx-2 ">
+            <a
+              className="navbar-ul"
+              href="/#land"
+              onClick={() => handleClick("landing")}
+              style={{ filter: "drop-shadow(3px 3px 5px #010101)" }}
+            >
+              Home
+            </a>
+          </li>
+          <li className="mx-2">
+            <a
+              className="navbar-ul"
+              href="/#about"
+              onClick={() => handleClick("about")}
+              style={{ filter: "drop-shadow(3px 3px 5px #010101)" }}
+            >
+              About
+            </a>
+          </li>
+          {/* <li className="mx-2">
                 <a className="navbar-ul" href="/#contact" onClick={() => handleClick("contact")}>Contact</a>
               </li> */}
-              <li className="mx-2">
-                <a className="navbar-ul" href="/#faqs" onClick={() => handleClick("faqs")}>Faqs</a>
-              </li>
-              <li className="mx-2">
-                <a className="navbar-ul" href="/#schedule" onClick={() => handleClick("schedule")}>Schedule</a>
-              </li>
-              <li className="mx-2">
-                <a className="navbar-ul" href="/#registration" onClick={() => handleClick("registration")}>Register</a>
-              </li> 
-              <li className="mx-2">
-                <a className="navbar-ul" href="/#profile" onClick={() => handleClick("profile")}>
-                  <img className="profilee" src={User} alt="profile-pic" style={{width:"45px", height: "45px"}} />
-                </a>
-              </li> 
-            </ul>
-          </div>
-        </nav>
-      );
-      
+          <li className="mx-2 ">
+            <a
+              className="navbar-ul "
+              href="/#faqs"
+              onClick={() => handleClick("faqs")}
+              style={{ filter: "drop-shadow(3px 3px 5px #010101)" }}
+            >
+              Faqs
+            </a>
+          </li>
+          <li className="mx-2">
+            <a
+              className="navbar-ul"
+              href="/#schedule"
+              onClick={() => handleClick("schedule")}
+              style={{ filter: "drop-shadow(3px 3px 5px #010101)" }}
+            >
+              Schedule
+            </a>
+          </li>
+          <li className="mx-2">
+            <Link
+              className="navbar-ul"
+              to="/registration"
+              onClick={() => handleClick("registration")}
+              style={{ filter: "drop-shadow(3px 3px 5px #010101)" }}
+            >
+              Register
+            </Link>
+          </li>
+          <li className="mx-2">
+            <Link
+              className="navbar-ul"
+              to="/profile"
+              onClick={() => handleClick("profile")}
+            >
+              <img
+                className="profilee"
+                src={User}
+                alt="profile-pic"
+                style={{
+                  width: "45px",
+                  height: "45px",
+                  filter: "drop-shadow(3px 3px 5px #010101)",
+                }}
+              />
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;

@@ -1,17 +1,35 @@
-import React from 'react'
-import img from "../assets/cityscape-1.png"
-import img2 from "../assets/cityscape-1.png"
-import img3 from "../assets/cityscape-1.png"
-import '../App.css'
-import About from './About'
-import mascot from "../assets/mascot.png"
-import Typewriter from 'typewriter-effect/dist/core';
+import React, { useState, useEffect } from "react";
+import newBg from "../assets/newbg3.png";
+import "../App.css";
+import About from "./About";
+import Bat from "../assets/bat-mascot.gif";
+import Dialogue from "../assets/dialogue.png";
+import Dialogue2 from "../assets/dialogue2.png";
+import Typewriter from "typewriter-effect/dist/core";
 
 // new Typewriter('#typewriter', {
 //   strings: ['Hackman', 'v7'],
 //   autoStart: true,
 // });
+
 function Landing() {
+  const [showDialogue, setShowDialogue] = useState(true);
+  const [showAnotherDialogue, setShowAnotherDialogue] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowDialogue(false);
+    }, 20000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
+  const handleHover = () => {
+    setShowDialogue(false);
+    setShowAnotherDialogue(true);
+  };
 
   const handleScroll = (event) => {
     const container = event.target;
@@ -19,35 +37,86 @@ function Landing() {
     container.scrollTo({
       top: 0,
       left: container.scrollLeft + scrollAmount,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
- 
-  return (
-    <div id='land' className='custom-height'>
-    <div className="containz ">
-      <div className="">
-      <h1  className='karma' >HACKMAN v7</h1>
-      <h1 className='karma2 sh'>June 24th-25th</h1>
-      </div>
-      <section onWheel={handleScroll} className='elem'>
-        <div className="overlay"></div>
-        <img src={img} alt="" srcset="" style={{height:"120vh",width:"100vw",objectFit:"cover"}}></img> 
-      </section>
-      <section onWheel={handleScroll} className='elem'>
-      <div className="overlay"></div>
-      <img src={img2} alt="" srcset=""  style={{height:"120vh",width:"100vw",objectFit:"cover"}}/> 
-      </section>
-     {/* <div className="mascot ">
-        <picture  alt="mascot" >
-           <img height={250} width={240} src={mascot} loading="lazy" alt="mascot"/>
-        </picture>
-      </div> */}
-      </div>
-      
 
+  return (
+    <div id="land" className="custom-height-land">
+      <div className="containz">
+        {/* First Layer Bg */}
+        <section onWheel={handleScroll} className="elem">
+          <div className="overlay"></div>
+          <img
+            src={newBg}
+            alt=""
+            srcset=""
+            style={{ height: "120vh", width: "100vw", objectFit: "cover" }}
+          />
+        </section>
+        <section onWheel={handleScroll} className="elem">
+          <div className="overlay"></div>
+          <img
+            src={newBg}
+            alt=""
+            srcset=""
+            style={{ height: "120vh", width: "100vw", objectFit: "cover" }}
+          />
+        </section>
+        {/* First Layer Bg End */}
+        <div className="karma glass flex">
+          <h1
+            className="mb-4"
+            data-aos="slide-down"
+            style={{ filter: "drop-shadow(4px 4px 6px #010101)" }}
+          >
+            <span>HACKMAN </span>
+            <span>v7.0</span>
+          </h1>
+          <h3 className="karma2 mt-4">May 24th-25th</h3>
+        </div>
+        <div className="mascot" onMouseOver={handleHover} data-aos="slide-left">
+          <picture alt="mascot">
+            <img
+              height={130}
+              width={230}
+              src={Bat}
+              loading="lazy"
+              alt="mascot"
+            />
+          </picture>
+
+          {showDialogue && (
+            <div className="dialogue" id="dialogue">
+              <picture alt="dialogue-box">
+                <img
+                  height={70}
+                  width={120}
+                  src={Dialogue}
+                  loading="lazy"
+                  alt="hello"
+                />
+              </picture>
+            </div>
+          )}
+
+          {showAnotherDialogue && (
+            <div className="dialogue2" id="dialogue2">
+              <picture alt="dialogue-box2">
+                <img
+                  height={80}
+                  width={150}
+                  src={Dialogue2}
+                  loading="lazy"
+                  alt="hello"
+                />
+              </picture>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Landing
+export default Landing;

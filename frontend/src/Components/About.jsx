@@ -1,31 +1,26 @@
-import React from "react";
-import "../App.css";
-import Board from "../assets/board-about.png";
-import CityScape from "../assets/cityscape-3.png";
-import "../Css/About.css"
+import React, { useEffect } from "react";
+import "../Css/About.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function About() {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  });
   return (
-    <div id="about" className="custom-height about-con" style={{
-      backgroundImage: `url(${CityScape})`,
-      color: "white",
-      backgroundSize: "cover",
-    }}>
-      <div
-        className="abt-container vh-100 logo"
-        
-      >
+    <div id="about" className="custom-height-abt about-con custom-abt-bg">
+      <div className="abt-container logo" data-aos="slide-up">
         <div className="text-center">
-          <img
-            src={Board}
-            alt="board"
-            className="img-fluid boardd ki"
-            style={{ width: "20rem" }}
-          />
           <h1
-            className="heading pt-5"
-            style={{ letterSpacing: "0.5px" }}
+            id="about"
+            style={{
+              fontFamily: "karmatic",
+              filter: "drop-shadow(3px 3px 5px #010101)",
+            }}
           >
+            ABOUT
+          </h1>
+          <h1 className="heading pt-5" style={{ letterSpacing: "0.5px" }}>
             HACKMAN V7
           </h1>
           <h4
@@ -35,7 +30,14 @@ function About() {
             Date : June 24th - 25th
           </h4>
           <div className="content-box container-md container-sm abt-box">
-              <p className="p-3 small-text" style={{color: "black", letterSpacing:"0.5px", wordSpacing:"1px"}}>
+            <p
+              className="p-3 small-text"
+              style={{
+                color: "black",
+                letterSpacing: "0.5px",
+                wordSpacing: "1px",
+              }}
+            >
               HackMan v.7 is an Inter College, extravagant 24-hour Hackathon,
               hosted by the Department of ISE, Dayananda Sagar College of
               Engineering (DSCE), Bangalore. We give the brightest of minds a

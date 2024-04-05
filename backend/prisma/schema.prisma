@@ -22,10 +22,12 @@ model Participant {
 
 model Team {
   id String @id @default(uuid())
-  teamName String
+  teamName String @unique
   members Participant[]
   githubLink String?
   transactionId String @unique
   upiId String
   payStatus Boolean @default(false)
+  leaderEmail String
+  password String?
 }

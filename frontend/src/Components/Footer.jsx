@@ -1,42 +1,27 @@
 import React from "react";
-import "../App.css";
 import Board from "../assets/board-contact.png";
-
 import { Linkedin, Instagram, Mail } from "react-feather";
+import "../Css/footer.css";
 
-
-import CityScape from "../assets/cityscape-3.png";
-import "../Css/About.css";
 function Footer() {
   return (
-    <div
-      className="about-con custom-height"
-      id="contact"
-      style={{
-        backgroundImage: `url(${CityScape})`,
-        color: "white",
-        backgroundSize: "cover",
-      }}
-    >
+    <div className="about-con custom-height custom-foot-bg" id="contact">
       <div className="abt-container vh-110">
         <div className="text-center">
-          <img
-            src={Board}
-            alt="board"
-            className="img-fluid"
-            style={{ width: "20rem" }}
-          />
+          <h1 style={{ fontFamily: "karmatic" }}>CONTACT US</h1>
           <h1 className="heading pt-5" style={{ letterSpacing: "0.5px" }}>
             HACKMAN V7
           </h1>
           <h4
-
             className="dates pb-4 mb-4"
             // style={{ color: "black", letterSpacing: "1px" }}
           >
             Date : June 24th - 25th
           </h4>
-          <div className="content-box small-text container-md container-sm">
+          <div
+            data-aos="flip-down"
+            className="content-box small-text container-md container-sm transform transition-transform hover:scale-120"
+          >
             <div>
               <h2
                 style={{
@@ -55,7 +40,6 @@ function Footer() {
             >
               <ul style={{ listStyle: "none" }}>
                 <li>
-
                   <p style={{ paddingRight: "20px" }}>
                     Gagan S: <a href="tel:">+91 9008243280</a>
                   </p>
@@ -129,6 +113,5 @@ function Footer() {
     </div>
   );
 }
-
 
 export default Footer;

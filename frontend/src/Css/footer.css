@@ -1,35 +1,109 @@
 @font-face {
-    font-family: k;
-    src: url(ka1.ttf);
+    font-family: pixeloidsans;
+    src: url("../fonts/PixeloidSans.ttf");
+  }
+  @font-face {
+    font-family: karmatic ;
+    src: url("../fonts/ka1.ttf");
+  }
+  @font-face {
+    font-family: pixeloidsans-bold;
+    src: url("../fonts/PixeloidSans.ttf");
+  }
+  
+  .custom-height{
+    height: 120vh;
+  }
+  
+  @media (max-width:767px){
+    .custom-height {
+      height: 110vh; 
+  }
+  }
+  
+  .about-con{
+    font-family: pixeloidsans;
+    overflow: hidden;
+    }
+    .heading {
+      font-family: karmatic;
+      /* -webkit-text-stroke: 1px rgb(222, 188, 106);  */
+       color:rgb(222, 188, 126);
+    }
+    
+    @media (max-width:767px){
+      .heading {
+        color: rgb(215, 188, 126);
+      }
+    }
+    
+    .dates {
+      color: white; 
+      font-weight:bolder;
+    }
+    .content-box {
+      background-color: rgba(217, 217, 217, 0.624);
+      border: 2px solid rgba(39, 37, 37, 0.34);
+      border-radius: 7px;
+  
+      width:85%;
+      height:60%;
+      
+      align-items: center;
+      justify-content: center;
+    }
+    @media (min-width: 768px) {
+      .content-box {
+        width: 50%;
+      }
+    }  
+    @media (min-width: 768px) and (max-width: 1300px) {
+      .content-box {
+        width: 70%;
+      }
+    }
+  
+    .small-text {
+      font-size: 1.1em; 
+    }
+    @media (max-width: 767px) {
+      .small-text {
+        font-size: 0.7em;
+      }
+    }
+    @media (min-width: 768px) and (max-width: 1300px) {
+      .small-text {
+        font-size: 0.9em;
+      }
+    }
+    /* .nev{
+      background-color: rgba(7, 37, 44, 0.);
+    } */
+   .head{
+    margin-right: -180px;
+   }
+  
+   .ok{
+    margin-bottom: 3%;
+  }
+  .abt-box {
+  transition: transform 0.3s; /* Smooth transition for scale effect */
+  }
+  
+  .abt-box:hover {
+  transform: scale(1.1); /* Scale up on hover */
+  }
 
-}
-
-@font-face {
-    font-family: p;
-    src: url(PixeloidSans-Bold.ttf);
-}
-body{
-    overflow-y: visible;
-}
- 
-p{
-
-    font-family: p; 
-    align-items: center;
-    padding-left: 260px; 
-}
-.bg{
-
-    background-image: url('../assets/vector.png');
-    background-size: cover;
-     padding: 0;
-     background-position-x: center;
-
-}
-.title{
-    background-image: url('../assets/board.png');
-    background-size: contain; 
-    height: 60px;
-    width: 300px;
-
-}
+  .custom-foot-bg{
+        background-image: url("../assets/newbg3.png");
+        color : white;
+        background-size: cover;
+  }
+  
+  @media (max-width: 767px) {
+    .custom-foot-bg{
+      background-image: url("../assets/small-bg.jpeg");
+      color : white;
+      background-size: cover;
+  }
+  }
