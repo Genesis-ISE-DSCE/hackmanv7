@@ -26,7 +26,7 @@ function TeamName() {
                 Back
               </button>
             </Link>
-            <Link to="/members">
+            <Link to="/payment">
               <button className="btn  w-45" style={{ textDecoration: "none" }}>
                 Next
               </button>
