@@ -5,100 +5,47 @@ import { isValidEmail } from "../helpers/emailValidator";
 import { sendEmailToLeader } from "../utils/mailer";
 import { generateRandomPassword } from "../utils/randomPassword";
 import { hashSync } from "bcrypt";
-const salt:number = Number(process.env.SALT); 
-interface Participant {
+
+const salt: number = Number(process.env.SALT);
+
+interface Leader {
   name: string;
   email: string;
   phoneNumber: string;
-  isLead: boolean;
 }
 
 interface TeamInfo {
   name: string;
-  upiId: string;
-  transactionId: string;
 }
 
 export const registerController = async (req: Request, res: Response) => {
-  const { members, teamInfo }: { members: Participant[]; teamInfo: TeamInfo } =
-    req.body;
+  const { leader, teamInfo }: { leader: Leader; teamInfo: TeamInfo } = req.body;
 
-  if (
-    teamInfo.name === "" ||
-    teamInfo.transactionId === "" ||
-    teamInfo.upiId === ""
-  ) {
-    throw new AppError({
-      name: "BAD_REQUEST",
-      message: "Empty details found!",
-    });
-  }
-
-  const leader = members.find((user) => user.isLead === true);
-  const team = await db.team.create({
-    data: {
-      teamName: teamInfo.name,
-      upiId: teamInfo.upiId,
-      transactionId: teamInfo.transactionId,
-      leaderEmail: leader?.email || "",
-    },
-  });
-
-  if (team) {
-    members.map(async (member) => {
-      if (isValidEmail(member.email) || member.name !== "") {
-        throw new AppError({
-          name: "BAD_REQUEST",
-          message: "Fill all the details",
-        });
-      }
-      const teamMate = await db.participant.create({
-        data: {
-          name: member.name,
-          email: member.email,
-          phoneNumber: member.phoneNumber,
-          isLead: member.isLead,
-          teamId: team.id,
-        },
-      });
-      if (!teamMate) {
-        throw new AppError({
-          name: "INTERNAL_SERVER_ERROR",
-          message: "Some Error Occurred",
-        });
-      }
-    });
-    const password = generateRandomPassword(teamInfo.name);
-    const hashedPassword = hashSync(password,salt);
-    const updatedTeam = await db.team.create({
+  await db.$transaction(async (db) => {
+    const l = await db.leader.create({
       data: {
-        teamName: teamInfo.name,
-        upiId: teamInfo.upiId,
-        transactionId: teamInfo.transactionId,
-        leaderEmail: leader?.email || "",
-        password: password,
+        email: leader.email,
+        name: leader.name,
+        phoneNumber: leader.phoneNumber,
       },
     });
 
-    const status = await sendEmailToLeader(
-      team.leaderEmail,
-      teamInfo.name,
-      password
-    );
-
-    if (status && updatedTeam) {
-      return res
-        .status(201)
-        .json({ success: true, message: "Team successfully registered!" });
-    }
-
-    throw new AppError({
-      message: "Some error occured",
-      name: "INTERNAL_SERVER_ERROR",
+    const team = await db.team.create({
+      data: {
+        teamName: teamInfo.name,
+        leaderId: l.id,
+      },
     });
-  }
-  throw new AppError({
-    name: "INTERNAL_SERVER_ERROR",
-    message: "Some Error Occurred",
+
+    if (team && l) {
+      const password = generateRandomPassword(team.teamName);
+      await sendEmailToLeader(password, l.email, team.teamName);
+
+      return res.status(201).json({ message: "Registeration successfull!" });
+    }
+    throw new AppError({
+      name: "INTERNAL_SERVER_ERROR",
+      message: "Registeration Unsuccessfull!",
+    });
   });
 };

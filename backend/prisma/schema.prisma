@@ -10,6 +10,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Leader {
+  id String @id @default(uuid())
+  name String
+  email String @unique
+  phoneNumber String 
+  team Team?
+  password String?
+}
+
 model Participant {
   id String @id @default(uuid())
   name String
@@ -17,17 +26,15 @@ model Participant {
   phoneNumber String 
   team Team @relation(fields: [teamId] ,references: [id])
   teamId String
-  isLead Boolean @default(false)
 }
 
 model Team {
   id String @id @default(uuid())
   teamName String @unique
+  leader Leader @relation(fields: [leaderId], references: [id])
+  leaderId String @unique
   members Participant[]
   githubLink String?
-  transactionId String @unique
-  upiId String
+  paymentPic String?
   payStatus Boolean @default(false)
-  leaderEmail String
-  password String?
 }
