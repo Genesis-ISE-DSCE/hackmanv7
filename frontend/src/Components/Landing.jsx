@@ -73,7 +73,7 @@ function Landing() {
             <span>HACKMAN </span>
             <span>v7.0</span>
           </h1>
-          <h3 className="karma2 mt-4">May 24th-25th</h3>
+          <h3 className="karma2 mt-4">June 8th-9th</h3>
         </div>
         <div className="mascot" onMouseOver={handleHover} data-aos="slide-left">
           <picture alt="mascot">

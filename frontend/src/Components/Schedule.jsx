@@ -245,11 +245,11 @@ const Schedule = () => {
               <li>
                 <div>
                   <p className="imp-events">
-                    May 24th : 7:30AM - 8:30AM <br /> Team Check-In
+                    June 8th : 7:30AM - 8:30AM <br /> Team Check-In
                   </p>
-                  May 24th : 9:00AM - 10:30AM <p>Inauguration + Quick Guide</p>
+                  June 8th : 9:00AM - 10:30AM <p>Inauguration + Quick Guide</p>
                   <p className="imp-events">
-                    May 24th : 11:00AM <br /> Get, Set, HackMan v7.0!
+                    June 8th : 11:00AM <br /> Get, Set, HackMan v7.0!
                   </p>
                 </div>
               </li>
@@ -257,59 +257,59 @@ const Schedule = () => {
               <li>
                 <div>
                   <p className="imp-events">
-                    May 24th : 2:00PM - 3:00PM <br /> Feast Hour (Lunch)
+                    June 8th : 2:00PM - 3:00PM <br /> Feast Hour (Lunch)
                   </p>
-                  May 24th : 3:00PM <p>Engaged Mode Activated!</p>
-                  May 24th : 5:30PM - 6:00PM <p>Refreshment Break</p>
+                  June 8th : 3:00PM <p>Engaged Mode Activated!</p>
+                  June 8th : 5:30PM - 6:00PM <p>Refreshment Break</p>
                 </div>
               </li>
 
               <li>
                 <div>
-                  May 24th : 6:00PM<p>Resume Action!</p>
+                  June 8th : 6:00PM<p>Resume Action!</p>
                   <p className="imp-events">
-                    May 24th : 8:30PM - 9:30PM <br /> Dinner Dash
+                    June 8th : 8:30PM - 9:30PM <br /> Dinner Dash
                   </p>
-                  May 24th : 9:30PM <p>Keep Momentum!</p>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  <p className="imp-events">
-                    May 24th : 11:00 - 11:30PM <br /> Networking Bonanza
-                  </p>
-                  May 25th : 12:30AM - 1:30AM<p>Game Zone</p>
-                  May 25th : 1:30AM <p>Dark Mode On!</p>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  May 25th : 3:30AM - 4:30AM<p>Night Owl Shenanigans</p>
-                  <p className="imp-events">
-                    May 25th : 4:30AM <br /> Final Stretch
-                  </p>
-                  May 25th : 7:00AM - 8:00AM<p>Rejuvenate</p>
-                </div>
-              </li>
-
-              <li>
-                <div>
-                  May 25th : 8:00AM - 9:00AM<p>Breakfast Boost</p>
-                  <p className="imp-events">
-                    May 25th : 9:00AM - 10:00AM <br /> Evaluation - Phase 1
-                  </p>
-                  May 25th : 10:00 - 10:30AM<p>Tactical Adjustments</p>
+                  June 8th : 9:30PM <p>Keep Momentum!</p>
                 </div>
               </li>
 
               <li>
                 <div>
                   <p className="imp-events">
-                    May 25th : 10:30AM - 12:00PM <br /> Evaluation - Phase 2
+                    June 8th : 11:00 - 11:30PM <br /> Networking Bonanza
                   </p>
-                  May 25th : 12:00PM - 12:30PM <p>Victors' Celebration</p>
+                  June 9th : 12:30AM - 1:30AM<p>Game Zone</p>
+                  June 9th : 1:30AM <p>Dark Mode On!</p>
+                </div>
+              </li>
+
+              <li>
+                <div>
+                  June 9th : 3:30AM - 4:30AM<p>Night Owl Shenanigans</p>
+                  <p className="imp-events">
+                    June 9th : 4:30AM <br /> Final Stretch
+                  </p>
+                  June 9th : 7:00AM - 8:00AM<p>Rejuvenate</p>
+                </div>
+              </li>
+
+              <li>
+                <div>
+                  June 9th : 8:00AM - 9:00AM<p>Breakfast Boost</p>
+                  <p className="imp-events">
+                    June 9th : 9:00AM - 10:00AM <br /> Evaluation - Phase 1
+                  </p>
+                  June 9th : 10:00 - 10:30AM<p>Tactical Adjustments</p>
+                </div>
+              </li>
+
+              <li>
+                <div>
+                  <p className="imp-events">
+                    June 9th : 10:30AM - 12:00PM <br /> Evaluation - Phase 2
+                  </p>
+                  June 9th : 12:00PM - 12:30PM <p>Victors' Celebration</p>
                 </div>
               </li>
               <li></li>
