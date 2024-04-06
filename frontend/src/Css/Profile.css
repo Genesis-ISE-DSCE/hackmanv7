@@ -28,8 +28,8 @@
 }
 
 .profile-heading {
-  font-size: 3em;
-  padding-top: 8%;
+  /* font-size: 3em; */
+  padding-top: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +38,7 @@
 }
 @media (max-width: 768px) {
   .profile-heading {
-    padding-top: 25%;
+    padding-top: 30%;
   }
 }
 
@@ -51,8 +51,11 @@
   transform: scale(1.1);
 }
 .contain {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  justify-content: center;
 }
 
 .details {
@@ -60,12 +63,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1%;
+  /* margin-top: 1%; */
+  
   flex-direction: column;
-  background-color: rgba(9, 56, 94, 0.718);
-  width: 60%;
+  background-color: rgba(235, 232, 232, 0.846);
+  width: 80%;
   border: 2px solid black;
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
 }
 
 .team-detail {
@@ -79,7 +83,7 @@
   
   place-items: center;
   /* padding-top: 2%; */
-  padding-bottom: 5%;
+  /* padding-bottom: 5%; */
   width: 80%;
 }
 
@@ -94,8 +98,11 @@
     font-size: x-small;
   }
   .details {
-    scale: 0.8;
-    width: fit-content;
+    scale: 0.61;
+    /* width: fit-content; */
+    width: auto;
+    padding: 5%;
+    margin-top: -25%;
 
   }
   .form-container {
@@ -117,12 +124,14 @@
 
 .custom-table {
   font-family: pixeloidsans;
+  color: black;
   font-size: 15px;
-  background-color: rgb(26, 94, 150);
-  border-radius: 0.5rem;
+  background-color: rgba(153, 153, 153, 0.713);
+  /* border-radius: 0.5rem; */
   border: white;
   text-align: center;
-  width: 90%;
+  width: 100%;
+  
 
 }
 .right-p {
@@ -140,7 +149,7 @@
 
 .custom-prof-bg {
   background-image: url("../assets/newbg3.png");
-  color: white;
+  color: rgb(0, 0, 0);
   background-size: cover;
 }
 
@@ -158,7 +167,7 @@
   width: 300px;
   /* padding: 10px; */
   background-color: #f0f0f0; 
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
@@ -176,6 +185,8 @@
 
 .table-container {
   margin-top: 0; 
+  width: 90%;
+  margin: 2%;
 }
 
 @media (max-width: 768px) {
@@ -213,7 +224,7 @@
 }
 
 .custum-file-upload .icon svg {
-  height: 8px;
+  height: 5em;
   fill: #e8e8e8;
   
 }
@@ -230,13 +241,27 @@
 }
 
 .custum-file-upload .text span {
-  font-weight: 400;
-  color: #e8e8e8;
+  font-weight: 200;
+  color: #000000;
   justify-items: center;
-  padding-left: 200px;
 }
 
 .custum-file-upload input {
   display: none;
  
 }
+.add-remove-btn{
+    border: none;
+    outline: 1px dotted rgb(37, 37, 37);
+    outline-offset: -4px;
+    background: hsl(0deg 0% 75%);
+    box-shadow: inset -1px -1px #292929, inset 1px 1px #fff, inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 5px 30px;
+  }
+  
+  .add-remove-btn:active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #292929, inset -2px -2px #ffffff, inset 2px 2px rgb(158, 158, 158);
+  }
