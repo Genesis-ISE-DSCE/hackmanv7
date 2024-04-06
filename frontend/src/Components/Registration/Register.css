@@ -28,7 +28,7 @@ input[type="number"] {
 }
 @media (min-width: 768px) and (max-width: 1300px) {
   .kard {
-    margin-top: 25%;
+    margin-top: 10%;
   }
 }
 .form-control::placeholder {
