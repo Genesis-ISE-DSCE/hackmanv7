@@ -14,10 +14,11 @@
 .custom-height {
   height: 120vh;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .custom-height {
     height: 110vh;
   }
+  
 }
 
 #profile {
@@ -39,7 +40,7 @@
 @media (max-width: 768px) {
   .profile-heading {
     padding-top: 30%;
-  }
+  } 
 }
 
 .profilee {
@@ -51,6 +52,7 @@
   transform: scale(1.1);
 }
 .contain {
+  
   display: flex;
   flex-direction: column;
   /* flex-wrap: wrap; */
@@ -67,7 +69,7 @@
   
   flex-direction: column;
   background-color: rgba(235, 232, 232, 0.846);
-  width: 80%;
+  width:80%;
   border: 2px solid black;
   /* border-radius: 1rem; */
 }
@@ -107,7 +109,7 @@
   }
   .form-container {
     margin: 0 auto;
-    /* padding: 20px; */
+    
    
   }
   .form-group{
@@ -190,9 +192,19 @@
 }
 
 @media (max-width: 768px) {
+
   .table-responsive {
     overflow-x: auto;
   }
+  .details{
+   
+    margin-top: 0 !important;
+    padding: 10px;
+  }
+  #file{
+    padding-left: 30px !important;
+  }
+   
   .svgg{
     height: 100px;
     width: 250px;
@@ -205,6 +217,13 @@
   .file-upload1{
     padding-left: 100px;
 
+  }
+  .table-container{
+    width: 100%;
+  }
+  input[name="Github Project Url"] {
+    margin-bottom: 0 !important;
+   
   }
 }
 
@@ -265,3 +284,11 @@
   .add-remove-btn:active {
     box-shadow: inset -1px -1px #fff, inset 1px 1px #292929, inset -2px -2px #ffffff, inset 2px 2px rgb(158, 158, 158);
   }
+
+  
+  @media(min-width:768px) {
+  #file{
+    padding-left: 120px !important;
+
+  }
+}
