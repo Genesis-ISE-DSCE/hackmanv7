@@ -1,25 +1,25 @@
 @font-face {
-    font-family: pixeloidsans;
-    src: url("../fonts/PixeloidSans.ttf");
+  font-family: pixeloidsans;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+  font-family: karmatic ;
+  src: url("../fonts/ka1.ttf");
+}
+@font-face {
+  font-family: pixeloidsans-bold;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+
+.custom-height{
+  height: 120vh;
+}
+
+@media (max-width:767px){
+  .custom-height {
+    height: 110vh; 
   }
-  @font-face {
-    font-family: karmatic ;
-    src: url("../fonts/ka1.ttf");
-  }
-  @font-face {
-    font-family: pixeloidsans-bold;
-    src: url("../fonts/PixeloidSans.ttf");
-  }
-  
-  .custom-height{
-    height: 120vh;
-  }
-  
-  @media (max-width:767px){
-    .custom-height {
-      height: 110vh; 
-  }
-  }
+}
   
   .about-con{
     font-family: pixeloidsans;
@@ -106,4 +106,4 @@
       color : white;
       background-size: cover;
   }
-  }
+}

@@ -1,25 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import "../Css/About.css";
 import User from "../assets/user-profile.png";
 import "../App.css";
 
 function Navbar() {
+
   const handleClick = (item) => {
     const element = document.getElementById("item");
     if (item === "home") {
-      window.location.href = "/"; // Redirect to the home page
+      window.location.href = "/";
     }
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   return (
-    <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center actual-nav pb-3 pt-2 ">
+    <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center actual-nav pb-2" style={{height: '60px'}}>
       <div className="head">
         <a href="/">
           <div
-            className="heading fs-4 mx-3"
+            className="heading fs-4 px-4 mb-3"
             style={{ filter: "drop-shadow(3px 3px 5px #010101)" }}
           >
             Hackman
@@ -43,10 +45,10 @@ function Navbar() {
         id="navbarNav"
       >
         <ul
-          className="list-unstyled d-flex flex-column align-items-center flex-md-row fs-5 gap-4 gap-md-2 gap-lg-2 my-3 mt-4 "
+          className="list-unstyled d-flex flex-column align-items-center flex-md-row fs-5 gap-4 gap-md-2 gap-lg-3 mt-3"
           style={{ fontFamily: "pixeloidsansbold" }}
         >
-          <li className="mx-2 ">
+          <li className="mx-2">
             <a
               className="navbar-ul"
               href="/#land"
@@ -66,9 +68,6 @@ function Navbar() {
               About
             </a>
           </li>
-          {/* <li className="mx-2">
-                <a className="navbar-ul" href="/#contact" onClick={() => handleClick("contact")}>Contact</a>
-              </li> */}
           <li className="mx-2 ">
             <a
               className="navbar-ul "

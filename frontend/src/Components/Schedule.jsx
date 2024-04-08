@@ -4,7 +4,7 @@ import Board from "../assets/event-board.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-import "../Css/Schedule.css";
+import "../Css/schedule.css";
 // import Schedule1 from "../assets/schedule-1.png";
 // import Schedule2 from "../assets/schedule-2.png";
 // import Schedule3 from "../assets/schedule-3.png";
@@ -233,12 +233,12 @@ const Schedule = () => {
           }}
           data-aos="slide-up"
         >
-          EVENT SCHEDULE
+          E V E N T || S C H E D U L E
         </h1>
         <section
           className="timeline"
           ref={timelineRef}
-          style={{ fontFamily: "pixeloidSans" }}
+          style={{ fontFamily: "pixeloidSans", overflowX: "auto", overflowY: "hidden" }}
         >
           <div className="items-wrap" data-aos="slide-up">
             <ol>

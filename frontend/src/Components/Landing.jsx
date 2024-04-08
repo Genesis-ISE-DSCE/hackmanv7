@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react";
 import newBg from "../assets/newbg3.png";
 import "../App.css";
-import About from "./About";
+import "../Css/landing.css";
 import Bat from "../assets/bat-mascot.gif";
 import Dialogue from "../assets/dialogue.png";
 import Dialogue2 from "../assets/dialogue2.png";
-import Typewriter from "typewriter-effect/dist/core";
-
-// new Typewriter('#typewriter', {
-//   strings: ['Hackman', 'v7'],
-//   autoStart: true,
-// });
 
 function Landing() {
   const [showDialogue, setShowDialogue] = useState(true);
@@ -44,7 +38,6 @@ function Landing() {
   return (
     <div id="land" className="custom-height-land">
       <div className="containz">
-        {/* First Layer Bg */}
         <section onWheel={handleScroll} className="elem">
           <div className="overlay"></div>
           <img
@@ -63,23 +56,21 @@ function Landing() {
             style={{ height: "120vh", width: "100vw", objectFit: "cover" }}
           />
         </section>
-        {/* First Layer Bg End */}
-        <div className="karma glass flex">
+        <div className="karma glass flex w-full">
           <h1
             className="mb-4"
             data-aos="slide-down"
             style={{ filter: "drop-shadow(4px 4px 6px #010101)" }}
           >
-            <span>HACKMAN </span>
-            <span>v7.0</span>
+            H A C K M A N || v7.0
           </h1>
-          <h3 className="karma2 mt-4">June 8th-9th</h3>
+          <h3 className="karma2">June 8th-9th</h3>
         </div>
+
         <div className="mascot" onMouseOver={handleHover} data-aos="slide-left">
           <picture alt="mascot">
             <img
-              height={130}
-              width={230}
+              height={240}
               src={Bat}
               loading="lazy"
               alt="mascot"
@@ -90,8 +81,7 @@ function Landing() {
             <div className="dialogue" id="dialogue">
               <picture alt="dialogue-box">
                 <img
-                  height={70}
-                  width={120}
+                  height={80}
                   src={Dialogue}
                   loading="lazy"
                   alt="hello"
@@ -105,7 +95,6 @@ function Landing() {
               <picture alt="dialogue-box2">
                 <img
                   height={80}
-                  width={150}
                   src={Dialogue2}
                   loading="lazy"
                   alt="hello"

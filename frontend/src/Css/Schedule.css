@@ -187,6 +187,16 @@ a {
 }
 
 /* RESPONSIVE STYLES */
+
+@media (min-width: 768px) {
+  .timeline {
+    white-space: nowrap;
+    overflow-x: auto;
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+
 @media (max-width: 767px) {
   .timeline {
     white-space: nowrap;
@@ -195,7 +205,7 @@ a {
 
   .timeline ol,
   .timeline ol li {
-    width: 100%; /* Expand to full width */
+    width: 100%; 
   }
 
   .timeline ol {
@@ -266,7 +276,6 @@ a {
 
 .eventHeading {
   padding-bottom: 1%;
-  word-spacing: 5px;
 }
 
 @media (max-width: 767px) {

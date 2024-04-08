@@ -8,7 +8,7 @@ function Footer() {
     <div className="about-con custom-height custom-foot-bg" id="contact">
       <div className="abt-container vh-110">
         <div className="text-center">
-          <h1 style={{ fontFamily: "karmatic" }}>CONTACT US</h1>
+          <h1 style={{ fontFamily: "karmatic" }}>C O N T A C T || US</h1>
           <h1 className="heading pt-5" style={{ letterSpacing: "0.5px" }}>
             HACKMAN V7
           </h1>
@@ -110,6 +110,7 @@ function Footer() {
           </div>
         </div>
       </div>
+      <div className="madeby text-center font-semibold text-white p-2 bg-[#0b4d81]">Made by team <a href="https://www.instagram.com/genesis.ise/" rel='noreferrer noopener' target="_blank" className='text-purple-300'>Genesis</a> with ❤️</div>
     </div>
   );
 }
