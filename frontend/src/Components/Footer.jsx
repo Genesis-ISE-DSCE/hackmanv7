@@ -1,7 +1,6 @@
 import React from "react";
 import { Linkedin, Instagram, Mail } from "react-feather";
 import "../Css/footer.css";
-import img from "../assets/images/WHAT__1_-removebg-preview.png";
 
 function Footer() {
   return (
