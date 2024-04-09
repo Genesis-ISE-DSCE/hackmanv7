@@ -1,0 +1,52 @@
+@font-face {
+    font-family: pixeloidsans;
+    src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+    font-family: karmatic ;
+    src: url("../fonts/ka1.ttf");
+}
+@font-face {
+    font-family: pixeloidsans-bold;
+    src: url("../fonts/PixeloidSans.ttf");
+}
+
+.navbar {
+    background: rgba(10, 60, 98, 0.674);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+  
+.navbar-ul {
+    color: rgb(255, 255, 255);
+}
+
+.actual-nav {
+    height: 11%;
+}
+
+@media (max-width: 767px) {
+    .actual-nav {
+        height: auto;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .actual-nav {
+        height: auto;
+        width: 100vw;
+    }
+    .mascot {
+        right: -7%;
+    }
+}
+
+.navbar-ul:hover {
+    color: white;
+}
+
+@media (max-width: 767px) {
+    .actual-nav {
+        height: auto;
+        width: 100vw;
+    }
+}

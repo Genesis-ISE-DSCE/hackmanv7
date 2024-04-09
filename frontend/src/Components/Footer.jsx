@@ -5,19 +5,10 @@ import "../Css/footer.css";
 
 function Footer() {
   return (
-    <div className="about-con custom-height custom-foot-bg" id="contact">
-      <div className="abt-container vh-110">
+    <div className="about-con custom-foot-bg" id="contact">
+      <div className="abt-container">
         <div className="text-center">
-          <h1 style={{ fontFamily: "karmatic" }}>C O N T A C T || US</h1>
-          <h1 className="heading pt-5" style={{ letterSpacing: "0.5px" }}>
-            HACKMAN V7
-          </h1>
-          <h4
-            className="dates pb-4 mb-4"
-            // style={{ color: "black", letterSpacing: "1px" }}
-          >
-            Date : June 8th - 9th
-          </h4>
+        <h1 className="text-center mt-0">C O N T A C T || U S</h1>
           <div
             data-aos="flip-down"
             className="content-box small-text container-md container-sm transform transition-transform hover:scale-120"
@@ -110,7 +101,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="madeby text-center font-semibold text-white p-2 bg-[#0b4d81]">Made by team <a href="https://www.instagram.com/genesis.ise/" rel='noreferrer noopener' target="_blank" className='text-purple-300'>Genesis</a> with ❤️</div>
+      <div className="madeby text-center font-semibold text-white p-2 bg-[black]">Made by team <a href="https://www.instagram.com/genesis.ise/" rel='noreferrer noopener' target="_blank" className='text-purple-300'>Genesis</a> with ❤️</div>
     </div>
   );
 }

@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import "../Css/About.css";
+import "../Css/navbar.css";
 import User from "../assets/user-profile.png";
-import "../App.css";
 
 function Navbar() {
 
