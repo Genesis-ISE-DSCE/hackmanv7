@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "../Css/about.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import img from "../assets/Ays.jpeg";
+import img from "../assets/images/aboutimg.png";
 
 function About() {
   useEffect(() => {
