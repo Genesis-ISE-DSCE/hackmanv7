@@ -4,7 +4,7 @@ import Board from "../assets/event-board.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-import "../Css/schedule.css";
+import "../Css/Schedule.css";
 // import Schedule1 from "../assets/schedule-1.png";
 // import Schedule2 from "../assets/schedule-2.png";
 // import Schedule3 from "../assets/schedule-3.png";

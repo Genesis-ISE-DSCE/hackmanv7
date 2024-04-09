@@ -22,7 +22,7 @@
 }
 
 .abt-container {
-  padding-top: 8%;
+  padding-top: 1%;
 }
 
 @media (max-width: 767px) {
@@ -54,21 +54,28 @@
   backdrop-filter: blur(23px);
   -webkit-backdrop-filter: blur(23px);
   font-weight: bolder;
-  width: 85%;
+  width: 100%; /* Set width to 100% for PC */
   height: 60%;
+  display: flex; /* Use flexbox */
   align-items: center;
   justify-content: center;
+  margin: auto;
 }
+
 @media (min-width: 768px) {
   .content-box {
     width: 50%;
+    margin: 0;
   }
 }
+
 @media (min-width: 768px) and (max-width: 1300px) {
   .content-box {
     width: 70%;
   }
 }
+
+
 
 .small-text {
   font-size: 1.1em;
