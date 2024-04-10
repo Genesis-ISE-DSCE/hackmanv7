@@ -5,6 +5,7 @@ import { isValidEmail } from "../helpers/emailValidator";
 import { sendEmailToLeader } from "../utils/mailer";
 import { generateRandomPassword } from "../utils/randomPassword";
 import { hashSync } from "bcrypt";
+import { addJobs, worker } from "../utils/emailQueue";
 
 const salt: number = Number(process.env.SALT);
 
@@ -39,7 +40,17 @@ export const registerController = async (req: Request, res: Response) => {
 
     if (team && l) {
       const password = generateRandomPassword(team.teamName);
-      await sendEmailToLeader(password, l.email, team.teamName);
+
+      const emailOptions = {
+        password: password,
+        email: l.email,
+        teamName: teamInfo.name,
+      };
+
+      addJobs(emailOptions);
+      worker.on("completed", (job, result) => {
+        console.log(`Job ${job.id} completed successfully`);
+      });
 
       return res.status(201).json({ message: "Registeration successfull!" });
     }
