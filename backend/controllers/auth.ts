@@ -23,11 +23,13 @@ export const registerController = async (req: Request, res: Response) => {
   const { leader, teamInfo }: { leader: Leader; teamInfo: TeamInfo } = req.body;
 
   await db.$transaction(async (db) => {
+    const password = generateRandomPassword(teamInfo.name);
     const l = await db.leader.create({
       data: {
         email: leader.email,
         name: leader.name,
         phoneNumber: leader.phoneNumber,
+        password: password,
       },
     });
 
@@ -39,8 +41,6 @@ export const registerController = async (req: Request, res: Response) => {
     });
 
     if (team && l) {
-      const password = generateRandomPassword(team.teamName);
-
       const emailOptions = {
         password: password,
         email: l.email,

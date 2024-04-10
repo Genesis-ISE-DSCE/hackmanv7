@@ -1,186 +1,211 @@
-import { Request, Response } from 'express';
-import { PrismaClient } from '@prisma/client';
-import { db } from '../utils/db';
-import { compareSync } from 'bcrypt';
-import jwt from 'jsonwebtoken';
-const prisma = new PrismaClient();
-// auth
+import { Request, Response } from "express";
+import { PrismaClient } from "@prisma/client";
+import { db } from "../utils/db";
+import { compareSync } from "bcrypt";
+import jwt from "jsonwebtoken";
+import { HttpStatus } from "../utils/statusCodes";
+import { AppError } from "../utils/error";
+
+const JWT_SECRET = process.env.JWT_SECRET;
+
+//AUTHENTICATION
 export const login = async (req: Request, res: Response) => {
-    const { email, password } = req.body;
-    try{
-        const user = await db.team.findFirst({
-            where: {
-                leaderEmail: email,
-            },
-        });
-        if (!user)
-            throw new Error("No user found with the given email address")
-        if (user.password && compareSync(password, user.password)) {
-            const token = jwt.sign({ email: user.leaderEmail,teamName:user.teamName }, process.env["JWT_KEY"] as string);
-            res.status(200).json({ token, msg: "Authenticated", status: true });
-        }
-        else {
-            throw new Error("Authentication failed, Invalid credentials");
-        }
-    }
-    catch(err){
-        res.json({
-            status:false,
-            err
-        })
-    }
-}
+  const { email, password } = req.body;
+
+  const user = await db.leader.findUnique({
+    where: {
+      email,
+    },
+  });
+
+  if (!user) {
+    return res.status(HttpStatus.NOT_FOUND).json({ message: "User Not Found" });
+  }
+
+  if (!JWT_SECRET) {
+    throw new Error("JWT secret is not defined");
+  }
+
+  if (user.password && compareSync(password, user.password)) {
+    const token = jwt.sign({ email: user.email, userId: user.id }, JWT_SECRET);
+    res
+      .status(HttpStatus.OK)
+      .json({ token: token, message: "Login SUccessfull" });
+  } else {
+    return res
+      .status(HttpStatus.UNAUTHORIZED)
+      .json({ message: "Authentication Failed, Invalid Creds" });
+  }
+
+  throw new AppError({
+    name: "INTERNAL_SERVER_ERROR",
+    message: "Internal server error in Login",
+  });
+};
+
+//GET TEAM DETAILS
 export const getTeamDetails = async (req: Request, res: Response) => {
-    const teamName = req.user.teamName;
-    try {
-        const team = await prisma.team.findUnique({
-            where: {
-                teamName
-            },
-            include: {
-                members: true,
-            },
-        });
+  const teamName = req.user.teamName;
 
-        if (!team) {
-            return res.status(404).json({ status: false, error: 'Team not found' });
-        }
+  const team = await db.team.findUnique({
+    where: {
+      teamName,
+    },
 
-        res.status(200).json({ team, status: true });
-    } catch (error) {
-        console.error('Error fetching team details:', error);
-        res.status(500).json({ error: 'Internal server error' });
-    }
-}
-export const addTeamMember = async (req: Request, res: Response) => {
-    const { teamId, name, email, phoneNumber, isLead } = req.body;
+    include: {
+      members: true,
+    },
+  });
 
-    try {
-        // Check if the team already has 4 members
-        const teamMembersCount = await prisma.participant.count({
-            where: {
-                teamId,
-            },
-        });
+  if (!team) {
+    return res
+      .status(HttpStatus.NOT_FOUND)
+      .json({ message: "Team Does Not Exist" });
+  }
 
-        if (teamMembersCount >= 4) {
-            return res.status(400).json({ status: false, error: 'Team already has maximum members' });
-        }
+  res.status(HttpStatus.OK).json({ team: team });
 
-        // Add the team member
-        const newMember = await prisma.participant.create({
-            data: {
-                name,
-                email,
-                phoneNumber,
-                teamId,
-                isLead,
-            },
-        });
-
-        res.status(201).json({ newMember, status: true });
-    } catch (error) {
-        console.error('Error adding team member:', error);
-        res.status(500).json({ status: false, error: 'Internal server error' });
-    }
+  throw new AppError({
+    name: "INTERNAL_SERVER_ERROR",
+    message: "Error in fetching Team Details",
+  });
 };
 
-// Change phoneNumber of a team member
+//ADD NEW TEAM MEMBER
+export const addTeamMemeber = async (req: Request, res: Response) => {
+  const { teamId, name, email, phoneNumber } = req.body;
+  const memberCount = await db.participant.count({
+    where: {
+      teamId,
+    },
+  });
+
+  if (memberCount >= 4) {
+    return res
+      .status(HttpStatus.BAD_REQUEST)
+      .json({ message: "Team already has maximum members" });
+  }
+
+  const newMember = await db.participant.create({
+    data: {
+      name,
+      email,
+      phoneNumber,
+      team: {
+        connect: { id: teamId },
+      },
+    },
+  });
+
+  await db.team.update({
+    where: { id: teamId },
+    data: {
+      members: {
+        connect: { id: newMember.id },
+      },
+    },
+  });
+
+  res
+    .status(HttpStatus.OK)
+    .json({ message: "Member Added Succesfully", member: newMember });
+
+  throw new AppError({
+    name: "INTERNAL_SERVER_ERROR",
+    message: "error in team member addition",
+  });
+};
+
+//UPDATE MEMBER NUMBER
 export const changePhoneNumber = async (req: Request, res: Response) => {
-    const { memberId } = req.params;
-    const { phoneNumber } = req.body;
+  const { phoneNumber } = req.body;
+  const { memberId } = req.params;
 
-    try {
-        const updatedMember = await prisma.participant.update({
-            where: {
-                id: memberId,
-            },
-            data: {
-                phoneNumber,
-            },
-        });
+  const updateNumber = await db.participant.update({
+    where: {
+      id: memberId,
+    },
+    data: {
+      phoneNumber,
+    },
+  });
 
-        res.status(200).json({ status: true, updatedMember });
-    } catch (error) {
-        console.error('Error changing phone number:', error);
-        res.status(500).json({ status: false, error: 'Internal server error' });
-    }
+  res
+    .status(HttpStatus.OK)
+    .json({ changedNumber: phoneNumber, message: "Updation Succesfull" });
+
+  throw new AppError({
+    name: "INTERNAL_SERVER_ERROR",
+    message: "Error in updation number",
+  });
 };
 
-// Remove a team member if not a lead
-export const removeTeamMember = async (req: Request, res: Response) => {
-    const { memberId } = req.params;
+//Removal OF MEMBER
+export const removeMember = async (req: Request, res: Response) => {
+  const { memberId } = req.params;
+  const member = await db.participant.findUnique({
+    where: {
+      id: memberId,
+    },
+  });
 
-    try {
-        const member = await prisma.participant.findUnique({
-            where: {
-                id: memberId,
-            },
-        });
+  if (!member) {
+    return res
+      .status(HttpStatus.NOT_FOUND)
+      .json({ message: "Member does not exist " });
+  }
 
-        if (!member) {
-            return res.status(404).json({ status: false, error: 'Member not found' });
-        }
+  await db.participant.delete({
+    where: { id: memberId },
+  });
 
-        if (!member.isLead) {
-            await prisma.participant.delete({
-                where: {
-                    id: memberId,
-                },
-            });
-            res.status(200).json({ status: true, message: 'Member removed successfully' });
-        } else {
-            res.status(400).json({ status: false, error: 'Lead member cannot be removed' });
-        }
-    } catch (error) {
-        console.error('Error removing team member:', error);
-        res.status(500).json({ error: 'Internal server error' });
-    }
+  res
+    .status(HttpStatus.OK)
+    .json({ message: "Memeber Deleted", member: member });
+
+  throw new AppError({
+    name: "INTERNAL_SERVER_ERROR",
+    message: "error in removing member",
+  });
 };
 
-// Edit team member
+//EDIT TEAM MEMBERS
 export const editTeamMember = async (req: Request, res: Response) => {
-    const { memberId } = req.params;
-    const { name, email, phoneNumber, isLead } = req.body;
+  const { memberId } = req.params;
+  const { name, email, phoneNumber } = req.body;
 
-    try {
-        const updatedMember = await prisma.participant.update({
-            where: {
-                id: memberId,
-            },
-            data: {
-                name,
-                email,
-                phoneNumber,
-                isLead,
-            },
-        });
+  const updateMember = await db.participant.update({
+    where: { id: memberId },
+    data: {
+      name,
+      email,
+      phoneNumber,
+    },
+  });
 
-        res.status(200).json({ updatedMember, status: true });
-    } catch (error) {
-        console.error('Error editing team member:', error);
-        res.status(500).json({ status: false, error: 'Internal server error' });
-    }
+  res.status(HttpStatus.OK).json({ update: updateMember });
+
+  throw new AppError({
+    name: "INTERNAL_SERVER_ERROR",
+    message: "Error in editing team",
+  });
 };
 
-// Add or edit github link of a team
-export const addOrEditGithubLink = async (req: Request, res: Response) => {
-    const { teamId } = req.params;
-    const { githubLink } = req.body;
+//EDIT GITHUB
+export const addOrEditgithub = async (req: Request, res: Response) => {
+  const { teamId } = req.params;
+  const { githubLink } = req.body;
 
-    try {
-        const updatedTeam = await prisma.team.update({
-            where: {
-                id: teamId,
-            },
-            data: {
-                githubLink,
-            },
-        });
+  const updatedTeam = await db.team.update({
+    where: { id: teamId },
+    data: {
+      githubLink,
+    },
+  });
+  res.status(HttpStatus.OK).json({ message: "github added" });
 
-        res.status(200).json({ status: true, updatedTeam });
-    } catch (error) {
-        console.error('Error adding/editing github link:', error);
-        res.status(500).json({ status: false, error: 'Internal server error' });
-    }
+  throw new AppError({
+    name: "INTERNAL_SERVER_ERROR",
+    message: "Error in addoreditgithub",
+  });
 };
