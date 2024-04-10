@@ -26,11 +26,19 @@
 @media (max-width: 767px) {
     .title-sub {
         padding-top: 3rem;
-        padding-bottom: 4rem;
         font-size: 1.6rem;
     }
     .image-container {
-        scale: 0.9;
+        width: 90%; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .image-column img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        object-position: center; 
+        padding-bottom: 2rem;
     }
 }
   
@@ -41,7 +49,25 @@
         font-size: 2.8rem;
     }
     .image-container {
-        scale: 0.9;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: minmax(300px, auto);;
+        gap: 16px;
+        width: 90%; 
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .image-column {
+        background-color: bisque;
+        height: 300px;
+    } 
+    .image-column img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        object-position: center; 
     }
 }
   
@@ -52,30 +78,26 @@
         font-size: 2.6rem;
     }
     .image-container {
-        scale: 0.9;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: minmax(300px, auto);;
+        gap: 16px;
+        width: 95%;
+        height: auto; 
+        margin-left: auto;
+        margin-right: auto;
     }
-}
-
-.image-container {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: minmax(300px, auto);;
-    gap: 16px;
-    width: 100%; 
-    margin: 0 auto;
-}
-
-.image-column {
-    background-color: bisque;
-    height: 300px;
-}
-
-.image-column img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the entire box while maintaining aspect ratio */
-    object-position: center; /* Centers the image within the box */
+    .image-column {
+        background-color: bisque;
+        height: 300px;
+    }
+    .image-column img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        object-position: center; 
+    }
 }
 
 .double-width {
@@ -85,4 +107,8 @@
 .double-height {
     grid-row: span 2;
     height: 616px;
+}
+
+.gallery {
+    padding-bottom: 4rem;
 }
