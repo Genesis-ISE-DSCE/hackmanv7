@@ -55,13 +55,13 @@ function Landing() {
             style={{ height: "100vh", width: "100vw", objectFit: "cover" }}
           />
         </section>
-        <div className="karma glass flex w-full">
+        <div className="karma glass">
           <h1
             className="mb-4 title"
             data-aos="slide-down"
             style={{ filter: "drop-shadow(4px 4px 6px #010101)" }}
           >
-            H A C K M A N || v7.0
+            H A C K M A N
           </h1>
           <h3 className="karma2">June 8th-9th</h3>
         </div>

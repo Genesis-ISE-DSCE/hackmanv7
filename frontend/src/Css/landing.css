@@ -186,15 +186,15 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        padding-bottom: 8%;
-        padding-top: 4%;
+        padding-bottom: 6%;
+        padding-top: 2.4%;
         padding-right: 4%;
         padding-left: 4%;
         margin-top: 2rem;
     }
 
     .title {
-        font-size: 4rem;
+        font-size: 6rem;
     }
 
     .mascot {
@@ -207,6 +207,6 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        margin-top: 5rem;
+        margin-top: 4.8rem;
     }
 }

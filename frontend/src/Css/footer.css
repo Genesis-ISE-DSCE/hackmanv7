@@ -46,6 +46,9 @@
     padding-bottom: 4rem;
     font-size: 1.6rem;
   }
+  .content-box {
+    width: 90%;
+  }
   .links-box {
     width: 60%;
   }

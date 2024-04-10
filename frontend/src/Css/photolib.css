@@ -1,0 +1,88 @@
+@font-face {
+    font-family: pixeloidsans;
+    src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+    font-family: karmatic;
+    src: url("../fonts/ka1.ttf");
+}
+@font-face {
+    font-family: pixeloidsans-bold;
+    src: url("../fonts/PixeloidSans.ttf");
+}
+
+.custom-abt-bg {
+    background-image: url("../assets/newbg3.png");
+    color: white;
+    background-size: cover;
+}
+  
+.title-sub {
+    font-family: karmatic;
+    color: white;
+    text-align: center;
+}
+  
+@media (max-width: 767px) {
+    .title-sub {
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+        font-size: 1.6rem;
+    }
+    .image-container {
+        scale: 0.9;
+    }
+}
+  
+@media (min-width: 768px) and (max-width: 991px) {
+    .title-sub {
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+        font-size: 2.8rem;
+    }
+    .image-container {
+        scale: 0.9;
+    }
+}
+  
+@media (min-width: 992px) {
+    .title-sub {
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+        font-size: 2.6rem;
+    }
+    .image-container {
+        scale: 0.9;
+    }
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: minmax(300px, auto);;
+    gap: 16px;
+    width: 100%; 
+    margin: 0 auto;
+}
+
+.image-column {
+    background-color: bisque;
+    height: 300px;
+}
+
+.image-column img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire box while maintaining aspect ratio */
+    object-position: center; /* Centers the image within the box */
+}
+
+.double-width {
+    grid-column: span 2; 
+}
+
+.double-height {
+    grid-row: span 2;
+    height: 616px;
+}

@@ -14,7 +14,7 @@ function Footer() {
               </h2>
               <div className="num-link">
                 <p>Gagan : <a className="doc-link" href="">+91 9008243280</a></p>
-                <p>Tarana : <a className="doc-link" href="">+91 9008243280</a></p>
+                <p>Tarana : <a className="doc-link" href="">+91 7483408791</a></p>
               </div>
             </div>
             <h2 className="connectHeading">
@@ -64,29 +64,3 @@ function Footer() {
 }
 
 export default Footer;
-
-
-
-{/* <div>
-              <h2
-                style={{
-                  fontFamily: "pixeloidsans-bold",
-                  color: "black",
-                  paddingTop: "20px",
-                }}
-              >
-                Reach Out To Us
-              </h2>
-            </div>
-
-            <div
-              className="small-text"
-              style={{ color: "black", fontSize: "1.3em" }}
-            >
-              <p>
-                Gagan S: <a href="tel:">+91 9008243280</a>
-              </p>
-              <p>
-                Tarana Shetty: <a href="tel:">+91 7483408791</a>
-              </p>
-            </div> */}
