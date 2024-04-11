@@ -5,60 +5,61 @@ import anastrat from "../assets/anastrat.png";
 import nokia from "../assets/nokia.png";
 import azad from "../assets/azad.png";
 import skill from "../assets/skill.png";
-import skolar from "../assets/skolar.png";
+// import skolar from "../assets/skolar.png";
 
 function Sponsors() {
   return (
     <div className="sponsorpage">
-      <div className="title-sub custom-sp-bg">
+      <div className="custom-sp-bg">
         <h1
-          className="text-center"
+          className="text-center pt-4"
+          style={{ letterSpacing: "0.5px", color: "white" ,filter: "drop-shadow(3px 3px 5px #010101)",fontFamily:"karmatic"}}
         >
-          S P O N S O R S
+          SPONSORS
         </h1>
+
+        <div className="d-flex justify-content-center align-items-center pt-2 name" >
+          <div className="d-flex row justify-content-center align-items-center sps shadow-custom gap-3">
+            <img
+              src={anastrat}
+              alt="anastrat"
+              className="img-fluid with-margin"
+              style={{ maxWidth: "100%", height: "auto", width: "18rem" }}
+            />
+            <img
+              src={basil}
+              alt="basil"
+              className="img-fluid with-margin"
+              style={{ width: "14rem" }}
+            />
+            
+            <img
+              src={nokia}
+              alt="nokia"
+              className="img-fluid with-margin"
+              style={{ maxWidth: "100%", height: "auto", width: "18em" }}
+            />
+
+            <img
+              src={azad}
+              alt="azad"
+              className="img-fluid with-margin"
+              style={{ maxWidth: "100%", height: "auto", width: "18em" }}
+            />
+            <img
+              src={skill}
+              alt="skill"
+              className="img-fluid with-margin"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                width: "18em",
+                marginBottom: "20px",
+              }}
+            />
+          </div>
+        </div>
       </div>
-
-      <div className="logo-container">
-        bbwnxw x w w
-      </div>
-
-      <div className="sp-containerz " data-aos="slide-up">
-        <div className="row">
-          <img
-            src={anastrat}
-            alt="anastrat"
-            className="with-margin"
-            style={{ maxWidth: "100%", height: "auto", width: "20rem" }}
-          />
-          <img
-            src={basil}
-            alt="basil"
-            className="with-margin"
-            style={{ maxWidth: "100%", height: "auto", width: "15em" }}
-          />
-        </div>
-
-        <div className="">
-          <img
-            src={nokia}
-            alt="nokia"
-            className="with-margin"
-            style={{ maxWidth: "100%", height: "auto", width: "15em" }}
-          />
-          <img
-            src={azad}
-            alt="azad"
-            className="with-margin"
-            style={{ maxWidth: "100%", height: "auto", width: "15em" }}
-          />
-          <img
-            src={skill}
-            alt="skill"
-            className="with-margin"
-            style={{ maxWidth: "100%", height: "auto", width: "15em" }}
-          />
-        </div>
-        </div>
     </div>
   );
 }

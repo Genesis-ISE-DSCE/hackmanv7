@@ -16,11 +16,11 @@ function Navbar() {
   };
 
   return (
-    <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center actual-nav pb-2" style={{height: '60px'}}>
+    <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center actual-nav pb-2">
       <div className="head">
         <a href="/">
           <div
-            className="heading fs-4 px-4 mb-3"
+            className="nav-heading fs-4 p-4"
             style={{ filter: "drop-shadow(3px 3px 5px #010101)" }}
           >
             Hackman

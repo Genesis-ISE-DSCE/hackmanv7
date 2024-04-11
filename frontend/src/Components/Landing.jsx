@@ -66,10 +66,10 @@ function Landing() {
           <h3 className="karma2">June 8th-9th</h3>
         </div>
 
-        <div className="mascot" onMouseOver={handleHover} data-aos="slide-left">
+        {/* <div className="mascot" onMouseOver={handleHover} data-aos="slide-left">
           <picture alt="mascot">
             <img
-              height={240}
+              height={180}
               src={Bat}
               loading="lazy"
               alt="mascot"
@@ -77,10 +77,11 @@ function Landing() {
           </picture>
 
           {showDialogue && (
-            <div className="dialogue" id="dialogue">
+            <div className="dialogue z-3" id="dialogue">
               <picture alt="dialogue-box">
                 <img
                   height={80}
+                  
                   src={Dialogue}
                   loading="lazy"
                   alt="hello"
@@ -90,10 +91,11 @@ function Landing() {
           )}
 
           {showAnotherDialogue && (
-            <div className="dialogue2" id="dialogue2">
+            <div className="dialogue2 z-3" id="dialogue2">
               <picture alt="dialogue-box2">
                 <img
                   height={80}
+                  className="z-3"
                   src={Dialogue2}
                   loading="lazy"
                   alt="hello"
@@ -101,7 +103,7 @@ function Landing() {
               </picture>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
