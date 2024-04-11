@@ -4,8 +4,27 @@ import { compareSync } from "bcrypt";
 import jwt from "jsonwebtoken";
 import { HttpStatus } from "../utils/statusCodes";
 import { AppError } from "../utils/error";
+import {
+  S3Client,
+  PutObjectCommand,
+  GetObjectCommand,
+} from "@aws-sdk/client-s3";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
 const JWT_SECRET = process.env.JWT_SECRET;
+const accessKey = process.env.ACCESS_KEY;
+const secretAccessKey = process.env.SECRET_ACCESS_KEY;
+const bucketName = process.env.BUCKET_NAME;
+const bucketRegion = process.env.BUCKET_REGION;
+
+//@ts-ignore
+const s3 = new S3Client({
+  credentials: {
+    accessKeyId: accessKey,
+    secretAccessKey: secretAccessKey,
+  },
+  region: bucketRegion,
+});
 
 //AUTHENTICATION
 export const login = async (req: Request, res: Response) => {
@@ -158,9 +177,7 @@ export const removeMember = async (req: Request, res: Response) => {
     where: { id: memberId },
   });
 
-  res
-    .status(HttpStatus.OK)
-    .json({ message: "Memeber Deleted", member: member });
+  res.status(HttpStatus.OK).json({ message: "Member Deleted", member: member });
 
   throw new AppError({
     name: "INTERNAL_SERVER_ERROR",
@@ -209,32 +226,57 @@ export const addOrEditgithub = async (req: Request, res: Response) => {
   });
 };
 
+//UPLOAD PAYMENT
 export const uploadPic = async (req: Request, res: Response) => {
-  const { teamId } = req.params;
-  const { paymentPic } = req.body;
-
+  const { id } = req.params;
   const team = await db.team.findUnique({
     where: {
-      id: teamId,
+      id: id,
     },
   });
 
   if (!team) {
-    return res.status(HttpStatus.NOT_FOUND).json({ message: "team not found" });
+    throw new AppError({ message: "Team not found!", name: "BAD_REQUEST" });
   }
 
-  const addPic = await db.team.update({
-    where: {
-      id: team.id,
-    },
-    data: {
-      paymentPic,
-    },
-  });
+  const fileName = team?.teamName;
 
-  res
-    .status(HttpStatus.OK)
-    .json({ message: "Payment Pic Added Succesfully", addPic });
+  const params = {
+    Bucket: bucketName,
+    Key: fileName,
+    Body: req.file?.buffer,
+    ContentType: req.file?.mimetype,
+  };
+
+  const command = new PutObjectCommand(params);
+  const response = await s3.send(command);
+
+  if (response.$metadata.httpStatusCode === 200) {
+    const getObjectParams = {
+      Bucket: bucketName,
+      Key: fileName,
+    };
+
+    const command = new GetObjectCommand(getObjectParams);
+    const url = await getSignedUrl(s3, command);
+
+    console.log(url);
+
+    const addPic = await db.team.update({
+      where: {
+        id: id,
+      },
+      data: {
+        paymentPic: url,
+      },
+    });
+
+    if (addPic) {
+      return res
+        .status(HttpStatus.OK)
+        .json({ success: true, message: "Payment Pic Added Succesfully" });
+    }
+  }
 
   throw new AppError({
     name: "INTERNAL_SERVER_ERROR",
