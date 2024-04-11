@@ -1,106 +1,106 @@
 import { Request, Response } from "express";
 import { db } from "../utils/db";
+import { error } from "console";
 import { HttpStatus } from "../utils/statusCodes";
+import { json } from "stream/consumers";
 import { AppError } from "../utils/error";
 
-interface TeamMember {
-  name: string;
-  email: string;
-}
-
 interface TeamInfo {
-  teamName: string;
-  teamMembers: TeamMember[];
-  leaderEmail: string;
-  payStatus: boolean;
-  upiId: string;
-  transactionId: string;
-  githubLink: string | "N/A";
+  teamName: String;
+  leader: {
+    name: String;
+    email: String;
+    phoneNumber: String;
+  };
+  githubLink: String;
+  payStatus: Boolean;
+  paymentPic: String;
 }
 
-const getalluser = async (req: Request, res: Response) => {
-  try {
-    const teams = await db.team.findMany({
-      include: {
-        members: {
-          select: {
-            name: true,
-            email: true,
-          },
+const getAllTeams = async (req: Request, res: Response) => {
+  //@ts-ignore
+  const teams: TeamInfo[] = await db.team.findMany({
+    select: {
+      teamName: true,
+      leader: {
+        select: {
+          name: true,
+          email: true,
+          phoneNumber: true,
         },
       },
-    });
+      githubLink: true,
+      payStatus: true,
+      paymentPic: true,
+    },
+  });
 
-    const teamInfo= teams.map((team) => ({
-      teamName: team.teamName,
-      teamMembers: team.members.map((member) => ({
-        name: member.name,
-        email: member.email,
-      })),
-
-      leaderEmail: team.leaderEmail,
-      payStatus: team.payStatus,
-      githubLink: team.githubLink,
-      upiId: team.upiId,
-    }));
-
-    res.json(teamInfo);
-  } catch (error) {
-    console.error("Error in fetching data of code", error);
-
-    const appError = new AppError({
-      name: "INTERNAL_SERVER_ERROR",
-      message: "Internal server error",
-    });
-
-    res.status(appError.statusCode).json({ error: appError.message });
-  } finally {
-    await db.$disconnect();
-  }
+  res.status(HttpStatus.OK).json(teams);
+  throw new AppError({
+    name: "INTERNAL_SERVER_ERROR",
+    message: "Error in getting all users",
+  });
 };
 
-const deleteuser = async (req: Request, res: Response) => {
-  try {
-    const teamId = req.params.teamId;
-    const existingTeam = await db.team.findUnique({
-      where: {
-        id: teamId,
-      },
-    });
+const deleteTeam = async (req: Request, res: Response) => {
+  const teamId = req.params.teamId;
 
-    if (!existingTeam) {
-      const notFoundError = new AppError({
-        name: "NOT_FOUND",
-        message: "Team not found in the database",
-      });
+  const existingTeam = await db.team.findUnique({
+    where: {
+      id: teamId,
+    },
+  });
 
-      res
-        .status(notFoundError.statusCode)
-        .json({ message: notFoundError.message });
-      return;
-    }
-
-    await db.team.delete({
-      where: {
-        id: teamId,
-      },
-    });
-
-    res.status(HttpStatus.OK).json({ message: "Team deleted successfully" });
-  } catch (error) {
-    console.error("Error in deleting team", error);
-
-    const appError = new AppError({
-      name: "INTERNAL_SERVER_ERROR",
-      message: "Internal Server Error",
-    });
-    res.status(appError.statusCode).json({ message: appError.message });
-  } finally {
-    await db.$disconnect();
+  if (!existingTeam) {
+    return res.status(HttpStatus.NOT_FOUND).json({ error: "Team not found" });
   }
+
+  const deletedTeam = await db.team.delete({
+    where: {
+      id: teamId,
+    },
+  });
+
+  res.status(HttpStatus.OK).json(deletedTeam);
+
+  throw new AppError({
+    name: "INTERNAL_SERVER_ERROR",
+    message: "Error in deleting team",
+  });
+};
+
+const updatePaymentStatus = async (req: Request, res: Response) => {
+  const teamId = req.params.teamId;
+
+  const existingTeam = await db.team.findMany({
+    where: {
+      id: teamId,
+    },
+  });
+
+  if (!existingTeam) {
+    return res.status(HttpStatus.NOT_FOUND).json({ error: "Team Not Found" });
+  }
+
+  const updatedTeamStatus = await db.team.update({
+    where: {
+      id: teamId,
+    },
+    data: {
+      payStatus: true,
+    },
+  });
+
+  res.status(HttpStatus.OK).json(updatedTeamStatus);
+
+  throw new AppError({
+    name: "INTERNAL_SERVER_ERROR",
+    message: "Error in Updation of Payment Status",
+  });
 };
 
 export = {
-  getalluser,
-  deleteuser,
+  getAllTeams,
+  deleteTeam,
+  updatePaymentStatus,
 };
