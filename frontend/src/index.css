@@ -6,10 +6,3 @@ a {
  @tailwind utilities;  */
 
 
- body {
-  margin: 0;
-  padding: 0;
-  background-image: url("../src/assets/newbg3.png");
-  background-size: cover; 
-  background-attachment: fixed;
-}

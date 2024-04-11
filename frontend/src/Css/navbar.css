@@ -21,9 +21,9 @@
     color: rgb(255, 255, 255);
 }
 
-.actual-nav {
+/* .actual-nav {
     height: 11%;
-}
+} */
 
 @media (max-width: 767px) {
     .actual-nav {
@@ -49,4 +49,9 @@
         height: auto;
         width: 100vw;
     }
+}
+.nav-heading{
+    font-family: karmatic;
+    color: white;
+
 }

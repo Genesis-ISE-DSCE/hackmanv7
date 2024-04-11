@@ -17,13 +17,16 @@
 }
 
 @media (max-width: 767px) {
+  .main-content-txt{
+    font-size:small !important;
+  }
   .title-sub {
     padding-top: 3rem;
     padding-bottom: 4rem;
     font-size: 1.6rem;
   }
   .custom-abt-bg {
-    background-image: url("../assets/small-bg.jpeg");
+    background-image: url("../assets/small-bg.jpeg") !important;
     color: white;
     background-size: cover;
   }
@@ -83,6 +86,7 @@
   
   .image-style {
     width: 20rem;
+    border-radius: 20px;
     padding: 1rem;
   }
   
@@ -94,6 +98,7 @@
 }
 
 .content-boxx {
+  font-family: pixeloidsans;
   backdrop-filter: blur(23px);
   -webkit-backdrop-filter: blur(23px);
   background-color: rgba(217, 217, 217, 0.624);
@@ -113,6 +118,8 @@
 }
 
 .tagline {
+  
+  font-weight: normal;
   text-align: left;
   color: #0b4d81;
   font-size: 1.1rem;
@@ -120,12 +127,15 @@
 }
 
 .dates-txt {
+  
+  font-weight: bold;
   color: #0b4d81;
   text-align: left;
   font-size: 1.1rem;
 }
 
 .main-content-txt {
+  color: #083e65;
   font-size: 1.1rem;
   text-align: justify;
 }
