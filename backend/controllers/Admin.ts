@@ -17,7 +17,7 @@ interface TeamInfo {
   paymentPic: String;
 }
 
-const getAllTeams = async (req: Request, res: Response) => {
+export const getAllTeams = async (req: Request, res: Response) => {
   //@ts-ignore
   const teams: TeamInfo[] = await db.team.findMany({
     select: {
@@ -42,7 +42,7 @@ const getAllTeams = async (req: Request, res: Response) => {
   });
 };
 
-const deleteTeam = async (req: Request, res: Response) => {
+export const deleteTeam = async (req: Request, res: Response) => {
   const teamId = req.params.teamId;
 
   const existingTeam = await db.team.findUnique({
@@ -69,7 +69,7 @@ const deleteTeam = async (req: Request, res: Response) => {
   });
 };
 
-const updatePaymentStatus = async (req: Request, res: Response) => {
+export const updatePaymentStatus = async (req: Request, res: Response) => {
   const teamId = req.params.teamId;
 
   const existingTeam = await db.team.findMany({
@@ -97,10 +97,4 @@ const updatePaymentStatus = async (req: Request, res: Response) => {
     name: "INTERNAL_SERVER_ERROR",
     message: "Error in Updation of Payment Status",
   });
-};
-
-export = {
-  getAllTeams,
-  deleteTeam,
-  updatePaymentStatus,
 };

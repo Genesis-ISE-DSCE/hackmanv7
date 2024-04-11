@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { PrismaClient } from "@prisma/client";
 import { db } from "../utils/db";
 import { compareSync } from "bcrypt";
 import jwt from "jsonwebtoken";
@@ -30,7 +29,7 @@ export const login = async (req: Request, res: Response) => {
     const token = jwt.sign({ email: user.email, userId: user.id }, JWT_SECRET);
     res
       .status(HttpStatus.OK)
-      .json({ token: token, message: "Login SUccessfull" });
+      .json({ token: token, message: "Login Successfull" });
   } else {
     return res
       .status(HttpStatus.UNAUTHORIZED)
@@ -132,7 +131,7 @@ export const changePhoneNumber = async (req: Request, res: Response) => {
 
   res
     .status(HttpStatus.OK)
-    .json({ changedNumber: phoneNumber, message: "Updation Succesfull" });
+    .json({ changedNumber: updateNumber, message: "Updation Succesfull" });
 
   throw new AppError({
     name: "INTERNAL_SERVER_ERROR",
@@ -202,10 +201,43 @@ export const addOrEditgithub = async (req: Request, res: Response) => {
       githubLink,
     },
   });
-  res.status(HttpStatus.OK).json({ message: "github added" });
+  res.status(HttpStatus.OK).json({ message: "github added", updatedTeam });
 
   throw new AppError({
     name: "INTERNAL_SERVER_ERROR",
     message: "Error in addoreditgithub",
+  });
+};
+
+export const uploadPic = async (req: Request, res: Response) => {
+  const { teamId } = req.params;
+  const { paymentPic } = req.body;
+
+  const team = await db.team.findUnique({
+    where: {
+      id: teamId,
+    },
+  });
+
+  if (!team) {
+    return res.status(HttpStatus.NOT_FOUND).json({ message: "team not found" });
+  }
+
+  const addPic = await db.team.update({
+    where: {
+      id: team.id,
+    },
+    data: {
+      paymentPic,
+    },
+  });
+
+  res
+    .status(HttpStatus.OK)
+    .json({ message: "Payment Pic Added Succesfully", addPic });
+
+  throw new AppError({
+    name: "INTERNAL_SERVER_ERROR",
+    message: "Error in uploading photo",
   });
 };
