@@ -6,26 +6,54 @@ const Profile = () => {
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
   const [uploadedFile, setUploadedFile] = useState(null);
+  
 
   const addTeamMember = () => {
     setShowForm(true);
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setTeamMembers([...teamMembers, formData]);
+  //   setFormData({ name: "", email: "", phone: "" });
+  //   setShowForm(false);
+  // };
+ 
+  const validateEmail = (email) => {
+ 
+    return email.includes('@') && email.includes('.');
+};
+  const validatePhone = (phone) => {
+
+    return /^\d{10}$/.test(phone);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (teamMembers.length >= 4) {
+      alert('Team members limit reached. You cannot add more members.');
+      return;
+  }
+    if (!formData.name.trim()) {
+      alert('Name is required');
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      alert('Invalid email address');
+      return;
+    }
+
+    if (!validatePhone(formData.phone)) {
+      alert('Invalid phone number (10 digits)');
+      return;
+    }
+
     setTeamMembers([...teamMembers, formData]);
     setFormData({ name: "", email: "", phone: "" });
     setShowForm(false);
   };
-  const handleFileUpload = (e) => {
-    const file = e.target.files[0];
-    setUploadedFile(file);
-  };
-
-  const handleFileRemove = () => {
-    setUploadedFile(null);
-  };
-
   return (
     <div>
       <div id="profile" className="custom-prof-bg">
@@ -34,7 +62,7 @@ const Profile = () => {
         </p>
         <div className="contain mx-3">
           <p className="fs-5 pt-2 text-center">Team Genesis</p>
-          <input type="text" name="Github Project Url" id="" style={{fontFamily:"pixeloidsans" , fontSize:"0.9em"}} placeholder="Upload Github Project Url" className="w-auto mb-3 text-center p-1"/>
+          <input type="text" name="Github Project Url" id="" style={{fontFamily:"pixeloidsans" , fontSize:"0.9em"}} placeholder="Upload Github Project Url" className="w-auto mb-3 text-center p-1 "/>
           <div className="details mx-2">
             {showForm ? (
               <form onSubmit={handleSubmit} className="text-center mt-4">
@@ -43,15 +71,19 @@ const Profile = () => {
                   <input
                     type="text"
                     value={formData.name}
+                    required
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
+            
                     }
                   />
                 </div>
                 <div className="form-group">
                   <label>Member Email:</label>
                   <input
+                    required
                     type="email"
+                    id='emailInput'
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
@@ -61,6 +93,8 @@ const Profile = () => {
                 <div className="form-group">
                   <label>Phone Number:</label>
                   <input
+                    required
+                    id='phoneInput'
                     type="tel"
                     value={formData.phone}
                     onChange={(e) =>
@@ -131,7 +165,9 @@ const Profile = () => {
             )}
             <hr />
             <p className="fw-bolder">Upload Payment Screenshot</p>
-            <input id="file" className="w-25 text-center my-4"  type="file" />
+            <div className="row justify-content-lg-center">
+            <input id="file" className="w-30 my-4 col-lg-auto gap-1"  type="file" />
+            </div>
           </div>
 
           {/* <input id="file" className="file-upload1 mx-2 text-sm" type="file" /> */}
