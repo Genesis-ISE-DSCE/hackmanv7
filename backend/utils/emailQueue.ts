@@ -4,11 +4,13 @@ import dotenv from "dotenv";
 import { sendEmailToLeader } from "./mailer";
 dotenv.config();
 
-const emailQueue = new Queue("emailQueue", {
-  connection: {
-    host: process.env.REDIS_HOST,
-    port: Number(process.env.REDIS_PORT),
-  },
+const redisConnection = {
+  host: process.env.REDIS_HOST,
+  port: Number(process.env.REDIS_PORT),
+};
+
+export const emailQueue = new Queue("emailQueue", {
+  connection: redisConnection,
 });
 
 export async function addJobs(emailOptions: {
@@ -16,6 +18,8 @@ export async function addJobs(emailOptions: {
   email: string;
   teamName: string;
 }) {
+  console.log(process.env.MAIL_USER);
+  console.log(process.env.MAIL_PASSWORD);
   const res = await emailQueue.add("sendEmail", {
     password: emailOptions.password,
     email: emailOptions.email,
@@ -30,6 +34,7 @@ export const worker = new Worker(
   async (job) => {
     console.log("Got a job --> ", job.id);
     try {
+      console.log(job.data);
       await sendEmailToLeader(
         job.data.email,
         job.data.password,
@@ -47,10 +52,5 @@ export const worker = new Worker(
       }
     }
   },
-  {
-    connection: {
-      host: process.env.REDIS_HOST,
-      port: Number(process.env.REDIS_PORT),
-    },
-  }
+  { connection: redisConnection }
 );

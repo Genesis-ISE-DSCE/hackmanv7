@@ -4,21 +4,23 @@ import path from "path";
 import { Participant } from "@prisma/client";
 import { db } from "./db";
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+dotenv.config();
 
 const transporter = nodemailer.createTransport({
   pool: true,
   maxConnections: 11,
   maxMessages: Infinity,
   host: "smtp.gmail.com",
-  port: 456,
+  port: 465,
   auth: {
     user: process.env.MAIL_USER,
     pass: process.env.MAIL_PASSWORD,
   },
 });
 type Doc = {
-  filename: string,
-  path: string
+  filename: string;
+  path: string;
 };
 const attachmentDocsPath: Doc[] = [];
 
@@ -45,7 +47,7 @@ export const sendEmailToLeader = async (
 const sendBrocures = async (memberEmail: string, teamName: string) => {
   try {
     if (process.env.MAIL_USER === undefined) {
-      throw new Error("Email not specified in Environment")
+      throw new Error("Email not specified in Environment");
     }
     const mailOption: nodemailer.SendMailOptions = {
       from: process.env.MAIL_USER,
@@ -60,7 +62,6 @@ const sendBrocures = async (memberEmail: string, teamName: string) => {
     await transporter.sendMail(mailOption, (error) => {
       if (error) {
         console.log(error);
-
       }
     });
     console.log(`Brochure sent to ${memberEmail} for team ${teamName}`);
@@ -83,10 +84,12 @@ export const sendMassMail = async (teamName: string, req: Request) => {
       console.warn(`Team ${teamName} not found.`);
       return;
     }
-    const memberEmails = Array.isArray(members) ? members.map((member) => member.email) : [];
+    const memberEmails = Array.isArray(members)
+      ? members.map((member) => member.email)
+      : [];
 
-   for (const mem of memberEmails) {
-      const  email  = mem;
+    for (const mem of memberEmails) {
+      const email = mem;
       await sendBrocures(email, teamName);
     }
     console.log(`Mass mail for brochures sent to team ${teamName}`);

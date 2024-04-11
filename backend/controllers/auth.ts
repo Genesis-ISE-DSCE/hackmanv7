@@ -48,10 +48,6 @@ export const registerController = async (req: Request, res: Response) => {
       };
 
       addJobs(emailOptions);
-      worker.on("completed", (job, result) => {
-        console.log(`Job ${job.id} completed successfully`);
-      });
-
       return res.status(201).json({ message: "Registeration successfull!" });
     }
     throw new AppError({
