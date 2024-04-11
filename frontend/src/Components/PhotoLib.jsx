@@ -30,11 +30,11 @@ const PhotoLib = () => {
                 <div className="image-column">
                     <img src={img3} alt="Image 1" />
                 </div>
-                <div className="image-column">
-                    <img src={img5} alt="Image 1" />
-                </div>
                 <div className="image-column double-width">
                     <img src={img6} alt="Image 1" />
+                </div>
+                <div className="image-column">
+                    <img src={img5} alt="Image 1" />
                 </div>
                 <div className="image-column">
                     <img src={img7} alt="Image 1" />

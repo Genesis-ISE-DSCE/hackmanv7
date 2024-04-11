@@ -26,6 +26,8 @@
 }
 
 .content-box {
+  backdrop-filter: blur(23px);
+  -webkit-backdrop-filter: blur(23px);
   background-color: rgba(217, 217, 217, 0.624);
   border: 2px solid rgba(39, 37, 37, 0.34);
   border-radius: 10px;

@@ -11,9 +11,6 @@
   src: url("../fonts/PixeloidSansBold.ttf");
 }
 
-.custom-sc-height {
-  height: 120vh;
-}
 
 @media (max-width: 767px) {
   .custom-sc-height {
@@ -21,10 +18,17 @@
   }
 }
 
+.title-sub {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  font-size: 2.6rem;
+}
+
 .custom-sc-bg {
   background-image: url("../assets/newbg3.png");
   color: white;
   background-size: cover;
+  padding-bottom: 4rem;
 }
 
 @media (max-width: 767px) {

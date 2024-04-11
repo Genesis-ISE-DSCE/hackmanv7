@@ -1,79 +1,13 @@
 import React from "react";
 import "../Css/Faq.css";
-// import card1 from "../assets/Eventback.png";
-// import card2 from "../assets/Eventback-2.png";
-// import card3 from "../assets/Eventback-3.png";
-// import brick from "../assets/brick.png";
-// import card4 from "../assets/Eventback-4.png";
-// import card5 from "../assets/Eventback-5.png"
-// import card6 from "../assets/Eventback-6.png"
 
 function Faqs() {
-  // <div id="faqs" className="custom-height d-flex justify-content-center custom-faq-bg ">
-  //   <div className="outer d-flex flex-row faq-main">
-  //     <div className="text-center">
-  //     <h1 style={{fontFamily:"karmatic"}}>FAQS</h1>
-  {
-    /* <div className="card-container ">
-        <div className="myCard">
-            <div className="innerCard">
-              <div className="frontSide">
-              <img src={card1} alt=""width={200}  height={550}/>
-              </div>
-              <div className="backSide" >
-                <img src={brick} width={315}  height={600} alt="" srcset="" />
-                <p className="position-absolute bs-cont">Hackman is a 24Hr Inter-College Hackathon, hosted by Dept of ISE,DSCE</p>
-            </div>
-            </div>
-          </div>
-          <div className="myCard">
-            <div className="innerCard">
-              <div className="frontSide">
-              <img src={card2} alt="" width={200}  height={550}/>
-              </div>
-              <div className="backSide">
-              <img src={brick} width={315}  height={600} alt="" srcset="" />
-              <span  className="position-absolute bs-cont fs-6">Any student pursuing engineering from any year with an interest in technology can participate in Hackman. This includes programmers, designers, data scientists,and other tech enthusiasts.</span>
-            </div>
-            </div>
-          </div>
-          <div className="myCard">
-            <div className="innerCard">
-              <div className="frontSide">
-              <img src={card3} alt=""width={200}  height={550}/>
-              </div>
-              <div className="backSide" >
-                <img src={brick} width={315}  height={600} alt="" srcset="" />
-                <p className="position-absolute bs-cont mh-60">Hackman v7 has an open theme, meaning participants are free to work on any project they choose.</p>
-            </div>
-            </div>
-          </div>
-          <div className="myCard">
-            <div className="innerCard">
-              <div className="frontSide">
-              <img src={card4} alt="" width={200}  height={550}/>
-              </div>
-              <div className="backSide" >
-                <img src={brick} width={315}  height={600} alt="" srcset="" />
-                <p className="position-absolute bs-cont mh-60 fs-5" >Yes, food, shelter and snacks will be provided for participants throughout the duration of Hackman.</p>
-            </div>
-            </div>
-          </div>
-          </div> */
-  }
-  //    </div>
-  //   </div>
-  // </div>
   return (
-    <div id="faqs" className="custom-height custom-faq-bg faq-main">
-      <div className="text-center">
-        <h1
-          style={{
-            fontFamily: "karmatic",
-            filter: "drop-shadow(3px 3px 5px #010101)",
-          }}
+    <div id="faqs" className="custom-faq-bg faq-main">
+      <div className="">
+        <h1 className="title-subz"
         >
-          FAQS
+          F A Q ' S
         </h1>
         <div className="main-accordion" data-aos="slide-up">
           <div
