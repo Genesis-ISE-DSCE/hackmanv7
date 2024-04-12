@@ -1,8 +1,6 @@
 import { Request, Response } from "express";
 import { db } from "../utils/db";
-import { error } from "console";
 import { HttpStatus } from "../utils/statusCodes";
-import { json } from "stream/consumers";
 import { AppError } from "../utils/error";
 
 interface TeamInfo {
@@ -12,15 +10,15 @@ interface TeamInfo {
     email: String;
     phoneNumber: String;
   };
-  githubLink: String;
+  githubLink: String | null;
   payStatus: Boolean;
-  paymentPic: String;
+  paymentPic: String | null;
 }
 
 export const getAllTeams = async (req: Request, res: Response) => {
-  //@ts-ignore
   const teams: TeamInfo[] = await db.team.findMany({
     select: {
+      id: true,
       teamName: true,
       leader: {
         select: {
@@ -35,15 +33,44 @@ export const getAllTeams = async (req: Request, res: Response) => {
     },
   });
 
-  res.status(HttpStatus.OK).json(teams);
-  throw new AppError({
-    name: "INTERNAL_SERVER_ERROR",
-    message: "Error in getting all users",
-  });
+  if (!teams)
+    throw new AppError({
+      name: "NOT_FOUND",
+      message: "Teams not found!",
+    });
+
+  return res.status(HttpStatus.OK).json({ success: true, teams: teams });
 };
 
 export const deleteTeam = async (req: Request, res: Response) => {
-  const teamId = req.params.teamId;
+  const teamId = req.params.id;
+
+  const existingTeam = await db.team.findUnique({
+    where: {
+      id: teamId,
+    },
+  });
+
+  console.log(existingTeam);
+
+  if (!existingTeam) {
+    throw new AppError({ name: "NOT_FOUND", message: "Team not found!" });
+  }
+
+  const deleteTeam = await db.leader.delete({
+    where: {
+      id: existingTeam.leaderId,
+    },
+  });
+
+  if (deleteTeam)
+    return res
+      .status(HttpStatus.OK)
+      .json({ success: true, message: "Team deleted successfully!" });
+};
+
+export const updatePaymentStatus = async (req: Request, res: Response) => {
+  const teamId = req.params.id;
 
   const existingTeam = await db.team.findUnique({
     where: {
@@ -52,34 +79,7 @@ export const deleteTeam = async (req: Request, res: Response) => {
   });
 
   if (!existingTeam) {
-    return res.status(HttpStatus.NOT_FOUND).json({ error: "Team not found" });
-  }
-
-  const deletedTeam = await db.team.delete({
-    where: {
-      id: teamId,
-    },
-  });
-
-  res.status(HttpStatus.OK).json(deletedTeam);
-
-  throw new AppError({
-    name: "INTERNAL_SERVER_ERROR",
-    message: "Error in deleting team",
-  });
-};
-
-export const updatePaymentStatus = async (req: Request, res: Response) => {
-  const teamId = req.params.teamId;
-
-  const existingTeam = await db.team.findMany({
-    where: {
-      id: teamId,
-    },
-  });
-
-  if (!existingTeam) {
-    return res.status(HttpStatus.NOT_FOUND).json({ error: "Team Not Found" });
+    throw new AppError({ name: "NOT_FOUND", message: "Team not found!" });
   }
 
   const updatedTeamStatus = await db.team.update({
@@ -91,10 +91,8 @@ export const updatePaymentStatus = async (req: Request, res: Response) => {
     },
   });
 
-  res.status(HttpStatus.OK).json(updatedTeamStatus);
-
-  throw new AppError({
-    name: "INTERNAL_SERVER_ERROR",
-    message: "Error in Updation of Payment Status",
-  });
+  if (updatedTeamStatus)
+    return res
+      .status(HttpStatus.OK)
+      .json({ success: true, message: "Payment Status Updated!" });
 };

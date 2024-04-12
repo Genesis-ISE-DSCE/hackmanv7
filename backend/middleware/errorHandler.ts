@@ -10,7 +10,6 @@ export const errorHandler = (
   next: NextFunction
 ) => {
   console.log(err);
-
   if (err instanceof ZodError) {
     return res
       .status(HttpStatus.BAD_REQUEST)

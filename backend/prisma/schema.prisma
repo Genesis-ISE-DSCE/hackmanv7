@@ -13,25 +13,25 @@ datasource db {
 model Leader {
   id String @id @default(uuid())
   name String
-  email String @unique
+  email String
   phoneNumber String 
-  team Team?
+  team Team? 
   password String?
 }
 
 model Participant {
   id String @id @default(uuid())
   name String
-  email String @unique
+  email String
   phoneNumber String 
-  team Team @relation(fields: [teamId] ,references: [id])
+  team Team @relation(fields: [teamId] ,references: [id], onDelete: Cascade)
   teamId String
 }
 
 model Team {
   id String @id @default(uuid())
   teamName String @unique
-  leader Leader @relation(fields: [leaderId], references: [id])
+  leader Leader @relation(fields: [leaderId], references: [id], onDelete: Cascade)
   leaderId String @unique
   members Participant[]
   githubLink String?

@@ -1,14 +1,9 @@
 import { Request, Response } from "express";
 import { db } from "../utils/db";
 import { AppError } from "../utils/error";
-import { isValidEmail } from "../helpers/emailValidator";
-import { sendEmailToLeader } from "../utils/mailer";
 import { generateRandomPassword } from "../utils/randomPassword";
-import { hashSync } from "bcrypt";
-import { addJobs, worker } from "../utils/emailQueue";
-import { loginSchema, registrationSchema } from "../helpers/auth-validator";
-
-const salt: number = Number(process.env.SALT);
+import { addJobs } from "../utils/emailQueue";
+import { registrationSchema } from "../zod/auth-validator";
 
 interface Leader {
   name: string;
@@ -22,23 +17,21 @@ interface TeamInfo {
 
 export const registerController = async (req: Request, res: Response) => {
   const payload = registrationSchema.parse(req.body);
-  console.log(payload);
-
   const { leader, teamInfo }: { leader: Leader; teamInfo: TeamInfo } = payload;
 
-  const existingL = await db.leader.findUnique({
+  const existingL = await db.leader.findFirst({
     where: {
       email: leader.email,
     },
   });
 
-  const existingParticipant = await db.participant.findUnique({
+  const existingParticipant = await db.participant.findFirst({
     where: {
       email: leader.email,
     },
   });
 
-  if (existingL && existingParticipant)
+  if (existingL || existingParticipant)
     throw new AppError({
       name: "BAD_REQUEST",
       message: "This Email is already Registered",

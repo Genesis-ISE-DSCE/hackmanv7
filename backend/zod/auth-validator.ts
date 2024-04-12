@@ -42,19 +42,17 @@ export const githubSchema = z.object({
 
 const leaderSchema = z.object({
   name: z.string(),
-  email: z.string().email(), // Ensure email format is valid
+  email: z.string().email(),
   phoneNumber: z
     .string()
     .min(10, { message: "min 10 Digits" })
-    .max(10, { message: "Max 10 digits allowed" }), // You might want to add more validation rules for phone numbers
+    .max(10, { message: "Max 10 digits allowed" }),
 });
 
-// Define schema for the teamInfo object
 const teamInfoSchema = z.object({
   name: z.string(),
 });
 
-// Combine the schemas for leader and teamInfo into a single schema
 export const registrationSchema = z.object({
   leader: leaderSchema,
   teamInfo: teamInfoSchema,

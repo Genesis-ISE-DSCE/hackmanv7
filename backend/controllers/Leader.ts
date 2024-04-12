@@ -10,7 +10,7 @@ import {
   GetObjectCommand,
 } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
-import { teamNameSchema } from "../helpers/auth-validator";
+import { teamNameSchema } from "../zod/auth-validator";
 
 const JWT_SECRET = process.env.JWT_SECRET;
 const accessKey = process.env.ACCESS_KEY;
@@ -31,7 +31,7 @@ const s3 = new S3Client({
 export const login = async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
-  const user = await db.leader.findUnique({
+  const user = await db.leader.findFirst({
     where: {
       email,
     },
