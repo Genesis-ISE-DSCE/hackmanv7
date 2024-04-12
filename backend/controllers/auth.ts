@@ -16,8 +16,8 @@ interface TeamInfo {
 }
 
 export const registerController = async (req: Request, res: Response) => {
-  const payload = registrationSchema.parse(req.body);
-  const { leader, teamInfo }: { leader: Leader; teamInfo: TeamInfo } = payload;
+  const { leader, teamInfo }: { leader: Leader; teamInfo: TeamInfo } =
+    registrationSchema.parse(req.body);
 
   const existingL = await db.leader.findFirst({
     where: {
