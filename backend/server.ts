@@ -5,7 +5,7 @@ import { errorHandler } from "./middleware/errorHandler";
 dotenv.config();
 
 const prisma = new PrismaClient();
-const app = express();
+export const app = express();
 const port: number = Number(process.env.PORT) || 8000;
 app.use(express.json());
 

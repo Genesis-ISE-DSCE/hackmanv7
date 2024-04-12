@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { AppError } from "../utils/error";
 import { HttpStatus } from "../utils/statusCodes";
+import { ZodError } from "zod";
 
 export const errorHandler = (
   err: Error,
@@ -8,7 +9,13 @@ export const errorHandler = (
   res: Response,
   next: NextFunction
 ) => {
-  if (err instanceof AppError) {
+  console.log(err);
+
+  if (err instanceof ZodError) {
+    return res
+      .status(HttpStatus.BAD_REQUEST)
+      .json({ success: false, error: err.errors[0].message });
+  } else if (err instanceof AppError) {
     return res
       .status(err.statusCode)
       .json({ success: false, error: err.message });

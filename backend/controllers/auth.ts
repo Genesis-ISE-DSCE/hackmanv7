@@ -6,6 +6,7 @@ import { sendEmailToLeader } from "../utils/mailer";
 import { generateRandomPassword } from "../utils/randomPassword";
 import { hashSync } from "bcrypt";
 import { addJobs, worker } from "../utils/emailQueue";
+import { loginSchema, registrationSchema } from "../helpers/auth-validator";
 
 const salt: number = Number(process.env.SALT);
 
@@ -20,10 +21,44 @@ interface TeamInfo {
 }
 
 export const registerController = async (req: Request, res: Response) => {
-  const { leader, teamInfo }: { leader: Leader; teamInfo: TeamInfo } = req.body;
+  const payload = registrationSchema.parse(req.body);
+  console.log(payload);
+
+  const { leader, teamInfo }: { leader: Leader; teamInfo: TeamInfo } = payload;
+
+  const existingL = await db.leader.findUnique({
+    where: {
+      email: leader.email,
+    },
+  });
+
+  const existingParticipant = await db.participant.findUnique({
+    where: {
+      email: leader.email,
+    },
+  });
+
+  if (existingL && existingParticipant)
+    throw new AppError({
+      name: "BAD_REQUEST",
+      message: "This Email is already Registered",
+    });
+
+  const teamExist = await db.team.findUnique({
+    where: {
+      teamName: teamInfo.name,
+    },
+  });
+
+  if (teamExist)
+    throw new AppError({
+      name: "BAD_REQUEST",
+      message: "Team Name Not Available",
+    });
 
   await db.$transaction(async (db) => {
     const password = generateRandomPassword(teamInfo.name);
+
     const l = await db.leader.create({
       data: {
         email: leader.email,

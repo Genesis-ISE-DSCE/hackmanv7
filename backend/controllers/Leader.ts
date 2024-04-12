@@ -10,6 +10,7 @@ import {
   GetObjectCommand,
 } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import { teamNameSchema } from "../helpers/auth-validator";
 
 const JWT_SECRET = process.env.JWT_SECRET;
 const accessKey = process.env.ACCESS_KEY;
@@ -63,7 +64,10 @@ export const login = async (req: Request, res: Response) => {
 
 //GET TEAM DETAILS
 export const getTeamDetails = async (req: Request, res: Response) => {
-  const { teamName } = req.body;
+  const payload = teamNameSchema.parse(req.body);
+  console.log(payload);
+
+  const { teamName } = payload;
 
   const team = await db.team.findUnique({
     where: {
@@ -76,11 +80,14 @@ export const getTeamDetails = async (req: Request, res: Response) => {
   });
 
   if (!team) {
-    return res
-      .status(HttpStatus.NOT_FOUND)
-      .json({ message: "Team Does Not Exist" });
+    // return res
+    //   .status(HttpStatus.NOT_FOUND)
+    //   .json({ message: "Team Does Not Exist" });
+    throw new AppError({
+      name: "NOT_FOUND",
+      message: "Team Does Not Exist",
+    });
   }
-
   res.status(HttpStatus.OK).json({ team: team });
 
   throw new AppError({
@@ -91,10 +98,11 @@ export const getTeamDetails = async (req: Request, res: Response) => {
 
 //ADD NEW TEAM MEMBER
 export const addTeamMemeber = async (req: Request, res: Response) => {
-  const { teamId, name, email, phoneNumber } = req.body;
+  const { id } = req.params;
+  const { name, email, phoneNumber } = req.body;
   const memberCount = await db.participant.count({
     where: {
-      teamId,
+      id,
     },
   });
 
@@ -110,13 +118,13 @@ export const addTeamMemeber = async (req: Request, res: Response) => {
       email,
       phoneNumber,
       team: {
-        connect: { id: teamId },
+        connect: { id: id },
       },
     },
   });
 
   await db.team.update({
-    where: { id: teamId },
+    where: { id: id },
     data: {
       members: {
         connect: { id: newMember.id },
@@ -134,47 +142,27 @@ export const addTeamMemeber = async (req: Request, res: Response) => {
   });
 };
 
-//UPDATE MEMBER NUMBER
-export const changePhoneNumber = async (req: Request, res: Response) => {
-  const { phoneNumber } = req.body;
-  const { memberId } = req.params;
-
-  const updateNumber = await db.participant.update({
-    where: {
-      id: memberId,
-    },
-    data: {
-      phoneNumber,
-    },
-  });
-
-  res
-    .status(HttpStatus.OK)
-    .json({ changedNumber: updateNumber, message: "Updation Succesfull" });
-
-  throw new AppError({
-    name: "INTERNAL_SERVER_ERROR",
-    message: "Error in updation number",
-  });
-};
-
 //Removal OF MEMBER
 export const removeMember = async (req: Request, res: Response) => {
-  const { memberId } = req.params;
+  const { id } = req.params;
   const member = await db.participant.findUnique({
     where: {
-      id: memberId,
+      id: id,
     },
   });
 
   if (!member) {
-    return res
-      .status(HttpStatus.NOT_FOUND)
-      .json({ message: "Member does not exist " });
+    // return res
+    //   .status(HttpStatus.NOT_FOUND)
+    //   .json({ message: "Member does not exist " });
+    throw new AppError({
+      name: "NOT_FOUND",
+      message: "Member Not Found",
+    });
   }
 
   await db.participant.delete({
-    where: { id: memberId },
+    where: { id: id },
   });
 
   res.status(HttpStatus.OK).json({ message: "Member Deleted", member: member });
@@ -187,11 +175,11 @@ export const removeMember = async (req: Request, res: Response) => {
 
 //EDIT TEAM MEMBERS
 export const editTeamMember = async (req: Request, res: Response) => {
-  const { memberId } = req.params;
+  const { id } = req.params;
   const { name, email, phoneNumber } = req.body;
 
   const updateMember = await db.participant.update({
-    where: { id: memberId },
+    where: { id: id },
     data: {
       name,
       email,
@@ -209,11 +197,11 @@ export const editTeamMember = async (req: Request, res: Response) => {
 
 //EDIT GITHUB
 export const addOrEditgithub = async (req: Request, res: Response) => {
-  const { teamId } = req.params;
+  const { id } = req.params;
   const { githubLink } = req.body;
 
   const updatedTeam = await db.team.update({
-    where: { id: teamId },
+    where: { id: id },
     data: {
       githubLink,
     },
