@@ -19,34 +19,34 @@ const PhotoLib = () => {
             </div>
             <div className="image-container">
                 <div className="image-column double-width">
-                    <img src={img4} alt="Image 1" />
+                    <img src={img4} alt="Image 1" loading="lazy" />
                 </div>
                 <div className="image-column double-width double-height">
-                    <img src={img2} alt="Image 1" />
+                    <img src={img2} alt="Image 1" loading="lazy" />
                 </div>
                 <div className="image-column double-height">
-                    <img src={img1} alt="Image 1" />
+                    <img src={img1} alt="Image 1" loading="lazy" />
                 </div>
                 <div className="image-column">
-                    <img src={img3} alt="Image 1" />
+                    <img src={img3} alt="Image 1" loading="lazy" />
                 </div>
                 <div className="image-column double-width">
-                    <img src={img6} alt="Image 1" />
+                    <img src={img6} alt="Image 1" loading="lazy" />
                 </div>
                 <div className="image-column">
-                    <img src={img5} alt="Image 1" />
+                    <img src={img5} alt="Image 1" loading="lazy" />
                 </div>
                 <div className="image-column">
-                    <img src={img7} alt="Image 1" />
+                    <img src={img7} alt="Image 1" loading="lazy" />
                 </div>
                 <div className="image-column">
-                    <img src={img10} alt="Image 1" />
+                    <img src={img10} alt="Image 1" loading="lazy" />
                 </div>
                 <div className="image-column">
-                    <img src={img9} alt="Image 1" />
+                    <img src={img9} alt="Image 1" loading="lazy" />
                 </div>
                 <div className="image-column">
-                    <img src={img8} alt="Image 1" />
+                    <img src={img8} alt="Image 1" loading="lazy" />
                 </div>
             </div>
         </div>
