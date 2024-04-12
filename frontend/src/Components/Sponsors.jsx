@@ -12,13 +12,13 @@ function Sponsors() {
     <div className="sponsorpage">
       <div className="custom-sp-bg">
         <h1
-          className="text-center pt-4"
+          className="text-center pt-5"
           style={{ letterSpacing: "0.5px", color: "white" ,filter: "drop-shadow(3px 3px 5px #010101)",fontFamily:"karmatic"}}
         >
           SPONSORS
         </h1>
 
-        <div className="d-flex justify-content-center align-items-center pt-2 name" >
+        <div className="d-flex justify-content-center align-items-center sponsor-container" >
           <div className="d-flex row justify-content-center align-items-center sps shadow-custom gap-3">
             <img
               src={anastrat}

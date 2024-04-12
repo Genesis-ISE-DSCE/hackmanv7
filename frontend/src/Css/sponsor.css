@@ -43,6 +43,9 @@
     gap: 30px;
     margin-top: -34% !important;
   }
+  .with-margin{
+    padding-bottom: 8%;
+  }
 }
 @media (max-width: 768px) {
   .containerz {
@@ -52,14 +55,23 @@
     align-items: center;
   }
 }
-@media (max-width: 768px) {
-  
+
+.sponsor-container{
+  margin-top: 10%;
 }
-@media (min-width: 992px) {
-  .name{
-    margin-top: 10%;
+
+@media (max-width: 768px) {
+  .sponsor-container {
+   margin-top: 20%;
   }
 }
+
+@media (min-width: 768px) and (max-width: 991px){
+  .sponsor-container{
+    margin-top: 30%;
+  }
+}
+
 .custom-sp-bg {
   background-image: url("../assets/newbg3.png");
   color: white;
