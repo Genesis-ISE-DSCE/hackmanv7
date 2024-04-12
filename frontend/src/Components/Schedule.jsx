@@ -152,14 +152,14 @@ const Schedule = () => {
           }}
           data-aos="slide-up"
         >
-          E V E N T || S C H E D U L E
+          EVENT||SCHEDULE
         </h1>
         <section
           className="timeline"
           ref={timelineRef}
           style={{ fontFamily: "pixeloidSans", overflowX: "auto", overflowY: "hidden" }}
         >
-          <div className="items-wrap" data-aos="slide-up">
+          <div className="items-wrap" data-aos="fade-down">
             <ol>
               <li>
                 <div>

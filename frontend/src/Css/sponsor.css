@@ -11,83 +11,81 @@
   src: url("../fonts/PixeloidSans.ttf");
 }
 
+.sponsorpage {
+  overflow: hidden;
+}
+
+.sponsor {
+  overflow: hidden;
+}
+.containerz {
+  overflow: hidden;
+}
+.heading {
+  font-family: karmatic;
+  font-size: 2.3em;
+  padding-top: 6%;
+}
+
 .with-margin {
   transition: transform 0.3s;
 }
 
 .with-margin:hover {
-  transform: translateY(-25px);
+  transform: translateY(-25px); /* Move the image 3D behind by 15px on hover */
 }
-
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .heading {
     font-size: 1.5em;
   }
   .sps {
     scale: 0.6;
     gap: 30px;
+    margin-top: -34% !important;
   }
-  .title-sub {
-    padding-top: 3rem;
-    padding-bottom: 4rem;
-    font-size: 1.6rem;
+  .with-margin{
+    padding-bottom: 8%;
   }
+}
+@media (max-width: 768px) {
   .containerz {
     flex-direction: column;
     max-width: 100%;
     justify-content: center;
     align-items: center;
   }
-  .sponsorpage {
+}
+
+.sponsor-container{
+  margin-top: 10%;
+}
+
+@media (max-width: 768px) {
+  .sponsor-container {
+   margin-top: 20%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .sponsor-container{
+    margin-top: 30%;
+  }
+}
+
+.custom-sp-bg {
+  background-image: url("../assets/newbg3.png");
+  color: white;
+  background-size: cover;
+  height: 100vh;
+}
+
+@media (max-width: 767px) {
+  .custom-sp-bg {
     background-image: url("../assets/small-bg.jpeg");
     color: white;
     background-size: cover;
   }
 }
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .title-sub {
-    padding-top: 3rem;
-    padding-bottom: 4rem;
-    font-size: 2.8rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .title-sub {
-    padding-top: 3rem;
-    padding-bottom: 4rem;
-    font-size: 2.6rem;
-  }
-}
-
-.sponsorpage {
-  background-image: url("../assets/newbg3.png");
-  background-color: white;
-  background-size: cover;
-  padding-bottom: 4rem;
-}
-
 .shadow-custom {
   filter: drop-shadow(3px 3px 5px #010101);
-}
-
-.sp-containerz {
-  display: flex;
-  flex-direction: column; /* Arrange items in a column */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
-  background-color: transparent;
-}
-
-.sp-containerz .row {
-  display: flex; 
-  justify-content: space-between; 
-  margin-bottom: 3rem; /* Adjust margin between rows */
-}
-
-.img {
-  width: 90%;
-  object-fit: contain;
-  mix-blend-mode: color-burn;
 }

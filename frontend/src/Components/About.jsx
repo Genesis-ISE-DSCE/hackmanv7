@@ -12,7 +12,7 @@ function About() {
   return (
     <div id="about">
       <div className="custom-height-abt about-con custom-abt-bg">
-        <div className="abt-container" data-aos="slide-up">
+        <div className="abt-container" data-aos="fade-up">
               <div className="col-12 text-center">
                 <h1
                   id="about"
@@ -45,13 +45,13 @@ function About() {
                       that it was created. You have to rise above it to the next level.”
                     </p>
                   </div>
-                  <div className="image-box">
+                  {/* <div className="image-box">
                     <img
                       src={img}
                       alt="Ays"
                       className="image-style"
                     />
-                </div>
+                </div> */}
                 </div>
               </div>
       </div>
