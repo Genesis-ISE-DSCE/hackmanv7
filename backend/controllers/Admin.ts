@@ -51,8 +51,6 @@ export const deleteTeam = async (req: Request, res: Response) => {
     },
   });
 
-  console.log(existingTeam);
-
   if (!existingTeam) {
     throw new AppError({ name: "NOT_FOUND", message: "Team not found!" });
   }

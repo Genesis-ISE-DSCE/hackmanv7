@@ -76,11 +76,12 @@ export const registerController = async (req: Request, res: Response) => {
       };
 
       addJobs(emailOptions);
-      return res.status(201).json({ message: "Registeration successfull!" });
+      return res.status(201).json({ message: "Registration successfull!" });
     }
+
     throw new AppError({
       name: "INTERNAL_SERVER_ERROR",
-      message: "Registeration Unsuccessfull!",
+      message: "Registration Unsuccessfull!",
     });
   });
 };

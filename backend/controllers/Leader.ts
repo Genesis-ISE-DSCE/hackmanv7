@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { db } from "../utils/db";
-import { compareSync } from "bcrypt";
-import jwt from "jsonwebtoken";
+import jwt, { Secret } from "jsonwebtoken";
 import { HttpStatus } from "../utils/statusCodes";
 import { AppError } from "../utils/error";
 import {
@@ -10,9 +9,15 @@ import {
   GetObjectCommand,
 } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
-import { teamNameSchema } from "../zod/auth-validator";
+import {
+  editMemberSchema,
+  githubSchema,
+  loginSchema,
+  memberSchema,
+  teamNameSchema,
+} from "../zod/auth-validator";
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET as string;
 const accessKey = process.env.ACCESS_KEY;
 const secretAccessKey = process.env.SECRET_ACCESS_KEY;
 const bucketName = process.env.BUCKET_NAME;
@@ -29,7 +34,7 @@ const s3 = new S3Client({
 
 //AUTHENTICATION
 export const login = async (req: Request, res: Response) => {
-  const { email, password } = req.body;
+  const { email, password } = loginSchema.parse(req.body);
 
   const user = await db.leader.findFirst({
     where: {
@@ -38,108 +43,104 @@ export const login = async (req: Request, res: Response) => {
   });
 
   if (!user) {
-    return res.status(HttpStatus.NOT_FOUND).json({ message: "User Not Found" });
+    throw new AppError({ message: "User not found!", name: "NOT_FOUND" });
   }
 
-  if (!JWT_SECRET) {
-    throw new Error("JWT secret is not defined");
-  }
-
-  if (user.password && compareSync(password, user.password)) {
+  if (user.password === password) {
     const token = jwt.sign({ email: user.email, userId: user.id }, JWT_SECRET);
-    res
-      .status(HttpStatus.OK)
-      .json({ token: token, message: "Login Successfull" });
-  } else {
     return res
-      .status(HttpStatus.UNAUTHORIZED)
-      .json({ message: "Authentication Failed, Invalid Creds" });
+      .status(HttpStatus.OK)
+      .json({ success: true, token: token, message: "Login Successfull" });
   }
 
   throw new AppError({
-    name: "INTERNAL_SERVER_ERROR",
-    message: "Internal server error in Login",
+    name: "UNAUTHORIZED",
+    message: "Invalid Credentials!",
   });
 };
 
 //GET TEAM DETAILS
 export const getTeamDetails = async (req: Request, res: Response) => {
-  const payload = teamNameSchema.parse(req.body);
-  console.log(payload);
-
-  const { teamName } = payload;
+  const { teamName } = teamNameSchema.parse(req.body);
 
   const team = await db.team.findUnique({
     where: {
       teamName,
     },
-
     include: {
       members: true,
+      leader: {
+        select: {
+          name: true,
+          email: true,
+          phoneNumber: true,
+        },
+      },
     },
   });
 
   if (!team) {
-    // return res
-    //   .status(HttpStatus.NOT_FOUND)
-    //   .json({ message: "Team Does Not Exist" });
     throw new AppError({
       name: "NOT_FOUND",
       message: "Team Does Not Exist",
     });
   }
-  res.status(HttpStatus.OK).json({ team: team });
 
-  throw new AppError({
-    name: "INTERNAL_SERVER_ERROR",
-    message: "Error in fetching Team Details",
-  });
+  if (team)
+    return res.status(HttpStatus.OK).json({ success: true, team: team });
 };
 
 //ADD NEW TEAM MEMBER
-export const addTeamMemeber = async (req: Request, res: Response) => {
+export const addTeamMember = async (req: Request, res: Response) => {
   const { id } = req.params;
-  const { name, email, phoneNumber } = req.body;
+  const { name, email, phoneNumber } = memberSchema.parse(req.body);
+
   const memberCount = await db.participant.count({
     where: {
-      id,
+      teamId: id,
     },
   });
 
-  if (memberCount >= 4) {
-    return res
-      .status(HttpStatus.BAD_REQUEST)
-      .json({ message: "Team already has maximum members" });
+  if (memberCount >= 3) {
+    throw new AppError({
+      name: "BAD_REQUEST",
+      message: "Member limit reached!",
+    });
   }
+
+  const existingMember = await db.participant.findFirst({
+    where: {
+      email: email,
+    },
+  });
+
+  const existingLeader = await db.leader.findFirst({
+    where: {
+      email: email,
+    },
+  });
+
+  if (existingLeader || existingMember)
+    throw new AppError({
+      name: "BAD_REQUEST",
+      message: "Email already regsitered!",
+    });
 
   const newMember = await db.participant.create({
     data: {
       name,
       email,
       phoneNumber,
-      team: {
-        connect: { id: id },
-      },
+      teamId: id,
     },
   });
 
-  await db.team.update({
-    where: { id: id },
-    data: {
-      members: {
-        connect: { id: newMember.id },
-      },
-    },
-  });
-
-  res
-    .status(HttpStatus.OK)
-    .json({ message: "Member Added Succesfully", member: newMember });
-
-  throw new AppError({
-    name: "INTERNAL_SERVER_ERROR",
-    message: "error in team member addition",
-  });
+  if (newMember)
+    return res.status(HttpStatus.OK).json({
+      success: true,
+      message: "Member Added Succesfully!",
+      member: newMember,
+    });
 };
 
 //Removal OF MEMBER
@@ -152,31 +153,46 @@ export const removeMember = async (req: Request, res: Response) => {
   });
 
   if (!member) {
-    // return res
-    //   .status(HttpStatus.NOT_FOUND)
-    //   .json({ message: "Member does not exist " });
     throw new AppError({
       name: "NOT_FOUND",
-      message: "Member Not Found",
+      message: "Member Not Found!",
     });
   }
 
-  await db.participant.delete({
+  const deletedMember = await db.participant.delete({
     where: { id: id },
   });
 
-  res.status(HttpStatus.OK).json({ message: "Member Deleted", member: member });
-
-  throw new AppError({
-    name: "INTERNAL_SERVER_ERROR",
-    message: "error in removing member",
-  });
+  if (deletedMember)
+    return res
+      .status(HttpStatus.OK)
+      .json({ success: true, message: "Member Deleted!" });
 };
 
 //EDIT TEAM MEMBERS
 export const editTeamMember = async (req: Request, res: Response) => {
   const { id } = req.params;
-  const { name, email, phoneNumber } = req.body;
+  const { name, email, phoneNumber } = editMemberSchema.parse(req.body);
+
+  if (email) {
+    const existingMember = await db.participant.findFirst({
+      where: {
+        email: email,
+      },
+    });
+
+    const existingLeader = await db.leader.findFirst({
+      where: {
+        email: email,
+      },
+    });
+
+    if (existingLeader || existingMember)
+      throw new AppError({
+        name: "BAD_REQUEST",
+        message: "Email already regsitered!",
+      });
+  }
 
   const updateMember = await db.participant.update({
     where: { id: id },
@@ -187,18 +203,16 @@ export const editTeamMember = async (req: Request, res: Response) => {
     },
   });
 
-  res.status(HttpStatus.OK).json({ update: updateMember });
-
-  throw new AppError({
-    name: "INTERNAL_SERVER_ERROR",
-    message: "Error in editing team",
-  });
+  if (updateMember)
+    return res
+      .status(HttpStatus.OK)
+      .json({ success: true, updatedMember: updateMember });
 };
 
 //EDIT GITHUB
 export const addOrEditgithub = async (req: Request, res: Response) => {
   const { id } = req.params;
-  const { githubLink } = req.body;
+  const { githubLink } = githubSchema.parse(req.body);
 
   const updatedTeam = await db.team.update({
     where: { id: id },
@@ -206,12 +220,11 @@ export const addOrEditgithub = async (req: Request, res: Response) => {
       githubLink,
     },
   });
-  res.status(HttpStatus.OK).json({ message: "github added", updatedTeam });
 
-  throw new AppError({
-    name: "INTERNAL_SERVER_ERROR",
-    message: "Error in addoreditgithub",
-  });
+  if (updatedTeam)
+    return res
+      .status(HttpStatus.OK)
+      .json({ success: true, message: "github link added", updatedTeam });
 };
 
 //UPLOAD PAYMENT
@@ -265,9 +278,4 @@ export const uploadPic = async (req: Request, res: Response) => {
         .json({ success: true, message: "Payment Pic Added Succesfully" });
     }
   }
-
-  throw new AppError({
-    name: "INTERNAL_SERVER_ERROR",
-    message: "Error in uploading photo",
-  });
 };
