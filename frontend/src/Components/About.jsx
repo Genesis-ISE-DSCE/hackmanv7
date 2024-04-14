@@ -25,7 +25,7 @@ function About() {
                 <div className="content-boxx abt-box">
                   <div className="text-container">
                     <div className="col-12 text-center">
-                      <h1 className="heading-txt">H A C K M A N || V7.0</h1>
+                      <h1 className="heading-txt">H A C K M A N || v7</h1>
                     </div>
                     <div className="col-12 text-center">
                       <p className="tagline">From bits to bytes, code your way to new heights.</p>
