@@ -168,7 +168,7 @@ const Schedule = () => {
                   </p>
                   June 8th : 9:00AM - 10:30AM <p>Inauguration + Quick Guide</p>
                   <p className="imp-events">
-                    June 8th : 11:00AM <br /> Get, Set, HackMan v7.0!
+                    June 8th : 11:00AM <br /> Get, Set, HackMan v7!
                   </p>
                 </div>
               </li>
