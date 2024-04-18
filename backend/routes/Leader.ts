@@ -12,6 +12,7 @@ import {
 const router = express.Router();
 import multer from "multer";
 import authenticateToken from "../middleware/auth";
+import { limiter } from "../server";
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
@@ -19,19 +20,19 @@ const upload = multer({ storage: storage });
 router.route("/login").post(asyncHandler(login));
 router
   .route("/getTeamDetails")
-  .get(authenticateToken, asyncHandler(getTeamDetails));
+  .get(limiter, authenticateToken, asyncHandler(getTeamDetails));
 router
   .route("/addMember/:id")
-  .post(authenticateToken, asyncHandler(addTeamMember));
+  .post(limiter, authenticateToken, asyncHandler(addTeamMember));
 router
   .route("/removeMember/:id")
-  .delete(authenticateToken, asyncHandler(removeMember));
+  .delete(limiter, authenticateToken, asyncHandler(removeMember));
 router
   .route("/editMember/:id")
-  .put(authenticateToken, asyncHandler(editTeamMember));
+  .put(limiter, authenticateToken, asyncHandler(editTeamMember));
 router
   .route("/addGithub/:id")
-  .put(authenticateToken, asyncHandler(addOrEditgithub));
+  .put(limiter, authenticateToken, asyncHandler(addOrEditgithub));
 router
   .route("/uploadPic/:id")
   .post(upload.single("image"), asyncHandler(uploadPic));

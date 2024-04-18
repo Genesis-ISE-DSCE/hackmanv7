@@ -2,12 +2,18 @@ import { Queue } from "bullmq";
 import { Worker } from "bullmq";
 import dotenv from "dotenv";
 import { sendEmailToLeader } from "./mailer";
+import IORedis from "ioredis";
 dotenv.config();
 
-const redisConnection = {
+const redisConnection = new IORedis({
   host: process.env.REDIS_HOST,
   port: Number(process.env.REDIS_PORT),
-};
+  password: process.env.REDIS_PASSWORD,
+  maxRetriesPerRequest: null,
+  tls: {
+    host: process.env.REDIS_HOST,
+  },
+});
 
 export const emailQueue = new Queue("emailQueue", {
   connection: redisConnection,

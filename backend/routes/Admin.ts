@@ -5,9 +5,10 @@ import {
   getAllTeams,
   updatePaymentStatus,
 } from "../controllers/Admin";
+import { limiter } from "../server";
 
 const router = express.Router();
-router.route("/getAllTeams").get(asyncHandler(getAllTeams));
+router.route("/getAllTeams").get(limiter, asyncHandler(getAllTeams));
 router.route("/deleteTeam/:id").delete(asyncHandler(deleteTeam));
 router.route("/updatePaymentStatus/:id").put(asyncHandler(updatePaymentStatus));
 
