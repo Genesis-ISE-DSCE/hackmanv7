@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import Hammer from "hammerjs";
-import Board from "../assets/event-board.png";
+// import Board from "../assets/event-board.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 

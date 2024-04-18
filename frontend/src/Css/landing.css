@@ -65,7 +65,7 @@
     bottom: 70%;
     right: 36%;
     transform: translateX(-45%);
-    padding: 10px;
+    padding: 5px;
 }
 
 .dialogue2 {
@@ -74,17 +74,17 @@
     bottom: 70%;
     right: 36%;
     transform: translateX(-45%);
-    padding: 10px;
+    padding: 3px;
 }
 
 .mascot {
     position: absolute;
-    top: 12%;
+    bottom: 1%;
     right: 0;
-    margin-right: -1%;
+    margin-right: -4%;
     rotate: -3deg;
     animation: bounce 6s;
-    z-index: 1;
+    z-index: 3;
 }
 
 .mascot:hover .dialogue2 {
@@ -144,8 +144,8 @@
     }
 
     .mascot {
-        scale: 0.60;
-        margin-right: -18%;
+        scale: 0.75;
+        /* margin-right: -18%; */
     }
 }
 

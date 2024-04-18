@@ -40,7 +40,7 @@
 
 @media (max-width: 767px) {
   .custom-foot-bg{
-    background-image: url("../assets/small-bg.jpeg");
+    background-image: url("../assets/smolbg.png");
     background-size: cover;
   }
   .title-sub {
