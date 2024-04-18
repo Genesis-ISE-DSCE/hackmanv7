@@ -47,7 +47,7 @@
 
 @media (max-width: 767px) {
   .custom-faq-bg {
-    background-image: url("../assets/small-bg.jpeg");
+    background-image: url("../assets/smolbg.png");
     color: white;
     background-size: cover;
   }

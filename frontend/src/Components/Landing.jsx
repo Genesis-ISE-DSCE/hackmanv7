@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
 import newBg from "../assets/newbg3.png";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import "../Css/landing.css";
-import Bat from "../assets/bat-mascot.gif";
+// import Bat from "../assets/bat-mascot.gif";
+import Batman from "../assets/newmascot2.png";
 import Dialogue from "../assets/dialogue.png";
 import Dialogue2 from "../assets/dialogue2.png";
 
 function Landing() {
+  useEffect(() => {
+    Aos.init({ duration: 6000 });
+  });
   const [showDialogue, setShowDialogue] = useState(true);
   const [showAnotherDialogue, setShowAnotherDialogue] = useState(false);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowDialogue(false);
@@ -58,19 +63,19 @@ function Landing() {
         <div className="karma glass">
           <h1
             className="mb-4 title"
-            data-aos="slide-down"
+            data-aos="fade-zoom-in"
             style={{ filter: "drop-shadow(4px 4px 6px #010101)" }}
           >
             H A C K M A N
           </h1>
-          <h3 className="karma2">June 8th-9th</h3>
+          <h3 className="karma2" >June 8th-9th</h3>
         </div>
 
-        {/* <div className="mascot" onMouseOver={handleHover} data-aos="slide-left">
+         <div className="mascot" onMouseOver={handleHover} data-aos="slide-left">
           <picture alt="mascot">
             <img
-              height={180}
-              src={Bat}
+              height={140}
+              src={Batman}
               loading="lazy"
               alt="mascot"
             />
@@ -80,7 +85,7 @@ function Landing() {
             <div className="dialogue z-3" id="dialogue">
               <picture alt="dialogue-box">
                 <img
-                  height={80}
+                  height={50}
                   
                   src={Dialogue}
                   loading="lazy"
@@ -103,7 +108,7 @@ function Landing() {
               </picture>
             </div>
           )}
-        </div> */}
+        </div> 
       </div>
     </div>
   );

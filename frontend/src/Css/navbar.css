@@ -12,9 +12,11 @@
 }
 
 .navbar {
-    background: rgba(10, 60, 98, 0.674);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    /* background: rgba(10, 60, 98, 0.674); */
+    /* text-align: center !important; */
+    background: rgba(3, 22, 35, 0.895);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
 }
   
 .navbar-ul {
@@ -35,9 +37,7 @@
         height: auto;
         width: 100vw;
     }
-    .mascot {
-        right: -7%;
-    }
+    
 }
 
 .navbar-ul:hover {

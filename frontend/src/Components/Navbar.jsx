@@ -16,7 +16,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="fixed-top navbar navbar-expand-lg d-flex align-items-center actual-nav pb-2">
+    <nav className="fixed-top navbar navbar-expand-lg d-flex jud align-items-center actual-nav pb-2">
       <div className="head">
         <a href="/">
           <div
