@@ -13,7 +13,7 @@ import img10 from "../assets/images/gallery/DSC02696.png";
 
 const PhotoLib = () => {
     return (
-        <div className="gallery custom-abt-bg">
+        <div id="gallery" className="gallery custom-abt-bg">
             <div>
                 <h1 className="title-sub">G A L L E R Y</h1>
             </div>
