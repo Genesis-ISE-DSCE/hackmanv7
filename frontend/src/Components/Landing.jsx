@@ -47,7 +47,7 @@ function Landing() {
           <img
             src={newBg}
             alt=""
-            srcset=""
+            srcSet=""
             style={{ height: "100vh", width: "100vw", objectFit: "cover" }}
           />
         </section>
