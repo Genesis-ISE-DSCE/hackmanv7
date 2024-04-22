@@ -11,65 +11,13 @@
   src: url("../fonts/PixeloidSans.ttf");
 }
 
-.sponsorpage {
-  overflow: hidden;
-}
-
-.sponsor {
-  overflow: hidden;
-}
-.containerz {
-  overflow: hidden;
+.sponsorpage{
+ overflow: hidden;
 }
 .heading {
   font-family: karmatic;
   font-size: 2.3em;
-  padding-top: 6%;
-}
-
-.with-margin {
-  transition: transform 0.3s;
-}
-
-.with-margin:hover {
-  transform: translateY(-25px); /* Move the image 3D behind by 15px on hover */
-}
-@media (max-width: 768px) {
-  .heading {
-    font-size: 1.5em;
-  }
-  .sps {
-    scale: 0.6;
-    gap: 30px;
-    margin-top: -34% !important;
-  }
-  .with-margin{
-    padding-bottom: 8%;
-  }
-}
-@media (max-width: 768px) {
-  .containerz {
-    flex-direction: column;
-    max-width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-.sponsor-container{
-  margin-top: 10%;
-}
-
-@media (max-width: 768px) {
-  .sponsor-container {
-   margin-top: 20%;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px){
-  .sponsor-container{
-    margin-top: 30%;
-  }
+  padding: 6%;
 }
 
 .custom-sp-bg {
@@ -81,9 +29,15 @@
 
 @media (max-width: 767px) {
   .custom-sp-bg {
-    background-image: url("../assets/smolbg.png");
+    background-image: url("../assets/small-bg.jpeg");
     color: white;
     background-size: cover;
+  }
+  .img-fluid{
+    scale: 0.8;
+  }
+  .for-small{
+    
   }
 }
 .shadow-custom {

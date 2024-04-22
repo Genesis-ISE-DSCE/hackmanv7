@@ -103,11 +103,11 @@
     }
 
     75% {
-        transform: rotate(-25deg);
+        transform: rotate(-20deg);
     }
 
     50% {
-        transform: translateX(40px);
+        transform: translateX(5px);
     }
 }
 

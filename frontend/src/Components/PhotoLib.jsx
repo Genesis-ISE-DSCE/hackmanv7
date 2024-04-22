@@ -1,15 +1,15 @@
 import React from "react";
 import "../Css/photolib.css";
 import img1 from "../assets/images/aboutimg.png";
-import img2 from "../assets/images/gallery/DSC03412.png";
-import img3 from "../assets/images/gallery/DSC02884.png";
-import img4 from "../assets/images/gallery/DSC02708.png";
-import img5 from "../assets/images/gallery/DSC02891.png";
-import img6 from "../assets/images/gallery/DSC03197.png";
-import img7 from "../assets/images/gallery/DSC03277.png";
-import img8 from "../assets/images/gallery/DSC03096.png";
-import img9 from "../assets/images/gallery/DSC02926.png";
-import img10 from "../assets/images/gallery/DSC02696.png";
+import img2 from "../assets/images/gallery/DSC03412.jpg";
+import img3 from "../assets/images/gallery/DSC02884.jpg";
+import img4 from "../assets/images/gallery/DSC02708.jpg";
+import img5 from "../assets/images/gallery/DSC02891.jpg";
+import img6 from "../assets/images/gallery/DSC03197.jpg";
+import img7 from "../assets/images/gallery/DSC03277.jpg";
+import img8 from "../assets/images/gallery/DSC03096.jpg";
+import img9 from "../assets/images/gallery/DSC02926.jpg";
+import img10 from "../assets/images/gallery/DSC02696.jpg";
 
 const PhotoLib = () => {
     return (
