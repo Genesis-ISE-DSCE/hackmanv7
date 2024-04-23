@@ -21,6 +21,7 @@ paths:
       responses:
         200:
           description: An object with token, message and state of operation
+
   /leader/getTeamDetails:
     post:
       tags:
@@ -42,6 +43,7 @@ paths:
       responses:
         200:
           description: object containing state of operation, team details and message
+
   /leader/addMember/{id}:
     post:
       tags:
@@ -73,11 +75,12 @@ paths:
       responses:
         200:
           description: object containing state of operation, member detail and message
+
   /leader/removeMember/{id}:
     delete:
       tags:
         - Leader
-      summary: For adding a team member
+      summary: For removing a team member
       security:
         - bearerAuth: []
       parameters:
@@ -85,23 +88,22 @@ paths:
           name: id
           description: id of the member to be deleted
           required: true
-          
       responses:
         200:
           description: object containing state of operation and message
 
   /leader/editMember/{id}:
     put:
-     tags:
+      tags:
         - Leader
       summary: For editing a Team Member
       security:
-        -bearerAuth: []
-      parameter:
-        -in: path
-         name: id
-         description: id of member to be edited
-         required: true
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          description: id of member to be edited
+          required: true
       consumes:
         - "application/json"
       produces:
@@ -117,22 +119,23 @@ paths:
                   type: string
                   format: email
                 phoneNumber:
-                  type: string    
+                  type: string
       responses:
         200:
           description: object containing state of operation and edited member details
+
   /leader/addGithub/{id}:
     put:
-     tags:
-      - Leader
-      summary: For Adding Github Link of The Particular Team               
-       security:
-        -bearerAuth: []
-      parameter:
-        -in: path
-         name: id
-         description: id of member to be edited
-         required: true
+      tags:
+        - Leader
+      summary: For Adding Github Link of The Particular Team
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          description: id of the team
+          required: true
       consumes:
         - "application/json"
       produces:
@@ -146,4 +149,30 @@ paths:
                   type: String
       responses:
         200:
-          description: object containing state of operation, message and member details            
+          description: object containing state of operation, message and member details
+
+  /leader/uploadPic/{id}:
+    post:
+      tags:
+        - Leader
+      summary: For uploading payment screenshot
+      security:
+        - bearerAuth: []
+      consumes:
+        - multipart/form-data
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          description: id of the team
+          required: true
+          schema:
+            type: string
+        - in: formData
+          name: upfile
+          type: file
+          description: The file to upload.
+      responses:
+        200:
+          description: object containing state of operation and message
