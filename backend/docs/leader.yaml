@@ -85,6 +85,65 @@ paths:
           name: id
           description: id of the member to be deleted
           required: true
+          
       responses:
         200:
           description: object containing state of operation and message
+
+  /leader/editMember/{id}:
+    put:
+     tags:
+        - Leader
+      summary: For editing a Team Member
+      security:
+        -bearerAuth: []
+      parameter:
+        -in: path
+         name: id
+         description: id of member to be edited
+         required: true
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                  format: email
+                phoneNumber:
+                  type: string    
+      responses:
+        200:
+          description: object containing state of operation and edited member details
+  /leader/addGithub/{id}:
+    put:
+     tags:
+      - Leader
+      summary: For Adding Github Link of The Particular Team               
+       security:
+        -bearerAuth: []
+      parameter:
+        -in: path
+         name: id
+         description: id of member to be edited
+         required: true
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              properties:
+                githubLink:
+                  type: String
+      responses:
+        200:
+          description: object containing state of operation, message and member details            
