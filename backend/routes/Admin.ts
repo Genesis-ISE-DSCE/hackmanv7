@@ -5,7 +5,7 @@ import {
   getAllTeams,
   updatePaymentStatus,
 } from "../controllers/Admin";
-import { limiter } from "../server";
+import { limiter } from "../config/rateLimiterConfig";
 
 const router = express.Router();
 router.route("/getAllTeams").get(limiter, asyncHandler(getAllTeams));

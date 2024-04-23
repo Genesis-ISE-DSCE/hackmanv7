@@ -9,13 +9,13 @@ import {
   removeMember,
   uploadPic,
 } from "../controllers/Leader";
-const router = express.Router();
 import multer from "multer";
 import authenticateToken from "../middleware/auth";
-import { limiter } from "../server";
+import { limiter } from "../config/rateLimiterConfig";
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
+const router = express.Router();
 
 router.route("/login").post(asyncHandler(login));
 router

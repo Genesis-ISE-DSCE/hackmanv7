@@ -1,24 +1,14 @@
-import { PrismaClient } from "@prisma/client";
 import express from "express";
 import dotenv from "dotenv";
 import swaggerUi from "swagger-ui-express";
 import { errorHandler } from "./middleware/errorHandler";
-import { rateLimit } from "express-rate-limit";
 import { swaggerDefinition } from "./config/swaggerConfig";
 import swaggerJSDoc from "swagger-jsdoc";
+import { db } from "./utils/db";
 
 dotenv.config();
 
-export const limiter = rateLimit({
-  windowMs: 1 * 60 * 1000,
-  limit: 8,
-  standardHeaders: "draft-7",
-  legacyHeaders: false,
-});
-
 export const app = express();
-
-const prisma = new PrismaClient();
 
 const port: number = Number(process.env.PORT) || 8000;
 const options = {
@@ -37,7 +27,7 @@ app.use(errorHandler);
 app.listen(port, () => console.log("Server is running at " + port));
 
 async function shutdown() {
-  await prisma.$disconnect();
+  await db.$disconnect();
 }
 
 process.on("SIGINT", shutdown);

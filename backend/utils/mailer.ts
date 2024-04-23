@@ -1,7 +1,5 @@
 //@ts-ignore
 import fs from "fs";
-import path from "path";
-import { Participant } from "@prisma/client";
 import { db } from "./db";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
