@@ -19,6 +19,8 @@ export const registerController = async (req: Request, res: Response) => {
   const { leader, teamInfo }: { leader: Leader; teamInfo: TeamInfo } =
     registrationSchema.parse(req.body);
 
+  console.log(leader, teamInfo);
+
   const existingL = await db.leader.findFirst({
     where: {
       email: leader.email,

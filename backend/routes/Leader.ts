@@ -20,7 +20,7 @@ const upload = multer({ storage: storage });
 router.route("/login").post(asyncHandler(login));
 router
   .route("/getTeamDetails")
-  .get(limiter, authenticateToken, asyncHandler(getTeamDetails));
+  .post(limiter, authenticateToken, asyncHandler(getTeamDetails));
 router
   .route("/addMember/:id")
   .post(limiter, authenticateToken, asyncHandler(addTeamMember));

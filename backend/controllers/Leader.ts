@@ -34,6 +34,8 @@ const s3 = new S3Client({
 
 //AUTHENTICATION
 export const login = async (req: Request, res: Response) => {
+  console.log(req.body);
+
   const { email, password } = loginSchema.parse(req.body);
 
   const user = await db.leader.findFirst({

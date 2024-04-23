@@ -1,0 +1,90 @@
+paths:
+  /leader/login:
+    post:
+      tags:
+        - Leader
+      summary: Leader Authetication route
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              properties:
+                email:
+                  type: "string"
+                  format: "email"
+                password:
+                  type: "string"
+      responses:
+        200:
+          description: An object with token, message and state of operation
+  /leader/getTeamDetails:
+    post:
+      tags:
+        - Leader
+      summary: Leader Authentication route
+      security:
+        - bearerAuth: []
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              properties:
+                teamName:
+                  type: string
+      responses:
+        200:
+          description: object containing state of operation, team details and message
+  /leader/addMember/{id}:
+    post:
+      tags:
+        - Leader
+      summary: For adding a team member
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          description: id of the team
+          required: true
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                  format: email
+                phoneNumber:
+                  type: string
+      responses:
+        200:
+          description: object containing state of operation, member detail and message
+  /leader/removeMember/{id}:
+    delete:
+      tags:
+        - Leader
+      summary: For adding a team member
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          description: id of the member to be deleted
+          required: true
+      responses:
+        200:
+          description: object containing state of operation and message

@@ -1,0 +1,43 @@
+paths:
+  /admin/getAllTeams:
+    get:
+      tags:
+        - Admin
+      summary: gets the information of all the teams.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: An array of objects with team details.
+
+  /admin/updatePaymentStatus/{id}:
+    put:
+      tags:
+        - Admin
+      summary: updates the paymentStatus field for a team
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          description: id of the team
+          required: true
+      responses:
+        200:
+          description: Payment Status will be updated!
+
+  /admin/deleteTeam/{id}:
+    delete:
+      tags:
+        - Admin
+      summary: deletes the team
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          description: id of the team
+          required: true
+      responses:
+        200:
+          description: Team will be deleted!
