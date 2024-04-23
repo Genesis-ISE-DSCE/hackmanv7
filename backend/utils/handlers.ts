@@ -1,12 +1,12 @@
-import { Request, Response, NextFunction } from 'express'
+import { Request, Response, NextFunction } from "express";
 
 type AsyncHandlerCallback = (
   req: Request,
   res: Response,
   next: NextFunction
-) => any
+) => any;
 export function asyncHandler(cb: AsyncHandlerCallback) {
   return (req: Request, res: Response, next: NextFunction) => {
-    return cb(req, res, next)?.catch(next)
-  }
+    return cb(req, res, next)?.catch(next);
+  };
 }

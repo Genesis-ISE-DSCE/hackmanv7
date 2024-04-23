@@ -24,8 +24,6 @@ export async function addJobs(emailOptions: {
   email: string;
   teamName: string;
 }) {
-  console.log(process.env.MAIL_USER);
-  console.log(process.env.MAIL_PASSWORD);
   const res = await emailQueue.add("sendEmail", {
     password: emailOptions.password,
     email: emailOptions.email,
@@ -40,7 +38,6 @@ export const worker = new Worker(
   async (job) => {
     console.log("Got a job --> ", job.id);
     try {
-      console.log(job.data);
       await sendEmailToLeader(
         job.data.email,
         job.data.password,

@@ -34,8 +34,6 @@ const s3 = new S3Client({
 
 //AUTHENTICATION
 export const login = async (req: Request, res: Response) => {
-  console.log(req.body);
-
   const { email, password } = loginSchema.parse(req.body);
 
   const user = await db.leader.findFirst({
@@ -262,8 +260,6 @@ export const uploadPic = async (req: Request, res: Response) => {
 
     const command = new GetObjectCommand(getObjectParams);
     const url = await getSignedUrl(s3, command);
-
-    console.log(url);
 
     const addPic = await db.team.update({
       where: {

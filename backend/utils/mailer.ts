@@ -64,7 +64,6 @@ const sendBrocures = async (memberEmail: string, teamName: string) => {
         console.log(error);
       }
     });
-    console.log(`Brochure sent to ${memberEmail} for team ${teamName}`);
   } catch (error) {
     console.error("Error sending brochure:", error);
   }
@@ -92,7 +91,6 @@ export const sendMassMail = async (teamName: string, req: Request) => {
       const email = mem;
       await sendBrocures(email, teamName);
     }
-    console.log(`Mass mail for brochures sent to team ${teamName}`);
   } catch (error) {
     console.error("Error sending mass mail for brochures:", error);
   }
