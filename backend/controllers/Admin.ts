@@ -2,6 +2,12 @@ import { Request, Response } from "express";
 import { db } from "../utils/db";
 import { HttpStatus } from "../utils/statusCodes";
 import { AppError } from "../utils/error";
+import dotenv from "dotenv";
+import jwt from "jsonwebtoken";
+import { adminSchema } from "../zod/auth-validator";
+
+dotenv.config();
+const JWT_SECRET = process.env.JWT_SECRET as string;
 
 interface TeamInfo {
   teamName: String;
@@ -14,6 +20,18 @@ interface TeamInfo {
   payStatus: Boolean;
   paymentPic: String | null;
 }
+
+export const adminLogin = async (req: Request, res: Response) => {
+  const { email, password } = adminSchema.parse(req.body);
+
+  if (email === process.env.ADMIN_EMAIL && password == process.env.ADMIN_PASS) {
+    const token = jwt.sign({ email: email }, JWT_SECRET);
+    return res
+      .status(HttpStatus.OK)
+      .json({ success: true, token: token, message: "Login Successfull" });
+  }
+  throw new AppError({ name: "UNAUTHORIZED", message: "Invalid credentials!" });
+};
 
 export const getAllTeams = async (req: Request, res: Response) => {
   const teams: TeamInfo[] = await db.team.findMany({
