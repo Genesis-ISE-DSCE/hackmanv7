@@ -86,3 +86,14 @@ export const registrationSchema = z.object({
   leader: leaderSchema,
   teamInfo: teamInfoSchema,
 });
+
+export const adminSchema = z.object({
+  email: z
+    .string()
+    .trim()
+    .email({ message: "Invalid Email Address" })
+    .min(3, { message: "Email should have atleast 3 characters" })
+    .max(255, { message: "email must not be more than 255 characters" }),
+
+  password: z.string(),
+});
