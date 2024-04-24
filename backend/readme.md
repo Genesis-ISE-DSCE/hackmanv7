@@ -68,7 +68,17 @@ Welcome to the backend of Hackman V7. This section provides an overview of the b
    cp .env.sample .env
    ```
 
-5. **Setup Database and Redis**:
+5. **Setup PostgresSQL Migrations**
+
+   After setting up your PostgreSQL database and configuring the `.env` file, you can run migrations to create the necessary tables in your database. Use the following command:
+
+   ```shell
+   npm run migrate
+
+   ```
+
+6. **Setup Database and Redis**:
+
    Ensure Docker is installed and running, then execute:
 
    ```shell
@@ -77,23 +87,23 @@ Welcome to the backend of Hackman V7. This section provides an overview of the b
 
    The .env variables are pre-configured; no changes are required.
 
-6. **Alternative Database and Redis Instances**:
+7. **Alternative Database and Redis Instances**:
    You can obtain Database and Redis instances from providers like Aiven for Redis and Supabase or Neon.tech for PostgreSQL.
 
-7. **Update .env Variables for External Services**:
+8. **Update .env Variables for External Services**:
    If using external services for database and Redis, ensure to update the corresponding .env variables with the credentials provided by the service provider.
 
-8. **Setup Other Environment Variables**:
+9. **Setup Other Environment Variables**:
    Configure additional environment variables such as PORT, S3 credentials, Mail credentials, Admin email, and password in the `.env` file according to your application's requirements.
 
-9. **Start the Server**:
-   Run the following command to start the server:
+10. **Start the Server**:
+    Run the following command to start the server:
 
-   ```shell
-   npm run dev
-   ```
+```shell
+npm run dev
+```
 
-   The server will start successfully!
+The server will start successfully!
 
-10. **Explore Endpoints Using API Documentation**:
+11. **Explore Endpoints Using API Documentation**:
     Access the API documentation by navigating to the `/api-docs` route in your web browser. A user interface will open containing detailed information about each endpoint, along with the option to try them out interactively.
