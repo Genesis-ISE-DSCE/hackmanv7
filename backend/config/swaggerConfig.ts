@@ -14,6 +14,11 @@ export const swaggerDefinition = {
   servers: [
     {
       url: `http://localhost:${process.env.PORT}`,
+      description: "Local Environment",
+    },
+    {
+      url: `${process.env.PROD_URL}`,
+      description: "Production Environment",
     },
   ],
   components: {
