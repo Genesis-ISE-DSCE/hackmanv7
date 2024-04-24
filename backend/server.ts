@@ -20,7 +20,10 @@ const swaggerSpec = swaggerJSDoc(options);
 
 app.use(express.json());
 app.use(cors());
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+if (process.env.NODE_ENV !== "production") {
+  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+}
 app.use("/auth", require("./routes/auth"));
 app.use("/leader", require("./routes/Leader"));
 app.use("/admin", require("./routes/Admin"));
