@@ -19,7 +19,7 @@ const swaggerSpec = swaggerJSDoc(options);
 
 app.use(express.json());
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-app.use("/auth", require("./routes/auth"));
+app.use("/auth", require("./routes/Auth"));
 app.use("/leader", require("./routes/Leader"));
 app.use("/admin", require("./routes/Admin"));
 app.use(errorHandler);
