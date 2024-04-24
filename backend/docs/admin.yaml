@@ -1,4 +1,26 @@
 paths:
+  /admin/login:
+    post:
+      tags:
+        - Admin
+      summary: Admin Authentication Route
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              properties:
+                email:
+                  type: "string"
+                  format: "email"
+                password:
+                  type: "string"
+      responses:
+        200:
+          description: state of the operation, token, message
   /admin/getAllTeams:
     get:
       tags:
