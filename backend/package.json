@@ -4,12 +4,11 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "deploy": "ts-node server.ts",
     "start": "node dist/server.js",
     "dev": "nodemon server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "npx prisma migrate dev && npx prisma generate",
-    "build": "tsc -b"
+    "build": "npm install && tsc"
   },
   "author": "",
   "license": "ISC",
