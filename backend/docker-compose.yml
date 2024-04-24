@@ -1,17 +1,27 @@
-version: "3.4"
+version: "3.8"
 
 services:
   postgres:
-    container_name: hackmanv7
     image: postgres
-    ports:
-      - 5434:5432
-    volumes:
-      - postgres_data:/var/lib/postgresql/postgres_data
+    container_name: hackmanv7
+    restart: always
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_DB: hackman
       POSTGRES_PASSWORD: hackman
+      POSTGRES_DB: hackman
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis
+    container_name: redis_container
+    restart: always
+    ports:
+      - "6379:6379"
+    environment:
+      - REDIS_PASSWORD= hackmanv7
 
 volumes:
   postgres_data:

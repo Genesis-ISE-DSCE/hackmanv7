@@ -3,34 +3,31 @@ paths:
     post:
       tags:
         - Auth
-      summary: creates a new Team with it's leader
+      summary: Creates a team and leader
+      consumes:
+        - "application/json"
       produces:
-        - application/json
-      parameters:
-        - in: body
-          name: register
-          description: Creates a new team
-          required: true
-          schema:
-            $ref: "#/definitions/Auth"
+        - "application/json"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              properties:
+                leader:
+                  type: "object"
+                  properties:
+                    email:
+                      type: "string"
+                      format: "email"
+                    name:
+                      type: "string"
+                    phoneNumber:
+                      type: "string"
+                teamInfo:
+                  type: "object"
+                  properties:
+                    name:
+                      type: "string"
       responses:
         201:
-          description: An object with user details
-definitions:
-  Auth:
-    type: object
-    properties:
-      leader:
-        type: object
-        properties:
-          name:
-            type: string
-          email:
-            type: string
-          phoneNumber:
-            type: string
-      teamInfo:
-        type: object
-        properties:
-          name:
-            type: string
+          description: An object with token, message and state of operation
