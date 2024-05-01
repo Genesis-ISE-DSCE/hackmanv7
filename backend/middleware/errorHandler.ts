@@ -20,6 +20,7 @@ export const errorHandler = (
   }
   return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
     success: false,
-    error: "Internal Server Error",
+    error: err,
+    // error: "Internal Server Error",
   });
 };
