@@ -7,7 +7,7 @@ import "../Css/footer.css";
 
 function Footer() {
   useEffect(() => {
-    Aos.init({ duration: 2000 });
+    Aos.init({ duration: 1000 });
   });
   return (
     <div className="about-con custom-foot-bg" id="contact">
@@ -64,7 +64,7 @@ function Footer() {
             </div>
           </div>
         </div>
-      <div className="madeby">Made by team <a href="https://www.instagram.com/genesis.ise/" rel='noreferrer noopener' target="_blank" className='genesis-link'>Genesis</a> with <span className="heart">❤️</span></div>
+      <div className="madeby" style={{fontFamily:"pixeloidsans"}}>Made by team <a href="https://www.instagram.com/genesis.ise/" rel='noreferrer noopener' target="_blank" className='genesis-link'>Genesis</a> with <span className="heart">❤️</span></div>
     </div>
   );
 }

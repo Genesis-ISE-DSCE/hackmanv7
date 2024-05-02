@@ -33,13 +33,13 @@ function Navbar() {
             <a href="/#about" className="nav-link">About</a>
           </li>
           <li className="nav-item">
-            <a href="/#gallery" className="nav-link">Gallery</a>
-          </li>
-          <li className="nav-item">
             <a href="/#faqs" className="nav-link">FAQs</a>
           </li>
           <li className="nav-item">
             <a href="/#schedule" className="nav-link">Schedule</a>
+          </li>
+          <li className="nav-item">
+            <a href="/#gallery" className="nav-link">Gallery</a>
           </li>
           <li className="nav-item">
             <Link to="/registration" className="nav-link">Register</Link>

@@ -23,11 +23,6 @@ const LandingPage = () => {
               <Suspense fallback={<div>Loading...</div>}>
                 <About />   
             </Suspense> 
-
-            <Suspense fallback={<div>Loading...</div>}>
-                <PhotoLib />
-            </Suspense>
-            
             <Suspense fallback={<div>Loading...</div>}>
                 <Faqs />
             </Suspense>
@@ -38,6 +33,9 @@ const LandingPage = () => {
 
             <Suspense fallback={<div>Loading...</div>}>
                 <Sponsors />
+            </Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
+                <PhotoLib />
             </Suspense>
             
             <Suspense fallback={<div>Loading...</div>}>
