@@ -1,14 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../Css/navbar.css";
 import User from "../assets/user-profile.png";
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
-  const toggleMobileMenu = () => {
+  const toggleMobileMenu = (event) => {
+    event.stopPropagation();
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
 
   return (
     <nav className="navbar">
@@ -25,28 +45,28 @@ function Navbar() {
           <div className={`line ${isMobileMenuOpen ? "open" : ""}`}></div>
         </div>
 
-        <ul className={`navbar-nav ${isMobileMenuOpen ? "active" : ""}`}>
-          <li className="nav-item">
+        <ul ref={menuRef} className={`navbar-nav ${isMobileMenuOpen ? "active" : ""}`}>
+          <li className="nav-item" onClick={closeMobileMenu}>
             <a href="/#land" className="nav-link">Home</a>
           </li>
-          <li className="nav-item">
+          <li className="nav-item" onClick={closeMobileMenu}>
             <a href="/#about" className="nav-link">About</a>
           </li>
-          <li className="nav-item">
+          <li className="nav-item" onClick={closeMobileMenu}>
             <a href="/#faqs" className="nav-link">FAQs</a>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item" onClick={closeMobileMenu}>
             <a href="/#schedule" className="nav-link">Schedule</a>
-          </li>
-          <li className="nav-item">
+          </li> */}
+          <li className="nav-item" onClick={closeMobileMenu}>
             <a href="/#gallery" className="nav-link">Gallery</a>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item" onClick={closeMobileMenu}>
             <Link to="/registration" className="nav-link">Register</Link>
-          </li>
+          </li> */}
 
           {/* Profile Icon for Mobile */}
-          <li className="nav-item mobile-profile-icon">
+          <li className="nav-item mobile-profile-icon" onClick={closeMobileMenu}>
             <Link to="/profile">
               <img src={User} alt="Profile" className="profile-img" />
             </Link>

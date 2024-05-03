@@ -71,7 +71,7 @@ function Landing() {
           <h3 className="karma2" >June 8th-9th</h3>
         </div>
 
-         <div className="mascot" onMouseOver={handleHover} data-aos="slide-left">
+         {/* <div className="mascot" onMouseOver={handleHover} data-aos="slide-left">
           <picture alt="mascot">
             <img
               height={140}
@@ -108,7 +108,7 @@ function Landing() {
               </picture>
             </div>
           )}
-        </div> 
+        </div>  */}
       </div>
     </div>
   );

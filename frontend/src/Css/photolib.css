@@ -116,3 +116,15 @@
 .gal-img{
    padding: 4% 25%;
 }
+
+@media (max-width: 991px) {
+    .image-container {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    #carouselExampleAutoplaying {
+      display: none;
+    }
+  }
