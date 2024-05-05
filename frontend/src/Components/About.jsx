@@ -39,7 +39,7 @@ function About() {
                       Engineering (DSCE), Bangalore. We give the brightest of minds a
                       chance to brainstorm as a team and come up with unique solutions,
                       code it out and solve some of the pressing problems of our
-                      society. Over the first 4 versions we have seen some brilliant
+                      society. Over the first six versions we have seen some brilliant
                       projects and we challenge you to top them off with your
                       Out-of-the-box ideas. “You can't solve a problem on the same level
                       that it was created. You have to rise above it to the next level.”
