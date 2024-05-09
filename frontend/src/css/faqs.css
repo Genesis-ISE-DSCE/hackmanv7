@@ -1,0 +1,121 @@
+@font-face {
+  font-family: pixeloidsans-bold;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+  font-family: pixeloidsans;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+  font-family: karmatic ;
+  src: url("../fonts/ka1.ttf");
+}
+
+.outer {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0a3c62;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #031421;
+}
+
+::-webkit-scrollbar-track {
+  background: #031421;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0b4672;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+@media (max-width: 767px) {
+  .main-accordian {
+    padding: 8% 10%;
+  }
+  .faq-main {
+    padding-top: 10%;
+    padding-bottom: 12%;
+  }
+  .title-subz {
+    padding-bottom: 2rem;
+    color: white;
+    font-size: 1.6rem;
+    text-align: center;
+    font-family: karmatic;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .faq-main {
+    padding-top: 10%;
+    padding-bottom: 20%;
+  }
+  .title-subz {
+    padding-top: 3rem;
+    padding-bottom: 0rem;
+    color: white;
+    font-size: 2.8rem;
+    text-align: center;
+    font-family: karmatic;
+  }
+}
+
+@media (min-width: 992px) {
+  .title-subz {
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+    color: white;
+    font-size: 2.6rem;
+    text-align: center;
+    font-family: karmatic;
+  }
+}
+
+.faq-main {
+  text-decoration: none;
+  margin-bottom: 40rem;
+}
+
+.main-accordion {
+  padding: 4% 10%;
+}
+
+.accordion-button {
+  background-color: #041d30 !important;
+  color: white;
+}
+
+.accordion-button:not(.collapsed) {
+  color: white;
+}
+
+.accordion-button:focus {
+  border: none;
+  outline: 0;
+}
+
+.accordion-body {
+  padding: var(--bs-accordion-body-padding-y) var(--bs-accordion-body-padding-x);
+  background-color: #062b46;
+  color: #ffffff;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: transparent;
+}
+
+.title-sub {
+  font-family: karmatic;
+  color: white;
+}

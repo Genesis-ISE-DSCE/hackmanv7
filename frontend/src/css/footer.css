@@ -1,0 +1,223 @@
+@font-face {
+    font-family: pixeloidsans-bold;
+    src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+    font-family: pixeloidsans;
+    src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+    font-family: karmatic ;
+    src: url("../fonts/ka1.ttf");
+}
+
+.karmaReal {
+    white-space: nowrap;
+    font-family: karmaRealtic;
+    font-size: 4rem;
+    color: rgb(245, 245, 245);
+    background: rgba(10, 60, 98, 0.455);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(11px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title-foot {
+    padding-top: 2rem;
+    font-family: karmatic;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #0d6efd;
+    transform: scale(1.1);
+}
+
+/* Small devices */
+@media (max-width: 767px) {
+    .title-foot {
+        font-size: 1.6rem;
+    }
+    .links-box {
+        color: white;
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: pixeloidsans;
+    }
+    
+    .social-links {
+        padding-top: 0.4rem;
+        transform: scale(0.7);
+    }
+    
+    .contact-no {
+        padding-top: 0.2rem;
+        display: flex;
+        width: 70%;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .contact-no p {
+        font-size: 0.7rem;
+    }
+    
+    .documents {
+        width: 95%;
+        display: flex;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .doc-link {
+        font-size: 0.55rem;
+    }
+    
+    .madeby {
+        background-color: #02142c;
+        color: white;
+        text-align: center;
+        padding: 6px;
+        font-size: medium;
+    }
+      
+    .genesis-link {
+        color: #47b9c3b3;
+    }
+      
+    .heart {
+        color: red;
+    }
+}
+
+/* Medium Devices */
+@media (min-width: 768px) and (max-width: 991px) {
+    .title-foot {
+        font-size: 2.8rem;
+    }
+    .links-box {
+        color: white;
+        width: 30%;
+        display: flex;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: pixeloidsans;
+    }
+    
+    .social-links {
+        padding-top: 1rem;
+    }
+    
+    .contact-no {
+        padding-top: 0.8rem;
+        display: flex;
+        width: 54%;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .contact-no p {
+        font-size: 1.2rem;
+    }
+    
+    .documents {
+        width: 95%;
+        display: flex;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .doc-link {
+        font-size: 1.1rem;
+    }
+    
+    .madeby {
+        background-color: #02142c;
+        color: white;
+        text-align: center;
+        padding: 6px;
+        font-size: large;
+    }
+      
+    .genesis-link {
+        color: #47b9c3b3;
+    }
+      
+    .heart {
+        color: red;
+    }
+}
+
+/* Large devices */
+@media (min-width: 992px) {
+    .title-foot {
+        font-size: 2.6rem;
+    }
+
+    .links-box {
+        color: white;
+        width: 20%;
+        display: flex;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .social-links {
+        padding-top: 1rem;
+    }
+    
+    .contact-no {
+        padding-top: 1rem;
+        display: flex;
+        width: 34%;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .contact-no p {
+        font-size: 1.4rem;
+    }
+    
+    .documents {
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .doc-link {
+        font-size: 1rem;
+    }
+    
+    .madeby {
+        background-color: #02142c;
+        color: white;
+        text-align: center;
+        padding: 6px;
+        font-size: large;
+    }
+      
+    .genesis-link {
+        color: #47b9c3b3;
+    }
+      
+    .heart {
+        color: red;
+    }
+}

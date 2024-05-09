@@ -1,0 +1,60 @@
+.karma-soon {
+    white-space: nowrap;
+    font-family: karmatic;
+    font-size: 4rem;
+    color: rgb(245, 245, 245);
+    background: rgba(10, 60, 98, 0.455);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(11px);
+    border-radius: 6px;
+    border: 2px solid rgba(253, 253, 253, 0.198);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small devices */
+@media (max-width: 767px) {
+    .karma-soon {
+        width: 90%;
+        padding-bottom: 8%;
+        padding-top: 8%;
+        margin-top: 24rem;
+        margin-bottom: 20rem;
+    }
+
+    .title-soon {
+        font-size: 1.4rem;
+    }
+}
+
+/* Medium Devices */
+@media (min-width: 768px) and (max-width: 991px) {
+    .karma-soon {
+        width: 90%;
+        padding-bottom: 8%;
+        padding-top: 8%;
+        padding-right: 2%;
+        padding-left: 2%;
+        margin-top: 30rem;
+        margin-bottom: 32rem;
+    }
+
+    .title-soon {
+        font-size: 2.8rem;
+    }
+}
+
+/* Large devices */
+@media (min-width: 992px) {
+    .karma-soon {
+        width: 50%;
+        padding-bottom: 6%;
+        padding-top: 6%;
+        margin-top: 24rem;
+        margin-bottom: 24rem;
+    }
+
+    .title-soon {
+        font-size: 3rem;
+    }
+}
