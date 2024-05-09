@@ -1,0 +1,131 @@
+@font-face {
+  font-family: pixeloidsans;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+  font-family: karmatic;
+  src: url("../fonts/ka1.ttf");
+}
+@font-face {
+  font-family: pixeloidsans-bold;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+
+.custom-reg-bg {
+  color: white;
+  font-family: karmatic;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10rem;
+}
+
+.kard {
+  background: rgba(78, 156, 208, 0.206);
+  padding-top: 8%;
+  border-radius: 10px;
+}
+
+.title-reg {
+  font-size: 2.8rem;
+  padding-bottom: 3.2rem;
+}
+
+.reg-form {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-item {
+  padding-bottom: 2rem;
+}
+
+.btn {
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.addButnContainer {
+  text-align: right;
+  margin-top: -1rem;
+}
+
+.addButton {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.addButton:hover {
+  color: skyblue;
+}
+
+.form-control::placeholder {
+  color: #0a3c62;
+  font-family: pixeloidsansbold;
+  text-align: center;
+}
+
+.form-control {
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  background: #6bb5edcc;
+  font-family: pixeloidsansbold;
+}
+
+.form-control:focus {
+  background: #6bb5edcc;
+  border: 0px;
+}
+
+@media (max-width: 767px) {
+  .custom-reg-bg {
+    width: 90%;
+    margin-top: 12rem;
+  }
+
+  .title-reg {
+    font-size: 1.8rem;
+    padding-bottom: 1.8rem;
+  }
+
+  .button-bar {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 1rem;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .custom-reg-bg {
+    width: 80%;
+    margin-top: 20rem;
+  }
+}
+@media (min-width: 992px) {
+  .custom-reg-bg {
+    color: white;
+    background-size: cover;
+  }
+  .button-bar {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: space-around;
+  }
+}

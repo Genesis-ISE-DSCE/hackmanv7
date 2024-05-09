@@ -1,18 +1,11 @@
-import React, { useEffect } from "react";
-import "../Css/about.css";
-import Aos from "aos";
-import "aos/dist/aos.css";
-// import img from "../assets/images/aboutimg.png";
+import React from "react";
+import "../css/about.css";
 
 function About() {
-  useEffect(() => {
-    Aos.init({ duration: 1500 });
-  });
-
   return (
     <div id="about">
       <div className="custom-height-abt about-con custom-abt-bg">
-        <div className="abt-container" data-aos="fade-up">
+        <div className="abt-container" >
               <div className="col-12 text-center">
                 <h1
                   id="about"
@@ -45,13 +38,6 @@ function About() {
                       that it was created. You have to rise above it to the next level.”
                     </p>
                   </div>
-                  {/* <div className="image-box">
-                    <img
-                      src={img}
-                      alt="Ays"
-                      className="image-style"
-                    />
-                </div> */}
                 </div>
               </div>
       </div>

@@ -1,3 +1,16 @@
+@font-face {
+  font-family: pixeloidsans;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+  font-family: karmatic;
+  src: url("../fonts/ka1.ttf");
+}
+@font-face {
+  font-family: pixeloidsans-bold;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -8,6 +21,12 @@
   -webkit-backdrop-filter: blur(33px); */
   padding: 10px 0;
   z-index: 1000;
+}
+
+.nav-heading {
+  text-decoration: none;
+  font-family: pixeloidsans-bold;
+  color: white;
 }
 
 .container {
@@ -49,9 +68,10 @@
 .navbar-nav {
   display: flex;
   list-style-type: none;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
-  
 }
 
 .nav-item {

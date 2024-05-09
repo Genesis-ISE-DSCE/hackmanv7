@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import "../Css/navbar.css";
+import "../css/navbar.css";
 import User from "../assets/user-profile.png";
 
 function Navbar() {
@@ -53,17 +53,18 @@ function Navbar() {
             <a href="/#about" className="nav-link">About</a>
           </li>
           <li className="nav-item" onClick={closeMobileMenu}>
+            <a href="/#gallery" className="nav-link">Gallery</a>
+          </li>
+          <li className="nav-item" onClick={closeMobileMenu}>
             <a href="/#faqs" className="nav-link">FAQs</a>
           </li>
           {/* <li className="nav-item" onClick={closeMobileMenu}>
             <a href="/#schedule" className="nav-link">Schedule</a>
           </li> */}
+          
           <li className="nav-item" onClick={closeMobileMenu}>
-            <a href="/#gallery" className="nav-link">Gallery</a>
+            <Link to="/register" className="nav-link">Register</Link>
           </li>
-          {/* <li className="nav-item" onClick={closeMobileMenu}>
-            <Link to="/registration" className="nav-link">Register</Link>
-          </li> */}
 
           {/* Profile Icon for Mobile */}
           <li className="nav-item mobile-profile-icon" onClick={closeMobileMenu}>

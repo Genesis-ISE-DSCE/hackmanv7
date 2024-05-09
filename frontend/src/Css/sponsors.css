@@ -1,0 +1,92 @@
+@font-face {
+  font-family: pixeloidsans;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+  font-family: karmatic;
+  src: url("../fonts/ka1.ttf");
+}
+@font-face {
+  font-family: pixeloidsans-bold;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+
+.sponsorpage {
+  overflow: hidden;
+  margin-bottom: 20rem;
+}
+
+.heading {
+  font-family: karmatic;
+  font-size: 2.3em;
+  padding: 6%;
+}
+
+@media (max-width: 767px) {
+  .img-fluid {
+    scale: 0.9;
+  }
+  .sponsors-heading {
+    font-family: karmatic;
+    color: white;
+    font-size: 1.6rem;
+    padding: 6%;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .img-fluid {
+    scale: 0.7;
+  }
+  .sponsors-heading {
+    font-family: karmatic;
+    color: white;
+    font-size: 2.8rem;
+    padding: 6%;
+  }
+}
+
+@media (min-width: 992px) {
+  .sponsors-heading {
+    font-family: karmatic;
+    color: white;
+    font-size: 2.6rem;
+    padding: 6%;
+  }
+}
+
+.shadow-custom {
+  filter: drop-shadow(3px 3px 5px #010101);
+}
+
+/* Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Animation */
+.sponsor-image {
+  transition: transform 0.3s ease;
+}
+
+.sponsor-image:hover {
+  transform: scale(1.05);
+}
+
+.sponsor-item {
+  opacity: 0;
+  animation: fade-in 1.0s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.animate {
+  animation: fade-in 1.0s ease forwards;
+}

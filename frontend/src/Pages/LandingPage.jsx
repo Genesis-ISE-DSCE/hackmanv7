@@ -1,48 +1,26 @@
-import React, { Suspense } from 'react';
-const About = React.lazy(()=>import('../Components/About'));
-
-const Footer = React.lazy(()=>import('../Components/Footer'));
-
-const Faqs = React.lazy(()=>import('../Components/Faqs'));
-const Landing = React.lazy(()=>import('../Components/Landing'));
-// const Navbar = React.lazy(()=>import('../components/Navbar'));
-const Schedule = React.lazy(()=>import('../Components/Schedule'));
-const Sponsors = React.lazy(()=>import('../Components/Sponsors'));
-const Register = React.lazy(()=>import('../Components/Register'));
-const Leader = React.lazy(()=>import('../Components/Registration/Leader'));
-const Profile = React.lazy(()=>import('../Components/Profile'));
-const PhotoLib = React.lazy(()=>import('../Components/PhotoLib'));
+import React from "react";
+import "../App.css";
+import About from "../components/About";
+import Landing from "../components/Landing";
+import Faqs from "../components/Faqs";
+import PhotoLib from "../components/PhotoLib";
+import Footer from "../components/Footer";
+import Sponsors from "../components/Sponsors";
 
 const LandingPage = () => {
-    return (
+    return(
         <div>
-            <Suspense>
+            <div className="background-scroll"></div>
+            <div className="content">
                 <Landing />
-            </Suspense>
-
-              <Suspense fallback={<div>Loading...</div>}>
-                <About />   
-            </Suspense> 
-            <Suspense fallback={<div>Loading...</div>}>
-                <Faqs />
-            </Suspense>
-
-            {/* <Suspense fallback={<div>Loading...</div>}>
-                <Schedule />
-            </Suspense> */}
-
-            <Suspense fallback={<div>Loading...</div>}>
-                <Sponsors />
-            </Suspense>
-            <Suspense fallback={<div>Loading...</div>}>
+                <About />
                 <PhotoLib />
-            </Suspense>
-            
-            <Suspense fallback={<div>Loading...</div>}>
+                <Sponsors />
+                <Faqs />
                 <Footer />
-            </Suspense>
+            </div>
         </div>
-    );
+    )
 };
 
 export default LandingPage;

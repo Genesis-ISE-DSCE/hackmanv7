@@ -18,33 +18,20 @@
 
 @media (max-width: 767px) {
   .main-content-txt{
-    font-size:small !important;
+    font-size: small !important;
   }
   .title-sub {
     padding-top: 3rem;
     padding-bottom: 4rem;
     font-size: 1.6rem;
   }
-  .custom-abt-bg {
-    background-image: url("../assets/smolbg.png") !important;
-    color: white;
-    background-size: cover;
-  }
   .heading-txt {
     font-size: 1.4rem;
   }
-  .image-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .image-style {
-    width: 16rem;
-    padding-bottom: 1rem;
-  }
   .content-boxx {
-    width: 90%;
+    width: 85%;
     padding: 1rem;
+    margin-bottom: 8rem;
   }
 }
 
@@ -54,20 +41,10 @@
     padding-bottom: 4rem;
     font-size: 2.8rem;
   }
-  .image-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .image-style {
-    width: 20rem;
-    padding-bottom: 1rem;
-  }
-  
   .content-boxx {
     width: 80%;
     padding: 2rem;
+    margin-bottom: 10rem;
   }
 }
 
@@ -80,20 +57,11 @@
   .heading-txt {
     font-size: 2.2rem;
   }
-  .image-box {
-    width: 100%;
-  }
-  
-  .image-style {
-    width: 20rem;
-    border-radius: 20px;
-    padding: 1rem;
-  }
-  
   .content-boxx {
     width: 60%;
     display: flex;
     padding: 2rem;
+    margin-bottom: 12rem;
   }
 }
 
@@ -127,7 +95,6 @@
 }
 
 .dates-txt {
-  
   font-weight: bold;
   color: #0b4d81;
   text-align: left;
@@ -155,10 +122,3 @@
 .abt-box:hover {
   transform: scale(1.1);
 }
-
-.custom-abt-bg {
-  background-image: url("../assets/newbg3.png");
-  color: white;
-  background-size: cover;
-}
-/* */

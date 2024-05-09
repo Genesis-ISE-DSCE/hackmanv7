@@ -11,12 +11,6 @@
     src: url("../fonts/PixeloidSans.ttf");
 }
 
-.custom-abt-bg {
-    background-image: url("../assets/newbg3.png");
-    color: white;
-    background-size: cover;
-}
-  
 .title-sub {
     font-family: karmatic;
     color: white;
@@ -110,16 +104,20 @@
 }
 
 .gallery {
-    padding-bottom: 4rem;
+    padding-bottom: 16rem;
 }
 
 .gal-img{
-   padding: 4% 25%;
+   padding: 2% 12%;
 }
 
 @media (max-width: 991px) {
     .image-container {
       display: none;
+    }
+    .gallery {
+        padding-top: 6%;
+        padding-bottom: 18rem;
     }
   }
   

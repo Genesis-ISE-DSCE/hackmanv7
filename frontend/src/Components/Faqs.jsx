@@ -1,9 +1,9 @@
 import React from "react";
-import "../Css/Faq.css";
+import "../css/faqs.css";
 
 function Faqs() {
   return (
-    <div id="faqs" className="custom-faq-bg faq-main">
+    <div id="faqs" className="faq-main">
       <div className="">
         <h1 className="title-subz">
           F A Q ' S

@@ -1,17 +1,18 @@
-import React,{ Suspense } from 'react'
+import React from "react";
+import "../App.css";
+// import Register from "../components/Register";
+import OpensSoon from "../components/OpensSoon";
 
-const Leader = React.lazy(()=>import('../Components/Registration/Leader'));
-const Team = React.lazy(()=>import('../Components/Registration/TeamName'));
-
-function RegistrationPage() {
-  return (
-    <div>
-      <Suspense fallback={<div>Loading...</div>}>
-                <Leader />   
-            </Suspense>  
-            
-    </div>
-  )
+const RegistrationPage = () => {
+    return (
+        <div>
+            <div className="background-scroll"></div>
+            <div className="content">
+                {/* <Register /> */}
+                <OpensSoon />
+            </div>
+        </div>
+    );
 }
 
-export default RegistrationPage
+export default RegistrationPage;

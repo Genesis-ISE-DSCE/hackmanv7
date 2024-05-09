@@ -1,5 +1,5 @@
 import React from "react";
-import "../Css/photolib.css";
+import "../css/photolib.css";
 import img1 from "../assets/images/aboutimg.png";
 import img2 from "../assets/images/gallery/DSC03412.jpg";
 import img3 from "../assets/images/gallery/DSC02884.jpg";
@@ -13,40 +13,40 @@ import img10 from "../assets/images/gallery/DSC02696.jpg";
 
 const PhotoLib = () => {
     return (
-        <div id="gallery" className="gallery custom-abt-bg">
+        <div id="gallery" className="gallery">
             <div>
                 <h1 className="title-sub">G A L L E R Y</h1>
             </div>
             <div className="image-container">
                 <div className="image-column double-width">
-                    <img src={img4} alt="Image 1" loading="lazy" />
+                    <img src={img4} alt="EventPic 1" loading="lazy" />
                 </div>
                 <div className="image-column double-width double-height">
-                    <img src={img2} alt="Image 1" loading="lazy" />
+                    <img src={img2} alt="EventPic 2" loading="lazy" />
                 </div>
                 <div className="image-column double-height">
-                    <img src={img1} alt="Image 1" loading="lazy" />
+                    <img src={img1} alt="EventPic 3" loading="lazy" />
                 </div>
                 <div className="image-column">
-                    <img src={img3} alt="Image 1" loading="lazy" />
+                    <img src={img3} alt="EventPic 4" loading="lazy" />
                 </div>
                 <div className="image-column double-width">
-                    <img src={img6} alt="Image 1" loading="lazy" />
+                    <img src={img6} alt="EventPic 5" loading="lazy" />
                 </div>
                 <div className="image-column">
-                    <img src={img5} alt="Image 1" loading="lazy" />
+                    <img src={img5} alt="EventPic 6" loading="lazy" />
                 </div>
                 <div className="image-column">
-                    <img src={img7} alt="Image 1" loading="lazy" />
+                    <img src={img7} alt="EventPic 7" loading="lazy" />
                 </div>
                 <div className="image-column">
-                    <img src={img10} alt="Image 1" loading="lazy" />
+                    <img src={img10} alt="EventPic 8" loading="lazy" />
                 </div>
                 <div className="image-column">
-                    <img src={img9} alt="Image 1" loading="lazy" />
+                    <img src={img9} alt="EventPic 9" loading="lazy" />
                 </div>
                 <div className="image-column">
-                    <img src={img8} alt="Image 1" loading="lazy" />
+                    <img src={img8} alt="EventPic 10" loading="lazy" />
                 </div>
             </div>
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">

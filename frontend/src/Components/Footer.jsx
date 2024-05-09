@@ -1,72 +1,62 @@
 import React from "react";
-import { useEffect } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
 import { Linkedin, Instagram, Mail } from "react-feather";
-import "../Css/footer.css";
+import "../css/footer.css";
 
 function Footer() {
-  useEffect(() => {
-    Aos.init({ duration: 1000 });
-  });
-  return (
-    <div className="about-con custom-foot-bg" id="contact">
-      <div className="text-center">
-        <h1 className="text-center title-sub">CONTACT || US</h1>
-          <div data-aos="fade-up" className="content-box">
-            <div className="reachout-con">
-              <h2 className="connectHeading">
-                Reach out to us
-              </h2>
-              <div className="num-link" style={{fontFamily:"pixeloidsans"}}>
-                <p >Gagan : <a className="doc-link" href="">+91 9008243280</a></p>
-                <p>Tarana : <a className="doc-link" href="">+91 7483408791</a></p>
-              </div>
-            </div>
-            <h2 className="connectHeading">
-              Connect with us
-            </h2>
-            <div className="links-box">
-              <div className="social-links">
-                <a
-                  href="https://www.instagram.com/wearehackman/"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                >
-                  <Instagram size={50} />
-                </a>
-              </div>
+    return (
+        <div id="footer">
+            <div className="karmaReal glass">
+                <h1 className="title-foot" style={{ filter: "drop-shadow(4px 4px 6px #010101)" }}>
+                    C o n t a c t
+                </h1>
+                <div className="links-box">
+                    <div className="social-links">
+                        <a
+                        href="https://www.instagram.com/wearehackman/"
+                        rel="noreferrer noopener"
+                        target="_blank"
+                        >
+                        <Instagram size={48} />
+                        </a>
+                    </div>
 
-              <div className="social-links">
-                <a
-                  href="https://www.linkedin.com/company/wearehackman/"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                >
-                  <Linkedin size={50} />
-                </a>
-              </div>
+                    <div className="social-links">
+                        <a
+                        href="https://www.linkedin.com/company/wearehackman/"
+                        rel="noreferrer noopener"
+                        target="_blank"
+                        >
+                        <Linkedin size={48} />
+                        </a>
+                    </div>
 
-              <div className="social-links">
-                <a
-                  href="mailto:genesis.hackman@gmail.com"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                >
-                  <Mail size={50} />
-                </a>
-              </div>
+                    <div className="social-links">
+                        <a
+                        href="mailto:genesis.hackman@gmail.com"
+                        rel="noreferrer noopener"
+                        target="_blank"
+                        >
+                        <Mail size={48} />
+                        </a>
+                    </div>
+                </div>
+                <div className="contact-no" style={{fontFamily:"pixeloidsans"}}>
+                    <p className="doc-link">Gagan: <a href="tel:9008243280">9008243280</a></p>
+                    <p className="doc-link">Tarana: <a href="tel:7483408791">7483408791</a></p>
+                </div>
+                <div className="documents" style={{fontFamily:"pixeloidsans"}}>
+                    <p className="doc-link copyright">© 2024 Hackman</p>
+                    <p className="doc-link">|</p>
+                    <p className="doc-link"><a href="#11">Code of Conduct</a></p>
+                    <p className="doc-link">|</p>
+                    <p className="doc-link"><a href="#11">Terms and Conditions</a></p>
+                    <p className="doc-link">|</p>
+                    <p className="doc-link"><a href="#11">Instructions</a></p>
+                </div>
+                <div className="madeby" style={{fontFamily:"pixeloidsans"}}>Made by team <a href="https://www.instagram.com/genesis.ise/" rel='noreferrer noopener' target="_blank" className='genesis-link'>Genesis</a> with <span className="heart">❤️</span></div>
             </div>
-            <div className="documents">
-              <p className="doc-link"><a href="">Code of Conduct</a></p>
-              <p className="doc-link"><a href="">Terms and Conditions</a></p>
-              <p className="doc-link"><a href="">Instructions</a></p>
-            </div>
-          </div>
         </div>
-      <div className="madeby" style={{fontFamily:"pixeloidsans"}}>Made by team <a href="https://www.instagram.com/genesis.ise/" rel='noreferrer noopener' target="_blank" className='genesis-link'>Genesis</a> with <span className="heart">❤️</span></div>
-    </div>
-  );
-}
+    )
+};
 
 export default Footer;
