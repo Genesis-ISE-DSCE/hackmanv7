@@ -27,15 +27,12 @@ function About() {
                       <p className="dates-txt">Date : June 8th - 9th</p>
                     </div>
                     <p className="main-content-txt">
-                      HACKMAN v.7 is an Inter College, extravagant 24-hour Hackathon,
-                      hosted by the Department of ISE, Dayananda Sagar College of
-                      Engineering (DSCE), Bangalore. We give the brightest of minds a
-                      chance to brainstorm as a team and come up with unique solutions,
-                      code it out and solve some of the pressing problems of our
-                      society. Over the first six versions we have seen some brilliant
-                      projects and we challenge you to top them off with your
-                      Out-of-the-box ideas. “You can't solve a problem on the same level
-                      that it was created. You have to rise above it to the next level.”
+                    HACKMAN v.7 is an inter-college, extravagant 24-hour Hackathon hosted by the Department of ISE at 
+                    Dayananda Sagar College of Engineering (DSCE), Bangalore. We give the brightest minds a chance to 
+                    brainstorm as a team and come up with unique solutions, code them out, and solve some of society's 
+                    pressing problems. Over the first six versions, we have seen some brilliant projects, and we 
+                    challenge you to top them with your out-of-the-box ideas. 'You can't solve a problem on the same 
+                    level that it was created. You have to rise above it to the next level.'
                     </p>
                   </div>
                 </div>

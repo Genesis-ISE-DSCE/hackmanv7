@@ -1,0 +1,180 @@
+@font-face {
+    font-family: pixeloidsans;
+    src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+    font-family: karmatic;
+    src: url("../fonts/ka1.ttf");
+}
+@font-face {
+    font-family: pixeloidsans-bold;
+    src: url("../fonts/PixeloidSans.ttf");
+}
+  
+input.form-control::-webkit-outer-spin-button,
+input.form-control::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.custom-mem-bg {
+    color: white;
+    font-family: karmatic;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10rem;
+}
+
+.bg-overlay-prof {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+}
+
+.popup-content {
+    z-index: 1000;
+}
+
+.popup-memb {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-family: karmatic;
+    font-size: 1.2rem;
+    color: rgb(245, 245, 245);
+    background: rgba(10, 60, 98, 0.455);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(11px);
+    border-radius: 10px;
+    border: 2px solid rgba(253, 253, 253, 0.198);
+    z-index: 1000;
+}
+
+.head-memb {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    font-size: 1.8rem;
+}
+
+.close {
+    float: right;
+    padding-right: 8px;
+    background: none;
+    border: none;
+}
+
+.team-details{
+    padding-top: 4rem;
+}
+
+.leader-details {
+    padding-top: 3rem;
+}
+
+.members-details {
+    padding-top: 3rem;
+}
+
+.members-form {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error-handling {
+    font-size: 0.8rem;
+}
+
+.member-cont {
+    padding-top: 1rem;
+}
+
+.edit-delete-btns {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 2rem;
+}
+
+.addMemButtonCont {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.addMemButton {
+    font-size: 0.8rem;
+    background: #5694c7;
+    padding: 6px;
+    border-radius: 6px;
+    margin-bottom: 3rem;
+}
+
+.payment-details {
+    padding-top: 3rem;
+    margin-bottom: 8rem;
+}
+
+.payment-cnt {
+    padding-top: 1rem;
+}
+.uploadButtonCon {
+    padding-top: 1rem;
+}
+
+.loading-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    font-family: karmatic;
+}
+
+@media (max-width: 767px) {
+    .custom-mem-bg {
+      width: 90%;
+      margin-top: 12rem;
+    }
+    .popup-memb {
+        width: 90%;
+    }
+    .head-memb {
+        font-size: 1.2rem;
+    }
+    .loading-details {
+        font-size: 1rem;
+        width: 90%;
+    }
+}
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    .custom-mem-bg {
+      width: 80%;
+      margin-top: 20rem;
+    }
+    .popup-memb {
+        width: 80%;
+    }
+    .loading-details {
+        font-size: 1.4rem;
+        width: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    .custom-mem-bg {
+      color: white;
+      background-size: cover;
+    }
+}
