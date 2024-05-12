@@ -76,7 +76,7 @@ function Register() {
         }
       };
 
-      Axios.post("http://localhost:8000/auth/register",requestBody)
+      Axios.post("https://hackmanv7.up.railway.app/auth/register",requestBody)
       .then((res)=>{
         console.log(res.data);
         setSection(section + 1);
