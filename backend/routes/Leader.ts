@@ -19,7 +19,7 @@ const router = express.Router();
 
 router.route("/login").post(asyncHandler(login));
 router
-  .route("/getTeamDetails/:id")
+  .route("/getTeamDetails")
   .get(limiter, authenticateToken, asyncHandler(getTeamDetails));
 router
   .route("/addMember/:id")

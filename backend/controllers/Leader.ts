@@ -61,7 +61,7 @@ export const login = async (req: Request, res: Response) => {
 
 //GET TEAM DETAILS
 export const getTeamDetails = async (req: Request, res: Response) => {
-  const { id } = req.params;
+  const id = req.user.id as string;
 
   const team = await db.team.findUnique({
     where: {
