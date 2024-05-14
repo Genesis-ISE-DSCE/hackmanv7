@@ -65,7 +65,7 @@ export const getTeamDetails = async (req: Request, res: Response) => {
 
   const team = await db.team.findUnique({
     where: {
-      leaderId: id,
+      leaderId: id as string,
     },
     include: {
       members: true,
