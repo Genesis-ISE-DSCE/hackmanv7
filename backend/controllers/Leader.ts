@@ -61,11 +61,11 @@ export const login = async (req: Request, res: Response) => {
 
 //GET TEAM DETAILS
 export const getTeamDetails = async (req: Request, res: Response) => {
-  const id = req.user.id as string;
+  const { id } = req.user;
 
   const team = await db.team.findUnique({
     where: {
-      leaderId: id,
+      id,
     },
     include: {
       members: true,
