@@ -30,11 +30,10 @@ const UserLogin = () => {
         .then((res)=>{
             console.log(res.data.token);
             const token = res.data.token;
-            localStorage.setItem("jwtToken", token);
+            sessionStorage.setItem("jwtToken", token);
             axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
             navigate("/profile");
         }).catch((error)=>{
-            localStorage.setItem("jwtToken", "newToken");
             console.log(error.response.data.error);
             setErrors(error.response.data.error);
         })
