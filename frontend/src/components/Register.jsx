@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import Axios from "axios";
+import axios from "axios";
 import "../css/register.css";
 
 function Register() {
@@ -76,7 +76,7 @@ function Register() {
         }
       };
 
-      Axios.post("https://hackmanv7.up.railway.app/auth/register",requestBody)
+      axios.post("https://hackmanv7.up.railway.app/auth/register",requestBody)
       .then((res)=>{
         console.log(res.data);
         setSection(section + 1);
@@ -104,15 +104,12 @@ function Register() {
   }
 
   function handleOkSuccess() {
-    navigate('/');
+    navigate('/userlogin');
   }
 
   return (
     <div id="registration" className="custom-reg-bg">
       <div className="kard">
-        
-        
-
         {(section === 1 || section === 2) && (
             <div>
               <h1 className="title-reg" style={{ color: "#fff" }}>

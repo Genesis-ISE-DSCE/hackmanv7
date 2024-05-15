@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
-import {jwtDecode} from "jwt-decode";
 import "../css/profile.css";
 
 const Profile = () => {
-    const initialMemberFormData = {
+    const initialMemberFormData = useMemo(() => ({
         memberName: "",
         memberEmail: "",
         memberPhone: "",
-    };
+    }), []);
     const [memberFormData, setMemberFormData] = useState(initialMemberFormData);
     const [showPopup, setShowPopup] = useState(false);
     const [showEditPopup, setShowEditPopup] = useState(false);
@@ -16,30 +15,29 @@ const Profile = () => {
     const [paymentPicFile, setPaymentPicFile] = useState(null);
     const [editMemberData, setEditMemberData] = useState({});
     const [teamDetails, setTeamDetails] = useState();
-    const jwtToken = localStorage.getItem("jwtToken");
+    const [showDeletePopup, setShowDeletePopup] = useState(false);
+    const [selectedMemberId, setSelectedMemberId] = useState(null);
+    const [resErrors, setResErrors] = useState("");
+    const [resEditErrors, setResEditErrors] = useState("");
+    const jwtToken = sessionStorage.getItem("jwtToken");
 
     useEffect(() => {
-        if (jwtToken) {
-            try {
-                const tokenValue = jwtDecode(jwtToken).userId;
-
-                axios.get(`https://hackmanv7.up.railway.app/leader/getTeamDetails/${tokenValue}`, {
-                    headers: {
-                        Authorization: `Bearer ${jwtToken}`
-                    }
-                })
-                .then((res) => {
-                    console.log(res.data);
-                    setTeamDetails(res.data);
-                })
-                .catch((err) => {
-                    console.log("Error fetching team details:", err);
-                });
-            } catch (error) {
-                console.log("Error decoding JWT token:", error);
-            }
+        try {
+            axios.get(`https://hackmanv7.up.railway.app/leader/getTeamDetails`, {
+                headers: {
+                    Authorization: `Bearer ${jwtToken}`
+                }
+            })
+            .then((res) => {
+                setTeamDetails(res.data);
+            })
+            .catch((err) => {
+                console.log("Error fetching team details:", err);
+            });
+        } catch (error) {
+            console.log("Error decoding JWT token:", error);
         }
-    }, []);
+    }, [jwtToken]);
 
     const memberValidation = (formData) => {
         const errors = {};
@@ -107,8 +105,7 @@ const Profile = () => {
             })
             .catch((error)=>{
                 console.log(error);
-                setShowPopup(false);
-                window.location.reload();
+                setResEditErrors(error.response.data.error);
             })
         } else {
             setErrors(errors);
@@ -138,8 +135,7 @@ const Profile = () => {
             })
             .catch((error)=>{
                 console.log(error);
-                setShowPopup(false);
-                window.location.reload();
+                setResErrors(error.response.data.error);
             })
         } else {
             setErrors(errors);
@@ -154,19 +150,31 @@ const Profile = () => {
     };
 
     const handleDeleteMember = (memberId) => {
-        axios.delete(`https://hackmanv7.up.railway.app/leader/removeMember/${memberId}`, {
+        setSelectedMemberId(memberId);
+        setShowDeletePopup(true);
+    };
+    
+    const handleCancelDelete = () => {
+        setShowDeletePopup(false);
+    };
+    
+    const handleConfirmDelete = () => {
+        if (selectedMemberId) {
+            axios.delete(`https://hackmanv7.up.railway.app/leader/removeMember/${selectedMemberId}`, {
             headers: {
                 Authorization: `Bearer ${jwtToken}`
             }
-        })
-        .then((res)=>{
-            console.log(res);
-            window.location.reload();
-        })
-        .catch((error)=>{
-            console.log(error);
-            window.location.reload();
-        })
+            })
+            .then((res)=>{
+                console.log(res);
+                window.location.reload();
+            })
+            .catch((error)=>{
+                console.log(error);
+            })
+            setSelectedMemberId(null);
+        }
+        setShowDeletePopup(false);
     };
 
     const handleFileInputChange = (e) => {
@@ -177,20 +185,20 @@ const Profile = () => {
         const formData = new FormData();
         formData.append("paymentPic", paymentPicFile);
 
-        axios.post("YOUR_UPLOAD_ENDPOINT", formData)
-            .then((res) => {
-                console.log("Image uploaded");
-            })
-            .catch((error) => {
-                console.error("Error uploading file:", error);
-            });
+        axios.post(`https://hackmanv7.up.railway.app/leader/uploadPic/${teamDetails.team.id}`, formData)
+        .then((res) => {
+            console.log(res.data);
+        })
+        .catch((error) => {
+            console.error("Error uploading file:", error);
+        });
     };
 
     useEffect(() => {
         if (showPopup) {
             setMemberFormData(initialMemberFormData);
         }
-    }, [showPopup]);
+    }, [showPopup, initialMemberFormData]);
 
     return(
         <div className="profile">
@@ -348,6 +356,7 @@ const Profile = () => {
                             />
                             <p className="error-handling">{errors.memberPhone}</p>
                         </div>
+                        <p className="error-handling">{resErrors}</p>
                         <div className="button-bar">
                             <div>
                                 <button className="btn" onClick={handleSubmitButton}>Submit</button>
@@ -398,6 +407,7 @@ const Profile = () => {
                             />
                             <p className="error-handling">{errors.memberPhone}</p>
                         </div>
+                        <p className="error-handling">{resEditErrors}</p>
                         <div className="button-bar">
                             <div>
                                 <button className="btn" onClick={handleUpdateButton}>Update</button>
@@ -407,6 +417,25 @@ const Profile = () => {
                     </div>
                 </div>
             )}
+
+            {showDeletePopup && (
+            <div>
+                <div className="bg-overlay"></div>
+                <div className="popup">
+                    <div>
+                        <p className="popup-msg">Are you sure?</p>
+                    </div>
+                <div className="popup-button-cnt">
+                    <button onClick={handleConfirmDelete} className="popup-btn" type="button">
+                        Confirm
+                    </button>
+                    <button onClick={handleCancelDelete} className="popup-btn" type="button">
+                        Cancel
+                    </button>
+                </div>
+                </div>
+            </div>
+        )}
             </div>
         ) : (
             <p className="loading-details">Loading team details...</p>
