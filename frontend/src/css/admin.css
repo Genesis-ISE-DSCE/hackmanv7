@@ -1,0 +1,60 @@
+@font-face {
+    font-family: karmatic;
+    src: url("../fonts/ka1.ttf");
+  }
+  .textfonts {
+    font-family: pixeloidsansbold;
+    color: #f1f1f1;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+ 
+  /* body {
+    background-image: url("../assets/newbg3.png");
+    color: white;
+    background-size: cover;
+    height: 100vh;
+    background-repeat: repeat-y; 
+  } */
+
+  
+  
+  /* @media (max-width: 767px) {
+    body {
+      background-image: url("../assets/newbg3.png");
+      color: white;
+      background-size: cover;
+      background-repeat: repeat-y;
+    }
+  } */
+
+ 
+table {
+  background-color: #eaf6ff; 
+}
+
+.table th,
+.table td {
+  border: 1px solid #dee2e6;
+
+}
+
+.table th {
+  background-color: #6297cf; 
+  color: #000000; 
+}
+
+.table-dark th,
+.table-dark td,
+.table-dark thead th {
+  border-color: #454d55;
+}
+
+  
