@@ -10,7 +10,9 @@
   font-family: pixeloidsans-bold;
   src: url("../fonts/PixeloidSans.ttf");
 }
-
+#registration{
+  font-family: karmatic;
+}
 input.form-control::-webkit-outer-spin-button,
 input.form-control::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -67,7 +69,7 @@ input.form-control::-webkit-inner-spin-button {
   border: none;
   padding: 0;
   cursor: pointer;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
   font-weight: bold;
 }
 
@@ -77,7 +79,7 @@ input.form-control::-webkit-inner-spin-button {
 
 .form-control::placeholder {
   color: #0a3c62;
-  font-family: pixeloidsansbold;
+  font-family: pixeloidsans-bold;
   text-align: center;
 }
 
@@ -87,12 +89,19 @@ input.form-control::-webkit-inner-spin-button {
   padding: 10px;
   font-size: 16px;
   background: #6bb5edcc;
-  font-family: pixeloidsansbold;
+  font-family: pixeloidsans-bold;
 }
 
 .form-control:focus {
   background: #6bb5edcc;
   border: 0px;
+}
+.btn{
+  color: #FFF;
+}
+.btn:hover{
+  scale: 1.1;
+  transition: all 0.2s ease-in;
 }
 
 @media (max-width: 767px) {
@@ -137,7 +146,7 @@ input.form-control::-webkit-inner-spin-button {
     text-align: right;
     color: red;
     font-size: 0.8rem;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: pixeloidsans-bold;
     font-weight: bold;
     padding-bottom: -1rem;
   }
@@ -215,8 +224,8 @@ input.form-control::-webkit-inner-spin-button {
 
 .error-handling {
   text-align: right;
-  color: red;
-  font-family: 'Times New Roman', Times, serif;
+  color: rgb(207, 39, 39);
+  font-family: pixeloidsans-bold;
   font-weight: bold;
   padding-bottom: -1rem;
 }
