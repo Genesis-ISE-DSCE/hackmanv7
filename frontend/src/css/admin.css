@@ -1,60 +1,97 @@
 @font-face {
-    font-family: karmatic;
-    src: url("../fonts/ka1.ttf");
-  }
-  .textfonts {
-    font-family: pixeloidsansbold;
-    color: #f1f1f1;
-  }
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  
-  input[type="number"] {
-    -moz-appearance: textfield;
-  }
- 
-  /* body {
-    background-image: url("../assets/newbg3.png");
-    color: white;
-    background-size: cover;
-    height: 100vh;
-    background-repeat: repeat-y; 
-  } */
-
-  
-  
-  /* @media (max-width: 767px) {
-    body {
-      background-image: url("../assets/newbg3.png");
-      color: white;
-      background-size: cover;
-      background-repeat: repeat-y;
-    }
-  } */
-
- 
-table {
-  background-color: #eaf6ff; 
+  font-family: pixeloidsansbold;
+  src: url("../fonts/ka1.ttf");
 }
 
-.table th,
-.table td {
-  border: 1px solid #dee2e6;
-
-}
-
-.table th {
-  background-color: #6297cf; 
-  color: #000000; 
-}
-
-.table-dark th,
-.table-dark td,
-.table-dark thead th {
-  border-color: #454d55;
-}
-
+body {
+  font-family: pixeloidsansbold, sans-serif;
+  color: #f1f1f1;
+  margin: 0;
+  padding: 0;
   
+}
+
+.background-scroll {
+  background-image: url('../assets/newbg3.png');
+  background-size: contain;
+  background-position: top left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10000%;
+  height: 100%;
+  z-index: -1;
+  animation: scrollBackground 800s linear infinite;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes scrollBackground {
+  from {
+    background-position: left top;
+  }
+  to {
+    background-position: right top;
+  }
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.alert {
+  background-color: #f44336;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.btn:active {
+  background-color: #3e8e41;
+}
