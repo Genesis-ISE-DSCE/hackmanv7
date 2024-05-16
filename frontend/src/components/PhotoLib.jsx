@@ -3,7 +3,7 @@ import "../css/photolib.css";
 import img1 from "../assets/images/aboutimg.png";
 import img2 from "../assets/images/gallery/DSC03412.jpg";
 import img3 from "../assets/images/gallery/DSC02884.jpg";
-import img4 from "../assets/images/gallery/DSC02708.jpg";
+import img4 from "../assets/images/gallery/DSC02078.jpg";
 import img5 from "../assets/images/gallery/DSC02891.jpg";
 import img6 from "../assets/images/gallery/DSC03197.jpg";
 import img7 from "../assets/images/gallery/DSC03277.jpg";

@@ -156,7 +156,7 @@ function Register() {
           </div>
           <div className="button-bar">
             <div>
-              <button className="btn" onClick={handleNextButtonClick}>N e x t</button>
+              <button className="btn text-white" onClick={handleNextButtonClick}>N e x t</button>
             </div>
           </div>
         </form>
