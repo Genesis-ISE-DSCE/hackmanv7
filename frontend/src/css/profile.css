@@ -141,6 +141,20 @@ input.form-control::-webkit-inner-spin-button {
     font-family: karmatic;
 }
 
+.popup-msg-delete {
+    font-size: 1.6rem;
+}
+
+.delete-btn-cnt {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.delete-btn{
+    padding: 4px;
+}
+
 @media (max-width: 767px) {
     .custom-mem-bg {
       width: 90%;

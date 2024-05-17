@@ -1,16 +1,16 @@
 import React from "react";
 import "../App.css";
-import AdminControl from "../components/Admin/AdminControl";
+import AdminLogin from "../components/Admin/AdminLogin";
 
-const AdminPage = () => {
+const AdminLoginPage = () => {
     return(
         <div>
             <div className="background-scroll"></div>
             <div className="content">
-              <AdminControl />
+                <AdminLogin />
             </div>
         </div>
     )
 };
 
-export default AdminPage;
+export default AdminLoginPage;

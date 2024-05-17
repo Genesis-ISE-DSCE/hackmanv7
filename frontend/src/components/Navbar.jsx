@@ -63,12 +63,16 @@ function Navbar() {
           </li> */}
           
           <li className="nav-item" onClick={closeMobileMenu}>
+            <a href="/#footer" className="nav-link">Contact</a>
+          </li>
+
+          <li className="nav-item" onClick={closeMobileMenu}>
             <Link to="/register" className="nav-link">Register</Link>
           </li>
 
           {/* Profile Icon for Mobile */}
           <li className="nav-item mobile-profile-icon" onClick={closeMobileMenu}>
-            <Link to="/profile">
+            <Link to="/userlogin">
               <img src={User} alt="Profile" className="profile-img" />
             </Link>
           </li>
@@ -76,7 +80,7 @@ function Navbar() {
 
         {/* Profile Icon for PC */}
         <div className="profile-icon">
-          <Link to="/profile">
+          <Link to="/userlogin">
             <img src={User} alt="Profile" className="profile-img" />
           </Link>
         </div>

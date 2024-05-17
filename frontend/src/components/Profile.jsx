@@ -184,10 +184,17 @@ const Profile = () => {
     const handleFileUpload = () => {
         const formData = new FormData();
         formData.append("paymentPic", paymentPicFile);
+        console.log(formData);
 
-        axios.post(`https://hackmanv7.up.railway.app/leader/uploadPic/${teamDetails.team.id}`, formData)
+        axios.post(`https://hackmanv7.up.railway.app/leader/uploadPic/${teamDetails.team.id}`, formData, {
+            headers: {
+                Authorization: `Bearer ${jwtToken}`,
+                'Content-Type': 'multipart/form-data',
+            }
+        })
         .then((res) => {
             console.log(res.data);
+            window.location.reload();
         })
         .catch((error) => {
             console.error("Error uploading file:", error);
@@ -423,16 +430,16 @@ const Profile = () => {
                 <div className="bg-overlay"></div>
                 <div className="popup">
                     <div>
-                        <p className="popup-msg">Are you sure?</p>
+                        <p className="popup-msg-delete">Are you sure? Really sure?</p>
                     </div>
-                <div className="popup-button-cnt">
-                    <button onClick={handleConfirmDelete} className="popup-btn" type="button">
-                        Confirm
-                    </button>
-                    <button onClick={handleCancelDelete} className="popup-btn" type="button">
-                        Cancel
-                    </button>
-                </div>
+                    <div className="popup-button-cnt delete-btn-cnt">
+                        <button onClick={handleConfirmDelete} className="delete-btn" type="button">
+                            Confirm
+                        </button>
+                        <button onClick={handleCancelDelete} className="delete-btn" type="button">
+                            Cancel
+                        </button>
+                    </div>
                 </div>
             </div>
         )}

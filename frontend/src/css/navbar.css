@@ -16,11 +16,20 @@
   top: 0;
   left: 0;
   width: 100%;
+  color: white;
   background: rgba(3, 22, 35, 0.895);
-  /* backdrop-filter: blur(33px);
-  -webkit-backdrop-filter: blur(33px); */
   padding: 10px 0;
   z-index: 1000;
+}
+
+.nav-link:visited {
+  color: white;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+  color: white;
 }
 
 .nav-heading {
@@ -46,23 +55,6 @@
   background-color: white;
   margin: 4px 0;
   transition: transform 0.3s ease-in-out;
-}
-
-.line.open:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.line.open:nth-child(2) {
-  opacity: 0;
-}
-.navbar-nav.active {
-  /* display: flex; */
-  background: rgba(3, 22, 35, 0.895);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-}
-.line.open:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
 }
 
 .navbar-nav {

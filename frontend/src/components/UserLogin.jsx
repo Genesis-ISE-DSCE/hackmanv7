@@ -28,7 +28,7 @@ const UserLogin = () => {
             password: loginData.password
         })
         .then((res)=>{
-            console.log(res.data.token);
+            console.log(res.data);
             const token = res.data.token;
             sessionStorage.setItem("jwtToken", token);
             axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;

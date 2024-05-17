@@ -1,48 +1,14 @@
 @font-face {
-  font-family: pixeloidsansbold;
+  font-family: pixeloidsans-bold;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+  font-family: pixeloidsans;
+  src: url("../fonts/PixeloidSans.ttf");
+}
+@font-face {
+  font-family: karmatic ;
   src: url("../fonts/ka1.ttf");
-}
-
-body {
-  font-family: pixeloidsansbold, sans-serif;
-  color: #f1f1f1;
-  margin: 0;
-  padding: 0;
-  
-}
-
-.background-scroll {
-  background-image: url('../assets/newbg3.png');
-  background-size: contain;
-  background-position: top left;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10000%;
-  height: 100%;
-  z-index: -1;
-  animation: scrollBackground 800s linear infinite;
-}
-
-.content {
-  position: relative;
-  z-index: 10;
-}
-
-@keyframes scrollBackground {
-  from {
-    background-position: left top;
-  }
-  to {
-    background-position: right top;
-  }
-}
-
-.card-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .card {
@@ -76,22 +42,54 @@ h1 {
   margin-bottom: 20px;
 }
 
-.btn {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
+.admin-cnt {
+  margin-top: 6rem;
+}
+
+.admin-cnt h1 {
+  font-family: karmatic;
+}
+
+.admin-buttons-cnt {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding-bottom: 2rem;
+  padding-right: 2rem;
+}
+
+.filter-forms {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table-responsive {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link-git {
+  color: skyblue;
+}
+
+.remove-btn {
+  color: #f44336;
+  background: none;
   border: none;
-  border-radius: 5px;
-  background-color: #4caf50;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  padding-bottom: 4px;
 }
 
-.btn:hover {
-  background-color: #45a049;
+.remove-btn:hover {
+  background: #f44336;
+  border: #f44336;
+  color: white;
+  border-radius: 4px;
 }
 
-.btn:active {
-  background-color: #3e8e41;
+.modal {
+  margin-top: 8rem;
 }
