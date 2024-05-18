@@ -302,7 +302,7 @@ const Profile = () => {
                                 <input
                                     className="form-control"
                                     type="text"
-                                    value={teamDetails.team.payStatus}
+                                    value={teamDetails.team.payStatus? "Approved" : "Approval Pending"}
                                     readOnly
                                 />
                             </div>
