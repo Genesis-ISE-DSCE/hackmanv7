@@ -2,10 +2,12 @@
   font-family: pixeloidsans;
   src: url("../fonts/PixeloidSans.ttf");
 }
+
 @font-face {
   font-family: karmatic;
   src: url("../fonts/ka1.ttf");
 }
+
 @font-face {
   font-family: pixeloidsans-bold;
   src: url("../fonts/PixeloidSans.ttf");
@@ -13,48 +15,17 @@
 
 .sponsorpage {
   overflow: hidden;
-  margin-bottom: 20rem;
+  margin-bottom: 15rem;
 }
 
-.heading {
+.sponsors-heading {
   font-family: karmatic;
+  color: white;
   font-size: 2.3em;
   padding: 6%;
 }
 
-@media (max-width: 767px) {
-  .img-fluid {
-    scale: 0.9;
-  }
-  .sponsors-heading {
-    font-family: karmatic;
-    color: white;
-    font-size: 1.6rem;
-    padding: 6%;
-    margin-bottom: 4rem;
-  }
-}
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .img-fluid {
-    scale: 0.7;
-  }
-  .sponsors-heading {
-    font-family: karmatic;
-    color: white;
-    font-size: 2.8rem;
-    padding: 6%;
-  }
-}
-
-@media (min-width: 992px) {
-  .sponsors-heading {
-    font-family: karmatic;
-    color: white;
-    font-size: 2.6rem;
-    padding: 6%;
-  }
-}
 
 .shadow-custom {
   filter: drop-shadow(3px 3px 5px #010101);
@@ -89,4 +60,79 @@
 
 .animate {
   animation: fade-in 1.0s ease forwards;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: hidden;
+  height: 300px;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  opacity: 0;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+.carousel-item:not(.active) {
+  opacity: 0;
+}
+
+/* Adjust the animation duration and easing as needed */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .img-fluid {
+    scale: 0.9;
+  }
+  .sponsors-heading {
+    font-family: karmatic;
+    color: white;
+    font-size: 1.6rem;
+    padding: 6%;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .img-fluid {
+    scale: 0.7;
+  }
+  .sponsors-heading {
+    font-family: karmatic;
+    color: white;
+    font-size: 2.8rem;
+    padding: 6%;
+  }
+}
+
+@media (min-width: 992px) {
+  .sponsors-heading {
+    font-family: karmatic;
+    color: white;
+    font-size: 2.6rem;
+    padding: 6%;
+  }
+  
+  .carousel {
+    display: none; /* Hide the carousel on larger screens */
+  }
 }
