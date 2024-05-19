@@ -190,7 +190,7 @@ const Profile = () => {
 
     const handleFileUpload = () => {
         const formData = new FormData();
-        formData.append("paymentPic", paymentPicFile);
+        formData.append("image", paymentPicFile);
         console.log(formData);
 
         axios.post(`https://hackmanv7.up.railway.app/leader/uploadPic/${teamDetails.team.id}`, formData, {
