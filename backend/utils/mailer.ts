@@ -31,8 +31,8 @@ export const sendEmailToLeader = async (
     const mailOption = {
       from: process.env.MAIL_USER,
       to: leaderEmail,
-      subject: `Registration successfull for team ${teamName}`,
-      text: `Dear Team Leader,\n\nThis is an update regarding the team "${teamName}".\n\nYour auto-generated password for login is: ${password}\n\nBest regards,\nYour Team`,
+      subject: `Registration successfull for the team ${teamName}`,
+      text: `Dear Team Leader,\n\nThis is an update regarding the team "${teamName}".\n\nYour auto-generated password for login is: ${password}\n\nBest regards,\nTeam Hackman`,
     };
     await transporter.sendMail(mailOption);
     return true;

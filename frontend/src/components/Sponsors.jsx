@@ -3,10 +3,10 @@ import "../css/sponsors.css";
 import basil from "../assets/basil.png";
 import anastrat from "../assets/anastrat.png";
 import nokia from "../assets/nokia.png";
-import skill from "../assets/skill.png";
+import skill from "../assets/re.png";
 import skolar from "../assets/skolar.png";
 import unibic from "../assets/unibic.png";
-import fin from "../assets/50fin.png";
+import fin from "../assets/radix.png";
 
 function Sponsors() {
   const carouselRef = useRef(null);
@@ -61,7 +61,6 @@ function Sponsors() {
                 <img
                   src={skill}
                   className="img-fluid sponsor-image pt-5 sm:pt-3 "
-                  width={"50%"}
                   alt="Skill"
                 />
               </div>
@@ -69,7 +68,6 @@ function Sponsors() {
                 <img
                   src={skolar}
                   className="img-fluid sponsor-image pt-5 sm:pt-3"
-                  width={"60%"}
                   alt="Skolar"
                 />
               </div>
@@ -77,7 +75,6 @@ function Sponsors() {
                 <img
                   src={unibic}
                   className="img-fluid sponsor-image pt-5 sm:pt-3"
-                  width={"50%"}
                   alt="Unibic"
                 />
               </div>
@@ -85,7 +82,6 @@ function Sponsors() {
                 <img
                   src={fin}
                   className="img-fluid sponsor-image pt-5 sm:pt-3"
-                  width={"80%"}
                   alt="Fin"
                 />
               </div>

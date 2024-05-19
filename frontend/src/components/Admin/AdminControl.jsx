@@ -24,6 +24,7 @@ const AdminControl = () => {
                 }
                 })
                 .then((res) => {
+                    console.log(res.data.teams);
                     setTeams(res.data.teams);
                 })
                 .catch((err) => {
@@ -159,6 +160,7 @@ const AdminControl = () => {
                                     <th scope="col">Email</th>
                                     <th scope="col">Phone Number</th>
                                     <th scope="col">Payment Status</th>
+                                    <th scope="col">Payment Link</th>
                                     <th scope="col">Github Link</th>
                                     {isEditing && <th scope="col">Actions</th>}
                                 </tr>
@@ -182,8 +184,17 @@ const AdminControl = () => {
                                             {team.payStatus ? "PAID" : "PENDING"}
                                         </td>
                                         <td>
+                                            {team.paymentPic ? (
+                                                <a href={team.paymentPic} target="_blank" rel="noreferrer" className="link-git">
+                                                    Link &#128206;
+                                                </a>
+                                            ) : (
+                                                "N/A"
+                                            )}
+                                        </td>
+                                        <td>
                                             {team.githubLink ? (
-                                                <a href={team.githubLink} className="link-git">
+                                                <a href={team.githubLink} target="_blank" rel="noreferrer" className="link-git">
                                                     Link &#128206;
                                                 </a>
                                             ) : (

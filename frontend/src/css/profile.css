@@ -155,6 +155,22 @@ input.form-control::-webkit-inner-spin-button {
     padding: 4px;
 }
 
+.logout-button-profile {
+    padding-bottom: 2rem;
+}
+
+.btn-danger-logout {
+    background-color: red;
+    color: white;
+    padding: 4px;
+    padding-bottom: 6px;
+    transition: transform 0.3s ease;
+}
+
+.btn-danger-logout:hover {
+    transform: scale(1.1);
+}
+
 @media (max-width: 767px) {
     .custom-mem-bg {
       width: 90%;

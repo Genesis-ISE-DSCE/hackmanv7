@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useMemo } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import "../css/profile.css";
 
 const Profile = () => {
+    const navigate = useNavigate();
     const initialMemberFormData = useMemo(() => ({
         memberName: "",
         memberEmail: "",
@@ -75,6 +77,11 @@ const Profile = () => {
             [name]: value
         });
     }
+
+    const handleLogout = () => {
+        sessionStorage.clear();
+        navigate("/userlogin");
+    };
 
     const handleUpdateButton = (event) => {
         event.preventDefault();
@@ -212,6 +219,9 @@ const Profile = () => {
         {teamDetails? (
             <div className="custom-mem-bg kard-memb">
                 <h1>Team Details</h1>
+                <div className="logout-button-profile">
+                    <button onClick={handleLogout} className="btn-danger-logout">Logout</button>
+                </div>
                 <div className="team-details">
                     <h4>Team Name</h4>
                     <div className="form-item">
@@ -320,6 +330,8 @@ const Profile = () => {
                         </div>
                     )}
                 </div>
+
+                
                     
                 
                 
