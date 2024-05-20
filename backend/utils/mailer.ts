@@ -63,8 +63,7 @@ export const sendEmailToLeader = async (
 
 export const paymentConfirmation = async (
   leaderEmail: string,
-  teamName: string,
-  password: string
+  teamName: string
 ) => {
   try {
     const mailOption = {
