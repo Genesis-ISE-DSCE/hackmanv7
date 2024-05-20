@@ -31,7 +31,7 @@ export const sendEmailToLeader = async (
 ) => {
   try {
     const imageAttachment = {
-      filename: "PaymentQRCode",
+      filename: "PaymentQRCode.jpeg",
       path: "./dist/assets/PaymentQRCode.jpeg",
     };
 
