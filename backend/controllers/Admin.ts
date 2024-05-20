@@ -115,7 +115,7 @@ export const updatePaymentStatus = async (req: Request, res: Response) => {
 
   if (updatedTeamStatus) {
     //@ts-ignore
-    paymentConfirmation(leader.email, existingTeam.teamName);
+    await paymentConfirmation(leader.email, existingTeam.teamName);
     return res
       .status(HttpStatus.OK)
       .json({ success: true, message: "Payment Status Updated!" });
