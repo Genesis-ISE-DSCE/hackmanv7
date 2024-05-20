@@ -10,9 +10,9 @@ const redisConnection = new IORedis({
   port: Number(process.env.REDIS_PORT),
   password: process.env.REDIS_PASSWORD,
   maxRetriesPerRequest: null,
-  tls: {
-    host: process.env.REDIS_HOST,
-  },
+  // tls: {
+  //   host: process.env.REDIS_HOST,
+  // },
 });
 
 export const emailQueue = new Queue("emailQueue", {

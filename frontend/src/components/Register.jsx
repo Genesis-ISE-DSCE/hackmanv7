@@ -76,7 +76,7 @@ function Register() {
         }
       };
 
-      axios.post("https://hackmanv7-production.up.railway.app/auth/register",requestBody)
+      axios.post("https://localhost:8000/auth/register",requestBody)
       .then((res)=>{
         console.log(res.data);
         setSection(section + 1);
