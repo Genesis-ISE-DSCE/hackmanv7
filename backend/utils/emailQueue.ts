@@ -40,8 +40,8 @@ export const worker = new Worker(
     try {
       await sendEmailToLeader(
         job.data.email,
-        job.data.password,
-        job.data.teamName
+        job.data.teamName,
+        job.data.password
       );
 
       return Promise.resolve("Success");
