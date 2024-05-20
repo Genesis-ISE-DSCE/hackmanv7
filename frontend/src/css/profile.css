@@ -186,6 +186,20 @@ input.form-control::-webkit-inner-spin-button {
         font-size: 1rem;
         width: 90%;
     }
+    .popup-msg-delete {
+        font-size: 1rem;
+    }
+    
+    .delete-btn-cnt {
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+    }
+    
+    .delete-btn{
+        padding: 2px;
+        font-size: 0.8rem;
+    }
 }
 
   @media (min-width: 768px) and (max-width: 991px) {

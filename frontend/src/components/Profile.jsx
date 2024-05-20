@@ -443,7 +443,7 @@ const Profile = () => {
                 <div className="bg-overlay"></div>
                 <div className="popup">
                     <div>
-                        <p className="popup-msg-delete">Are you sure? Really sure?</p>
+                        <p className="popup-msg-delete">Are you sure?</p>
                     </div>
                     <div className="popup-button-cnt delete-btn-cnt">
                         <button onClick={handleConfirmDelete} className="delete-btn" type="button">
