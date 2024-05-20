@@ -29,7 +29,7 @@ app.use("/leader", require("./routes/Leader"));
 app.use("/admin", require("./routes/Admin"));
 app.use(errorHandler);
 
-app.listen(port, () => console.log("Server is running at " + port));
+app.listen(port, () => console.log("Server is running at " + port + __dirname));
 
 async function shutdown() {
   await db.$disconnect();

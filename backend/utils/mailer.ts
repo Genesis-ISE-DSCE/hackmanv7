@@ -30,7 +30,7 @@ export const sendEmailToLeader = async (
   try {
     const imageAttachment = {
       filename: 'PaymentQRCode',
-      path: __dirname + "/assets/PaymentQRCode.jpeg",
+      path: __dirname + "../assets/PaymentQRCode.jpeg",
     };
     const mailOption = {
       from: process.env.MAIL_USER,
