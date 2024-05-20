@@ -3,6 +3,7 @@ import fs from "fs";
 import { db } from "./db";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+var path = require('path');
 dotenv.config();
 
 const transporter = nodemailer.createTransport({
@@ -30,8 +31,9 @@ export const sendEmailToLeader = async (
   try {
     const imageAttachment = {
       filename: 'PaymentQRCode',
-      path: "/assets/PaymentQRCode.jpeg",
+      path: path.join(__dirname, "../assets/PaymentQRCode.jpeg"),
     };
+    
     
     const mailOption = {
       from: process.env.MAIL_USER,
