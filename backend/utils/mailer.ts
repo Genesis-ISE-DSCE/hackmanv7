@@ -3,7 +3,8 @@ import fs from "fs";
 import { db } from "./db";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
-var path = require('path');
+import { tryCatch } from "bullmq";
+var path = require("path");
 dotenv.config();
 
 const transporter = nodemailer.createTransport({
@@ -30,11 +31,12 @@ export const sendEmailToLeader = async (
 ) => {
   try {
     const imageAttachment = {
-      'filename': 'PaymentQRCode',
-      'path': path.join(__dirname, '../assets/PaymentQRCode.jpeg'),
+      filename: "PaymentQRCode",
+      path: "./dist/assets/PaymentQRCode.jpeg",
     };
-    
-    
+
+    console.log(path);
+
     const mailOption = {
       from: process.env.MAIL_USER,
       to: leaderEmail,
@@ -51,7 +53,7 @@ export const sendEmailToLeader = async (
       <p>Best regards,</p>
       <p>Team Hackman</p>
       `,
-      attachments: [imageAttachment]
+      attachments: [imageAttachment],
     };
     await transporter.sendMail(mailOption);
     return true;
@@ -142,3 +144,14 @@ export const sendMassMail = async (teamName: string, req: Request) => {
     console.error("Error sending mass mail for brochures:", error);
   }
 };
+
+// const verfyMail = async (leaderEmail: string) => {
+//   try {
+//     const mailOption = {
+//       from: process.env.MAIL_USER,
+//       to: leaderEmail,
+//       subject: "Verification of registration",
+//     };
+//   } catch (error) {}
+
+// };

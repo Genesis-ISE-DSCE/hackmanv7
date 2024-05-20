@@ -6,7 +6,7 @@ import { swaggerDefinition } from "./config/swaggerConfig";
 import swaggerJSDoc from "swagger-jsdoc";
 import { db } from "./utils/db";
 import cors from "cors";
-var path = require('path');
+var path = require("path");
 
 dotenv.config();
 
@@ -28,7 +28,6 @@ if (process.env.NODE_ENV !== "production") {
 app.use("/auth", require("./routes/auth"));
 app.use("/leader", require("./routes/Leader"));
 app.use("/admin", require("./routes/Admin"));
-app.use('/assets', express.static(path.join(__dirname, './assets')));
 app.use(errorHandler);
 
 app.listen(port, () => console.log("Server is running at " + port));
