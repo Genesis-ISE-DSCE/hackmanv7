@@ -25,7 +25,7 @@ const Profile = () => {
 
     useEffect(() => {
         try {
-            axios.get(`https://hackmanv7.up.railway.app/leader/getTeamDetails`, {
+            axios.get(`https://hackmanv7-production.up.railway.app/leader/getTeamDetails`, {
                 headers: {
                     Authorization: `Bearer ${jwtToken}`
                 }
@@ -100,7 +100,7 @@ const Profile = () => {
                 "email": editMemberData.email,
                 "phoneNumber": editMemberData.phoneNumber,
             };
-            axios.put(`https://hackmanv7.up.railway.app/leader/editMember/${editMemberData.id}`, requestBody, {
+            axios.put(`https://hackmanv7-production.up.railway.app/leader/editMember/${editMemberData.id}`, requestBody, {
                 headers: {
                     Authorization: `Bearer ${jwtToken}`
                 }
@@ -130,7 +130,7 @@ const Profile = () => {
                 "email": memberFormData.memberEmail,
                 "phoneNumber": memberFormData.memberPhone,
             };
-            axios.post(`https://hackmanv7.up.railway.app/leader/addMember/${teamDetails.team.id}`, requestBody, {
+            axios.post(`https://hackmanv7-production.up.railway.app/leader/addMember/${teamDetails.team.id}`, requestBody, {
                 headers: {
                     Authorization: `Bearer ${jwtToken}`
                 }
@@ -167,7 +167,7 @@ const Profile = () => {
     
     const handleConfirmDelete = () => {
         if (selectedMemberId) {
-            axios.delete(`https://hackmanv7.up.railway.app/leader/removeMember/${selectedMemberId}`, {
+            axios.delete(`https://hackmanv7-production.up.railway.app/leader/removeMember/${selectedMemberId}`, {
             headers: {
                 Authorization: `Bearer ${jwtToken}`
             }
@@ -193,7 +193,7 @@ const Profile = () => {
         formData.append("image", paymentPicFile);
         console.log(formData);
 
-        axios.post(`https://hackmanv7.up.railway.app/leader/uploadPic/${teamDetails.team.id}`, formData, {
+        axios.post(`https://hackmanv7-production.up.railway.app/leader/uploadPic/${teamDetails.team.id}`, formData, {
             headers: {
                 Authorization: `Bearer ${jwtToken}`,
                 'Content-Type': 'multipart/form-data',
