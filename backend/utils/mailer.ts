@@ -35,8 +35,6 @@ export const sendEmailToLeader = async (
       path: "./dist/assets/PaymentQRCode.jpeg",
     };
 
-    console.log(path);
-
     const mailOption = {
       from: process.env.MAIL_USER,
       to: leaderEmail,
