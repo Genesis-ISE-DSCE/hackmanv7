@@ -32,7 +32,6 @@ export const sendEmailToLeader = async (
       filename: 'PaymentQRCode',
       path: "/assets/PaymentQRCode.jpeg",
     };
-    console.log(__dirname + "../assets/PaymentQRCode.jpeg");
     
     const mailOption = {
       from: process.env.MAIL_USER,
