@@ -299,15 +299,6 @@ const Profile = () => {
                     {teamDetails.team.paymentPic ? (
                         <div className="payment-cnt">
                             <div className="form-item">
-                                Link
-                                <input
-                                    className="form-control"
-                                    type="text"
-                                    value={teamDetails.team.paymentPic}
-                                    readOnly
-                                />
-                            </div>
-                            <div className="form-item">
                                 Status
                                 <input
                                     className="form-control"
