@@ -39,16 +39,17 @@ export const sendEmailToLeader = async (
       from: process.env.MAIL_USER,
       to: leaderEmail,
       subject: `Hackman Awaits: Time to Complete Your Registration team ${teamName}`,
-      text: `Dear Team Leader,\n\n
-      Thank you for your interest in participating in Hackman. Please find below the QR code for the payment of ₹600.\n\n
-      Once you’ve made the payment, use the credentials below to log into your user page and complete your registration:\n\n
-      Username: "${leaderEmail}"\n
-      Password: "${password}"\n\n
-      <a href="https://hackman.in/userlogin" target="_blank">Login here</a>\n\n
-      Don’t forget to upload a screenshot of your payment receipt on your user page. This is crucial to confirm your spot!\n\n
-      We're excited to see the innovative ideas you and your team will bring to Hackman. If you run into any issues or have questions, give us a shout at genesis.hackman@gmail.com.\n\n
-      Best regards,\n
-      Team Hackman`,
+      html: `
+      <p>Dear Team Leader,</p>
+      <p>Thank you for your interest in participating in Hackman. Please find below the QR code for the payment of ₹600. Once you’ve made the payment, use the credentials below to log into your user page and complete your registration:</p>
+      <p>Username: "${leaderEmail}"</p>
+      <p>Password: "${password}"\</p>
+      <a href="https://hackman.in/userlogin" target="_blank">Login here</a>
+      <p>Don’t forget to upload a screenshot of your payment receipt on your user page. This is crucial to confirm your spot!</p>
+      <p>We're excited to see the innovative ideas you and your team will bring to Hackman. If you run into any issues or have questions, give us a shout at genesis.hackman@gmail.com</p>
+      <p>Best regards,</p>
+      <p>Team Hackman</p>
+      `,
       attachments: [imageAttachment]
     };
     await transporter.sendMail(mailOption);
