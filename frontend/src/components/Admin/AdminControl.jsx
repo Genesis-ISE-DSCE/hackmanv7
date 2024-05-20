@@ -18,7 +18,7 @@ const AdminControl = () => {
     useEffect(() => {
         const fetchTeams = async () => {
             try {
-                axios.get(`https://hackmanv7.up.railway.app/admin/getAllTeams`, {
+                axios.get(`https://hackmanv7-production.up.railway.app/admin/getAllTeams`, {
                 headers: {
                     Authorization: `Bearer ${jwtAdminToken}`
                 }
@@ -45,7 +45,7 @@ const AdminControl = () => {
 
     const confirmRemoveTeam = () => {
         try {
-            axios.delete(`https://hackmanv7.up.railway.app/admin/deleteTeam/${teamToRemove}`, {
+            axios.delete(`https://hackmanv7-production.up.railway.app/admin/deleteTeam/${teamToRemove}`, {
                 headers: {
                     Authorization: `Bearer ${jwtAdminToken}`
                 }
@@ -74,7 +74,7 @@ const AdminControl = () => {
 
     const confirmTogglePaymentStatus = () => {
         try {
-            axios.put(`https://hackmanv7.up.railway.app/admin/updatePaymentStatus/${teamToToggle}`, null, {
+            axios.put(`https://hackmanv7-production.up.railway.app/admin/updatePaymentStatus/${teamToToggle}`, null, {
                 headers: {
                     Authorization: `Bearer ${jwtAdminToken}`
                 }

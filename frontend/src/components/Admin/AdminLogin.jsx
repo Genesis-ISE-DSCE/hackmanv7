@@ -22,7 +22,7 @@ const AdminLogin = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post("https://hackmanv7.up.railway.app/admin/login", {
+        axios.post("https://hackmanv7-production.up.railway.app/admin/login", {
             email: loginData.email,
             password: loginData.password
         })
