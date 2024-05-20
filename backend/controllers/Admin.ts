@@ -98,6 +98,12 @@ export const updatePaymentStatus = async (req: Request, res: Response) => {
     throw new AppError({ name: "NOT_FOUND", message: "Team not found!" });
   }
 
+  const leader = await db.leader.findUnique({
+    where: {
+      id: existingTeam.leaderId,
+    },
+  });
+
   const updatedTeamStatus = await db.team.update({
     where: {
       id: teamId,
@@ -107,8 +113,11 @@ export const updatePaymentStatus = async (req: Request, res: Response) => {
     },
   });
 
-  if (updatedTeamStatus)
+  if (updatedTeamStatus) {
+    //@ts-ignore
+    await paymentConfirmation(leader.email, existingTeam.teamName);
     return res
       .status(HttpStatus.OK)
       .json({ success: true, message: "Payment Status Updated!" });
+  }
 };

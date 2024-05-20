@@ -31,7 +31,7 @@ export const sendEmailToLeader = async (
 ) => {
   try {
     const imageAttachment = {
-      filename: "PaymentQRCode",
+      filename: "PaymentQRCode.jpeg",
       path: "./dist/assets/PaymentQRCode.jpeg",
     };
 
@@ -63,8 +63,7 @@ export const sendEmailToLeader = async (
 
 export const paymentConfirmation = async (
   leaderEmail: string,
-  teamName: string,
-  password: string
+  teamName: string
 ) => {
   try {
     const mailOption = {
@@ -75,7 +74,7 @@ export const paymentConfirmation = async (
       <p>Dear Team Leader,</p>
       <p>Congratulations! Your payment has been successfully processed, and we are excited to welcome you to Hackman. We can't wait to see the innovative ideas you and your team will bring to the event. Attached to this email, you will find a detailed instructions document to help you prepare and make the most of your Hackman experience.</p>
       <p>To stay updated and connected with other participants, join our Hackman WhatsApp group:</p>
-      <a href="https://hackman.in/userlogin" target="_blank">Whatsapp Link</a>
+      <a href="https://chat.whatsapp.com/BfGmfvVfdW2DdrYTFH809c" target="_blank">Whatsapp Link</a>
       <p>If you have any questions or need further assistance, please feel free to reach out to us at genesis.hackman@gmail.com</p>
       <p>Welcome aboard, and let's get ready to hack!</p>
       <p> </p>
