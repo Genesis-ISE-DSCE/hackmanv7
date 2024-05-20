@@ -30,8 +30,8 @@ export const sendEmailToLeader = async (
 ) => {
   try {
     const imageAttachment = {
-      filename: 'PaymentQRCode',
-      path: path.join(__dirname, "../assets/PaymentQRCode.jpeg"),
+      'filename': 'PaymentQRCode',
+      'path': path.join(__dirname, '../assets/PaymentQRCode.jpeg'),
     };
     
     
@@ -49,7 +49,7 @@ export const sendEmailToLeader = async (
       We're excited to see the innovative ideas you and your team will bring to Hackman. If you run into any issues or have questions, give us a shout at genesis.hackman@gmail.com.\n\n
       Best regards,\n
       Team Hackman`,
-
+      attachments: [imageAttachment]
     };
     await transporter.sendMail(mailOption);
     return true;
