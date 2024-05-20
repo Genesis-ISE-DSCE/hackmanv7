@@ -31,7 +31,7 @@ function Sponsors() {
     <div className="sponsorpage">
       <div className="">
         <h1 className="sponsors-heading">
-          S P O N S O R S
+          P A S T || S P O N S O R S
         </h1>
         <div className="image-container">
           <div className="d-flex justify-content-center align-items-center">

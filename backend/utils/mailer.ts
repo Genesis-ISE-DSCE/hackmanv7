@@ -28,11 +28,23 @@ export const sendEmailToLeader = async (
   password: string
 ) => {
   try {
+    const imageAttachment = {
+      filename: 'PaymentQRCode',
+      path: "../assets/PaymentQRCode.jpeg"
+    };
     const mailOption = {
       from: process.env.MAIL_USER,
       to: leaderEmail,
-      subject: `Registration successfull for the team ${teamName}`,
-      text: `Dear Team Leader,\n\nThis is an update regarding the team "${teamName}".\n\nYour auto-generated password for login is: ${password}\n\nBest regards,\nTeam Hackman`,
+      subject: `Hackman Awaits: Time to Complete Your Registration team ${teamName}`,
+      text: `Dear Team Leader,\n\n
+      Thank you for your interest in participating in Hackman. Please find below the QR code for the payment of ₹600.\n\n
+      Once you’ve made the payment, use the credentials below to log into your user page and complete your registration:\n\n
+      Username: "${leaderEmail}"\n
+      Password: "${password}"\n\n
+      <a href="https://hackman.in/userlogin" target="_blank">Login here</a>\n\n
+      Best regards,\n
+      Team Hackman`,
+      attachments: [imageAttachment],
     };
     await transporter.sendMail(mailOption);
     return true;

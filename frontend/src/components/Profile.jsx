@@ -322,6 +322,7 @@ const Profile = () => {
                             <input
                                 className="form-control"
                                 type="file"
+                                accept="image/*"
                                 onChange={handleFileInputChange}
                             />
                             <div className="uploadButtonCon">
