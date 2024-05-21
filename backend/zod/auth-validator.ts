@@ -37,6 +37,8 @@ export const editMemberSchema = z.object({
     .min(10, { message: "Phone Number Should Have minimum 10 Digits" })
     .max(10, { message: "Phone number should have max 10 digits" })
     .optional(),
+
+  id: z.string().optional(),
 });
 
 export const memberSchema = z.object({
