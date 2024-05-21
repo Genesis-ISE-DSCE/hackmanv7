@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Hackman v7",
+  "name": "Hackman, a 24-hour Inter-College Hackathon, hosted by the Department of Information Science, DSCE.",
   "icons": [
     {
       "src": "favicon.ico",

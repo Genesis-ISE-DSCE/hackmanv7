@@ -298,7 +298,7 @@ const Profile = () => {
                     <h4>Payment Status</h4>
                     {teamDetails.team.paymentPic ? (
                         <div className="payment-cnt">
-                            <div className="form-item">
+                            {/* <div className="form-item">
                                 Link
                                 <input
                                     className="form-control"
@@ -306,7 +306,7 @@ const Profile = () => {
                                     value={teamDetails.team.paymentPic}
                                     readOnly
                                 />
-                            </div>
+                            </div> */}
                             <div className="form-item">
                                 Status
                                 <input
