@@ -5,6 +5,7 @@ import { AppError } from "../utils/error";
 import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 import { adminSchema } from "../zod/auth-validator";
+import { paymentConfirmation } from "../utils/mailer";
 
 dotenv.config();
 const JWT_SECRET = process.env.JWT_SECRET as string;
@@ -113,9 +114,10 @@ export const updatePaymentStatus = async (req: Request, res: Response) => {
     },
   });
 
-  if (updatedTeamStatus) {
+  if (updatedTeamStatus.payStatus) {
     //@ts-ignore
-    await paymentConfirmation(leader.email, existingTeam.teamName);
+    await paymentConfirmation(leader?.email as string, existingTeam?.teamName);
+
     return res
       .status(HttpStatus.OK)
       .json({ success: true, message: "Payment Status Updated!" });
