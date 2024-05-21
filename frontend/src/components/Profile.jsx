@@ -99,6 +99,7 @@ const Profile = () => {
                 "name": editMemberData.name,
                 "email": editMemberData.email,
                 "phoneNumber": editMemberData.phoneNumber,
+                "teamId":teamDetails.id
             };
             axios.put(`https://hackmanv7-production.up.railway.app/leader/editMember/${editMemberData.id}`, requestBody, {
                 headers: {
