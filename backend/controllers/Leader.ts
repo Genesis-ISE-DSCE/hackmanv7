@@ -175,7 +175,12 @@ export const removeMember = async (req: Request, res: Response) => {
 //EDIT TEAM MEMBERS
 export const editTeamMember = async (req: Request, res: Response) => {
   const { id } = req.params;
-  const { name, email, phoneNumber } = editMemberSchema.parse(req.body);
+  const {
+    name,
+    email,
+    phoneNumber,
+    id: teamId,
+  } = editMemberSchema.parse(req.body);
 
   if (email) {
     const existingMember = await db.participant.findFirst({
@@ -188,9 +193,15 @@ export const editTeamMember = async (req: Request, res: Response) => {
       where: {
         email: email,
       },
+      include: {
+        team: true,
+      },
     });
 
-    if (existingLeader || existingMember)
+    if (
+      existingMember?.teamId !== teamId ||
+      existingLeader?.team?.id !== teamId
+    )
       throw new AppError({
         name: "BAD_REQUEST",
         message: "Email already regsitered!",
