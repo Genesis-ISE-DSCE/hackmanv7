@@ -75,6 +75,7 @@ export const paymentConfirmation = async (
       <p>Congratulations! Your payment has been successfully processed, and we are excited to welcome you to Hackman. We can't wait to see the innovative ideas you and your team will bring to the event. Attached to this email, you will find a detailed instructions document to help you prepare and make the most of your Hackman experience.</p>
       <p>To stay updated and connected with other participants, join our Hackman WhatsApp group:</p>
       <a href="https://chat.whatsapp.com/BfGmfvVfdW2DdrYTFH809c" target="_blank">Whatsapp Link</a>
+      <p>Keep an eye out on the mail for more updates.<p>
       <p>If you have any questions or need further assistance, please feel free to reach out to us at genesis.hackman@gmail.com</p>
       <p>Welcome aboard, and let's get ready to hack!</p>
       <p> </p>
@@ -85,7 +86,7 @@ export const paymentConfirmation = async (
     await transporter.sendMail(mailOption);
     return true;
   } catch (error) {
-    console.error("Error sending email to leader with password:", error);
+    console.error("Error sending payment confirmation mail.", error);
     return false;
   }
 };

@@ -1,6 +1,9 @@
 import React from "react";
 import { Linkedin, Instagram, Mail } from "react-feather";
 import "../css/footer.css";
+const coc = require("../assets/docs/CoC-Hackman.pdf");
+const tc = require("../assets/docs/T&C-Hackman.pdf");
+const ins = require("../assets/docs/Instructions-Hackman.pdf");
 
 function Footer() {
     return (
@@ -47,11 +50,11 @@ function Footer() {
                 <div className="documents" style={{fontFamily:"pixeloidsans"}}>
                     <p className="doc-link copyright">© 2024 Hackman</p>
                     <p className="doc-link">|</p>
-                    <p className="doc-link"><a href="#11">Code of Conduct</a></p>
+                    <p className="doc-link"><a href={coc} rel='noreferrer noopener' target="_blank">Code of Conduct</a></p>
                     <p className="doc-link">|</p>
-                    <p className="doc-link"><a href="#11">Terms and Conditions</a></p>
+                    <p className="doc-link"><a href={tc} rel='noreferrer noopener' target="_blank">Terms and Conditions</a></p>
                     <p className="doc-link">|</p>
-                    <p className="doc-link"><a href="#11">Instructions</a></p>
+                    <p className="doc-link"><a href={ins} rel='noreferrer noopener' target="_blank">Instructions</a></p>
                 </div>
                 <div className="madeby" style={{fontFamily:"pixeloidsans"}}>Made by team <a href="https://www.instagram.com/genesis.ise/" rel='noreferrer noopener' target="_blank" className='genesis-link'>Genesis</a> with <span className="heart">❤️</span></div>
             </div>
