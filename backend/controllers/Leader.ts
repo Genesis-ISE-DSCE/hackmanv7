@@ -259,6 +259,7 @@ export const uploadPic = async (req: Request, res: Response) => {
     const getObjectParams = {
       Bucket: bucketName,
       Key: fileName,
+      Expires: 60 * 60 * 24 * 30,
     };
 
     const command = new GetObjectCommand(getObjectParams);
