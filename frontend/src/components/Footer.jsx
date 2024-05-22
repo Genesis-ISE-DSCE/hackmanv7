@@ -3,7 +3,7 @@ import { Linkedin, Instagram, Mail } from "react-feather";
 import "../css/footer.css";
 const coc = require("../assets/docs/CoC-Hackman.pdf");
 const tc = require("../assets/docs/T&C-Hackman.pdf");
-const ins = require("../assets/docs/Instructions-Hackman.pdf");
+const ins = require("../assets/docs/Hackman-Registration-Instructions.pdf");
 
 function Footer() {
     return (
