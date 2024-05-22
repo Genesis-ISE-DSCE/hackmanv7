@@ -109,6 +109,7 @@
   padding: var(--bs-accordion-body-padding-y) var(--bs-accordion-body-padding-x);
   background-color: #062b46;
   color: #ffffff;
+  text-align: left;  
 }
 
 .accordion-button:not(.collapsed) {

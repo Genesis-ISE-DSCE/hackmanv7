@@ -71,18 +71,43 @@ function Faqs() {
             <div className="accordion-item">
               <h2 className="accordion-header">
                 <button
-                  className="accordion-button collapsed accordian-ques "
+                  className="accordion-button collapsed accordian-ques"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseThree"
-                  aria-expanded="false"
+                  aria-expanded="true"
                   aria-controls="collapseThree"
+                >
+                  Is there a registration fee for Hackman v7?
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                className="accordion-collapse collapse"
+                data-bs-parent="#accordionExample"
+              >
+                <div className="accordion-body accordian-ans">
+                  <p>
+                    Yes, there is a minimal registration fee of ₹600 per team.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="accordion-item">
+              <h2 className="accordion-header">
+                <button
+                  className="accordion-button collapsed accordian-ques "
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
                 >
                   What is the theme of Hackman v7?
                 </button>
               </h2>
               <div
-                id="collapseThree"
+                id="collapseFour"
                 className="accordion-collapse collapse"
                 data-bs-parent="#accordionExample"
               >
@@ -101,15 +126,15 @@ function Faqs() {
                   className="accordion-button collapsed accordian-ques"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseFour"
+                  data-bs-target="#collapseFive"
                   aria-expanded="false"
-                  aria-controls="collapseFour"
+                  aria-controls="collapseFive"
                 >
                   Will Food, shelter and refreshments be provided at Hackman v7?
                 </button>
               </h2>
               <div
-                id="collapseFour"
+                id="collapseFive"
                 className="accordion-collapse collapse"
                 data-bs-parent="#accordionExample"
               >
@@ -122,22 +147,21 @@ function Faqs() {
                 </div>
               </div>
             </div>
-            {/* New FAQs */}
             <div className="accordion-item">
               <h2 className="accordion-header">
                 <button
                   className="accordion-button collapsed accordian-ques"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseFive"
+                  data-bs-target="#collapseSix"
                   aria-expanded="false"
-                  aria-controls="collapseFive"
+                  aria-controls="collapseSix"
                 >
                   How will projects be judged at Hackman v7?
                 </button>
               </h2>
               <div
-                id="collapseFive"
+                id="collapseSix"
                 className="accordion-collapse collapse"
                 data-bs-parent="#accordionExample"
               >
@@ -154,15 +178,15 @@ function Faqs() {
                   className="accordion-button collapsed accordian-ques"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseSix"
+                  data-bs-target="#collapseSeven"
                   aria-expanded="false"
-                  aria-controls="collapseSix"
+                  aria-controls="collapseSeven"
                 >
                   How many members can be on a team at Hackman v7?
                 </button>
               </h2>
               <div
-                id="collapseSix"
+                id="collapseSeven"
                 className="accordion-collapse collapse"
                 data-bs-parent="#accordionExample"
               >
@@ -179,15 +203,15 @@ function Faqs() {
                   className="accordion-button collapsed accordian-ques"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseSeven"
+                  data-bs-target="#collapseEight"
                   aria-expanded="false"
-                  aria-controls="collapseSeven"
+                  aria-controls="collapseEight"
                 >
                   What should I bring to this hackathon?
                 </button>
               </h2>
               <div
-                id="collapseSeven"
+                id="collapseEight"
                 className="accordion-collapse collapse"
                 data-bs-parent="#accordionExample"
               >
@@ -204,15 +228,15 @@ function Faqs() {
                   className="accordion-button collapsed accordian-ques"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseEight"
+                  data-bs-target="#collapseNine"
                   aria-expanded="false"
-                  aria-controls="collapseEight"
+                  aria-controls="collapseNine"
                 >
                   Do I need to have programming experience to participate?
                 </button>
               </h2>
               <div
-                id="collapseEight"
+                id="collapseNine"
                 className="accordion-collapse collapse"
                 data-bs-parent="#accordionExample"
               >
@@ -229,15 +253,15 @@ function Faqs() {
                   className="accordion-button collapsed accordian-ques"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseNine"
+                  data-bs-target="#collapseTen"
                   aria-expanded="false"
-                  aria-controls="collapseNine"
+                  aria-controls="collapseTen"
                 >
                   What are the benefits of participating in Hackman v7?
                 </button>
               </h2>
               <div
-                id="collapseNine"
+                id="collapseTen"
                 className="accordion-collapse collapse"
                 data-bs-parent="#accordionExample"
               >
