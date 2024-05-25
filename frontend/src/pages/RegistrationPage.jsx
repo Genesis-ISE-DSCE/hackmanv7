@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import "../css/register.css";
 import OpensSoon from "../components/OpensSoon";
 
 const RegistrationPage = () => {
