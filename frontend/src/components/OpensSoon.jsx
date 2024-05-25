@@ -6,7 +6,10 @@ function OpensSoon() {
     <div id="soon" className="">
         <div className="karma-soon glass-soon">
           <h1 className="title-soon" style={{ filter: "drop-shadow(4px 4px 6px #010101)" }}>
-            O P E N I N G || S O O N !!
+            Registrations are closed||!!
+          </h1>
+          <h1 className="title-soon-sec" style={{ filter: "drop-shadow(4px 4px 6px #010101)" }}>
+            Come back next year!!
           </h1>
         </div>
     </div>

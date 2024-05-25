@@ -21,9 +21,11 @@
         margin-top: 24rem;
         margin-bottom: 20rem;
     }
-
     .title-soon {
-        font-size: 1.4rem;
+        font-size: 0.8rem;
+    }
+    .title-soon-sec {
+        font-size: 0.6rem;
     }
 }
 
@@ -38,9 +40,11 @@
         margin-top: 30rem;
         margin-bottom: 32rem;
     }
-
     .title-soon {
-        font-size: 2.8rem;
+        font-size: 1.8rem;
+    }
+    .title-soon-sec {
+        font-size: 1.2rem;
     }
 }
 
@@ -53,8 +57,10 @@
         margin-top: 24rem;
         margin-bottom: 24rem;
     }
-
     .title-soon {
-        font-size: 3rem;
+        font-size: 1.8rem;
+    }
+    .title-soon-sec {
+        font-size: 1.2rem;
     }
 }
