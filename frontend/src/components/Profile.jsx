@@ -297,31 +297,17 @@ const Profile = () => {
                 </div>
                 <div className="payment-details">
                     <h4>Payment Status</h4>
-                    {teamDetails.team.paymentPic ? (
-                        <div className="payment-cnt">
-                            <div className="form-item">
-                                Status
-                                <input
-                                    className="form-control"
-                                    type="text"
-                                    value={teamDetails.team.payStatus? "Approved" : "Approval Pending"}
-                                    readOnly
-                                />
-                            </div>
-                        </div>
-                    ) : (
+                    <div className="payment-cnt">
                         <div className="form-item">
+                            Status
                             <input
                                 className="form-control"
-                                type="file"
-                                accept="image/*"
-                                onChange={handleFileInputChange}
+                                type="text"
+                                value={teamDetails.team.payStatus? "Approved" : "Approval Pending"}
+                                readOnly
                             />
-                            <div className="uploadButtonCon">
-                                <button className="uploadButton" onClick={handleFileUpload}>Upload</button>
-                            </div>
                         </div>
-                    )}
+                    </div>
                 </div>
 
                 
