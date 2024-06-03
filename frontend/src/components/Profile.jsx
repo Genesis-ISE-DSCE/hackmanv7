@@ -283,17 +283,17 @@ const Profile = () => {
                                     readOnly
                                     />
                                 </div>
-                                <div className="edit-delete-btns">
+                                {/* <div className="edit-delete-btns">
                                     <button onClick={() => handleEditMember(member.id)}>Edit</button>
                                     <button onClick={() => handleDeleteMember(member.id)}>Delete</button>
-                                </div>
+                                </div> */}
                             </div>
                         ))}
-                    {teamDetails && teamDetails.team.members.length < 3 && (
+                    {/* {teamDetails && teamDetails.team.members.length < 3 && (
                         <div className="addMemButtonCont">
                             <button className="addMemButton" onClick={() => setShowPopup(true)}>Add Member</button>
                         </div>
-                    )}
+                    )} */}
                 </div>
                 <div className="payment-details">
                     <h4>Payment Status</h4>
