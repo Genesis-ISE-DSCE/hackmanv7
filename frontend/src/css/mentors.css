@@ -1,0 +1,101 @@
+@font-face {
+    font-family: pixeloidsans-bold;
+    src: url("../fonts/PixeloidSans.ttf");
+  }
+  @font-face {
+    font-family: pixeloidsans;
+    src: url("../fonts/PixeloidSans.ttf");
+  }
+  @font-face {
+    font-family: karmatic ;
+    src: url("../fonts/ka1.ttf");
+  }
+
+  .mentors-container {
+   
+    margin-top:-40rem;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.mentors-heading {
+    font-size: 3rem;
+    margin-bottom: 6rem;
+    font-family: karmatic;
+    color: white;
+   
+}
+
+.upper-row,
+.lower-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.mentor-card {
+  width:18rem;
+    text-align: center;
+}
+
+.mentor-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.mentor-name {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-family: pixeloidsans-bold;
+    color: white;
+}
+
+.mentor-designation {
+    font-size: 14px;
+    font-family: pixeloidsans-bold;
+    color: white;
+}
+
+.mentor-img{
+  box-shadow:3px -1px 10px black;
+}
+
+@media (max-width: 767px) {
+  
+.mentor-card {
+  width:300%;
+    text-align: center;
+   
+}
+
+.mentor-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  
+.mentor-card {
+  width:300%;
+    text-align: center;
+  
+}
+
+.mentor-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+}
+
