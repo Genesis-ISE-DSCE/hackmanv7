@@ -46,6 +46,7 @@
   .faq-main {
     padding-top: 10%;
     padding-bottom: 12%;
+   
   }
   .title-subz {
     padding-bottom: 2rem;
@@ -84,7 +85,7 @@
 
 .faq-main {
   text-decoration: none;
-  margin-bottom: 40rem;
+ 
 }
 
 .main-accordion {
@@ -120,3 +121,4 @@
   font-family: karmatic;
   color: white;
 }
+

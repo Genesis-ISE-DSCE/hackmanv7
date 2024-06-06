@@ -6,6 +6,7 @@ import Faqs from "../components/Faqs";
 import PhotoLib from "../components/PhotoLib";
 import Footer from "../components/Footer";
 import Sponsors from "../components/Sponsors";
+import Mentors from "../components/mentors"
 
 const LandingPage = () => {
     return(
@@ -17,6 +18,7 @@ const LandingPage = () => {
                 <PhotoLib />
                 <Sponsors />
                 <Faqs />
+                <Mentors/>
                 <Footer />
             </div>
         </div>
