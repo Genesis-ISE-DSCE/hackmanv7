@@ -1,12 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import "../css/sponsors.css";
-import basil from "../assets/basil.png";
-import anastrat from "../assets/anastrat.png";
-import nokia from "../assets/nokia.png";
-import skill from "../assets/re.png";
-import skolar from "../assets/skolar.png";
-import unibic from "../assets/unibic.png";
-import fin from "../assets/radix.png";
+import edway from "../assets/edway.png";
+import wowfit from "../assets/wowfit.jpeg";
+import acm from "../assets/acm.png";
 
 function Sponsors() {
   const carouselRef = useRef(null);
@@ -31,58 +27,33 @@ function Sponsors() {
     <div className="sponsorpage">
       <div className="">
         <h1 className="sponsors-heading">
-          P A S T || S P O N S O R S
+          O U R || S P O N S O R S
         </h1>
         <div className="image-container">
           <div className="d-flex justify-content-center align-items-center">
-            <div className="row d-flex  justify-content-center align-items-center for-small pt-40 shadow-custom">
+            <div className="row d-flex  justify-content-center align-items-center for-small pt-30 shadow-custom">
               <div className="col-10 col-sm-3 col-md-4 col-lg-4 sponsor-item">
                 <img
-                  src={anastrat}
+                  src={acm}
                   className="img-fluid sponsor-image"
-                  alt="AnaStrat"
+                  alt="Acm"
+                  style={{height: "50%", width:"50%"}}
                 />
               </div>
               <div className="col-10 col-sm-3 col-md-4 col-lg-4 sponsor-item">
                 <img
-                  src={nokia}
+                  src={edway}
                   className="img-fluid sponsor-image"
-                  alt="Nokia"
+                  alt="edway"
+                  style={{height: "50%", width:"50%"}}
                 />
               </div>
               <div className="col-8 col-sm-3 col-md-4 col-lg-4 d-flex justify-content-center sponsor-item">
                 <img
-                  src={basil}
+                  src={wowfit}
                   className="img-fluid sponsor-image"
-                  alt="Basil"
-                />
-              </div>
-              <div className="col-8 col-sm-3 col-md-4 col-lg-4 d-flex justify-content-center sponsor-item">
-                <img
-                  src={skill}
-                  className="img-fluid sponsor-image pt-5 sm:pt-3 "
-                  alt="Skill"
-                />
-              </div>
-              <div className="col-8 col-sm-3 col-md-4 col-lg-4 d-flex justify-content-center sponsor-item">
-                <img
-                  src={skolar}
-                  className="img-fluid sponsor-image pt-5 sm:pt-3"
-                  alt="Skolar"
-                />
-              </div>
-              <div className="col-8 col-sm-3 col-md-4 col-lg-4 d-flex justify-content-center sponsor-item">
-                <img
-                  src={unibic}
-                  className="img-fluid sponsor-image pt-5 sm:pt-3"
-                  alt="Unibic"
-                />
-              </div>
-              <div className="col-8 col-sm-3 col-md-4 col-lg-4 d-flex justify-content-center sponsor-item">
-                <img
-                  src={fin}
-                  className="img-fluid sponsor-image pt-5 sm:pt-3"
-                  alt="Fin"
+                  alt="wowfit"
+                  style={{height: "50%", width:"50%"}}
                 />
               </div>
             </div>
@@ -90,25 +61,13 @@ function Sponsors() {
         </div>
         <div className="carousel" ref={carouselRef}>
           <div className="carousel-item active">
-            <img src={anastrat} className="d-block w-100 gal-img" alt="..." />
+            <img src={acm} className="d-block w-100 gal-img" alt="..." />
           </div>
           <div className="carousel-item">
-            <img src={nokia} className="d-block w-100 gal-img" alt="..." />
+            <img src={edway} className="d-block w-100 gal-img" alt="..." />
           </div>
           <div className="carousel-item">
-            <img src={basil} className="d-block w-100 gal-img" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src={skill} className="d-block w-100 gal-img" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src={skolar} className="d-block w-100 gal-img" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src={unibic} className="d-block w-100 gal-img" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src={fin} className="d-block w-100 gal-img" alt="..." />
+            <img src={wowfit} className="d-block w-100 gal-img" alt="..." />
           </div>
         </div>
       </div>

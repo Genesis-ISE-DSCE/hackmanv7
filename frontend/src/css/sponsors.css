@@ -65,7 +65,7 @@
 .carousel {
   display: flex;
   overflow-x: hidden;
-  height: 300px;
+  height: 320px;
 }
 
 @keyframes slide {
