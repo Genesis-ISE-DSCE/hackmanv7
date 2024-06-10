@@ -34,17 +34,17 @@ function Sponsors() {
             <div className="row d-flex  justify-content-center align-items-center for-small pt-30 shadow-custom">
               <div className="col-10 col-sm-3 col-md-4 col-lg-4 sponsor-item">
                 <img
-                  src={acm}
+                  src={edway}
                   className="img-fluid sponsor-image"
-                  alt="Acm"
+                  alt="edway"
                   style={{height: "50%", width:"50%"}}
                 />
               </div>
               <div className="col-10 col-sm-3 col-md-4 col-lg-4 sponsor-item">
                 <img
-                  src={edway}
+                  src={acm}
                   className="img-fluid sponsor-image"
-                  alt="edway"
+                  alt="Acm"
                   style={{height: "50%", width:"50%"}}
                 />
               </div>

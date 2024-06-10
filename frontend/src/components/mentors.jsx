@@ -10,7 +10,7 @@ import Sreeniketh from "../assets/Sreeniketh Madgula.jpeg";
 const Mentors = () => {
   return (
       <div className="mentors-container">
-          <h1 className="mentors-heading">MENTORS</h1>
+          <h1 className="mentors-heading">M E N T O R S</h1>
           <div className="upper-row">
               <MentorCard
                   imgSrc={Farhaan}
