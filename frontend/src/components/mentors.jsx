@@ -6,6 +6,8 @@ import Ashish from "../assets/Ashish Kumar Mishra.jpeg";
 import Ritik from "../assets/Ritik Dutt.jpg";
 import Ashutosh from "../assets/Ashutosh Pandey.jpeg";
 import Sreeniketh from "../assets/Sreeniketh Madgula.jpeg";
+import Chirag from "../assets/Chirag Chopra.png"
+import Devesh from "../assets/Devesh Verma.jpg"
 
 const Mentors = () => {
   return (
@@ -27,6 +29,11 @@ const Mentors = () => {
                   name="Ashish Kumar"
                   designation="Software Developer at Razor Network"
               />
+              <MentorCard
+                  imgSrc={Devesh}
+                  name="Devesh Verma"
+                  designation="Co-Founder & CTO of Vyapardost"
+              />
           </div>
           <div className="lower-row">
               <MentorCard
@@ -43,6 +50,11 @@ const Mentors = () => {
                   imgSrc={Sreeniketh}
                   name="Sreeniketh Madgula"
                   designation="Associate Software Engineer at Sentinelone"
+              />
+              <MentorCard
+                  imgSrc={Chirag}
+                  name="Chirag Chopra"
+                  designation="Head of Product at 50FIN"
               />
           </div>
       </div>
